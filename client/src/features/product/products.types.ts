@@ -1,4 +1,4 @@
-import { Category } from "./category.interface";
+import { Category } from "../filters/types/category.interface";
 
 export interface ProductFormData {
   title: string;
@@ -10,4 +10,11 @@ export interface ProductFormData {
 
 export interface Product extends ProductFormData {
   id: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ProductsWithPagesCount {
+  products: Product[];
+  pages: number;
 }

@@ -40,7 +40,7 @@ export const Header: FC = () => {
       <Box display="flex" alignItems="center">
         <RocketLaunchIcon sx={{ mr: 1 }} />
         <Typography variant="h6" noWrap component="a" href="/" sx={headerTitle}>
-          FullStack
+          AppleStore
         </Typography>
       </Box>
 

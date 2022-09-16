@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Button, MenuItem, Select, TextField, Grid, Box } from "@mui/material";
 import { Form, Formik, FormikProps } from "formik";
-import { ProductFormData } from "api/products/types/product.interface";
-import { Category, CategoryName } from "api/products/types/category.interface";
+import { ProductFormData } from "features/product/products.types";
+import { Category, CategoryName } from "features/filters/types/category.interface";
 import { ProductSchema } from "./schema";
 import { useAppDispatch } from "features/hooks";
 import { addProduct } from "features/product/products.actions";
@@ -49,7 +49,9 @@ export const ProductForm: FC = () => {
                   {...formik.getFieldProps("category")}
                 >
                   {Object.entries(CategoryName).map(([value, name]) => (
-                    <MenuItem value={Number(value)}>{name}</MenuItem>
+                    <MenuItem key={value} value={Number(value)}>
+                      {name}
+                    </MenuItem>
                   ))}
                 </Select>
               </Grid>

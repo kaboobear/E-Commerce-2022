@@ -1,10 +1,17 @@
 import { ApiBaseService } from "api/apibase.service";
 import { AxiosResponse } from "axios";
-import { Product, ProductFormData } from "api/products/types/product.interface";
+import {
+  ProductsWithPagesCount,
+  Product,
+  ProductFormData,
+} from "features/product/products.types";
+import { ProductParams } from "./types";
 
 class ProductApiService extends ApiBaseService {
-  getProducts(): Promise<AxiosResponse<Product[]>> {
-    return this.apibase.get("/products");
+  getProducts(
+    params: ProductParams
+  ): Promise<AxiosResponse<ProductsWithPagesCount>> {
+    return this.apibase.get("/products", { params });
   }
 
   createProduct(data: ProductFormData): Promise<AxiosResponse<Product>> {
@@ -13,5 +20,4 @@ class ProductApiService extends ApiBaseService {
 }
 
 const productApiService = new ProductApiService();
-
 export { productApiService };

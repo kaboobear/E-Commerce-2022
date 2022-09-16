@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 const bootstrap = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
+    // await sequelize.sync();
     console.log("Postgres was connected (Sequelize)");
   } catch (error) {
     console.log("Postgres connection failed (Sequelize)", error);

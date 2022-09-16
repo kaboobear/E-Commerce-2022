@@ -1,41 +1,35 @@
-import { FC, useEffect } from "react";
-import { Grid } from "@mui/material";
-import { Product } from "./components/Product";
+import { FC, useEffect, useState } from "react";
+import { Box } from "@mui/material";
 import { fetchProducts } from "features/product/products.actions";
 import { Status } from "types/Status";
 import { useAppDispatch, useAppSelector } from "features/hooks";
-import { ProductSkeleton } from "./components/ProductSkeleton";
+import { Sort } from "features/filters/types/sort.interface";
+import { Filters } from "components/Filters/Filters";
+import { SortSelector } from "components/Sort/Sort";
+import { ProductsList } from "./components/ProductsList";
+import { selectStatus } from "features/product/products.selectors";
 
 export const Catalog: FC = () => {
   const dispatch = useAppDispatch();
-  const { data: products, status } = useAppSelector((state) => state.products);
+  const [sort, setSort] = useState<Sort>(Sort.DATE_DESC);
+  const status = useAppSelector(selectStatus);
 
   useEffect(() => {
     if (status === Status.INIT) {
-      dispatch(fetchProducts());
+      dispatch(fetchProducts({ page: 1, sort }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, status]);
 
-  const isLoading = status === Status.LOADING || status === Status.INIT;
-  if (isLoading) {
-    return (
-      <Grid container spacing={2}>
-        {Array.from(Array(3)).map((item) => (
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <ProductSkeleton />
-          </Grid>
-        ))}
-      </Grid>
-    );
-  }
+  const initLoading = status === Status.LOADING || status === Status.INIT;
 
   return (
-    <Grid container spacing={2}>
-      {products.map((product) => (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Product product={product} />
-        </Grid>
-      ))}
-    </Grid>
+    <Box display="flex">
+      <Filters sort={sort} initLoading={initLoading} />
+      <Box flex={1}>
+        <SortSelector sort={sort} setSort={setSort} />
+        <ProductsList initLoading={initLoading} sort={sort} />
+      </Box>
+    </Box>
   );
 };

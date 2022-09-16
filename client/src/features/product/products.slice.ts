@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Status } from "types/Status";
-import { Product } from "api/products/types/product.interface";
+import { ProductsWithPagesCount } from "features/product/products.types";
 import { State } from "types/State";
 import { addProduct, fetchProducts } from "./products.actions";
 
-const initialState: State<Product[]> = {
-  data: [],
+const initialState: State<ProductsWithPagesCount> = {
+  data: {
+    products: [],
+    pages: 0,
+  },
   status: Status.INIT,
   error: null,
 };
@@ -28,11 +31,9 @@ export const productsSlice = createSlice({
         state.error = action.error.message || null;
       })
       .addCase(addProduct.fulfilled, (state, action) => {
-        state.data = [...state.data, action.payload];
+        state.data.products = [...state.data.products, action.payload];
       });
   },
 });
-
-// export const {} = productsSlice.actions;
 
 export default productsSlice.reducer;

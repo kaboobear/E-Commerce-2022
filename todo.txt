@@ -1,0 +1,4 @@
+- add query types for api/front
+- add redux selectors
+- add types for api
+- middlewares/logs/protection

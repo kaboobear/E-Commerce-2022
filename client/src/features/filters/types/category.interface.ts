@@ -6,6 +6,10 @@ export enum Category {
   WATCH,
 }
 
+export const CategoryKeys = Object.keys(Category).filter(
+  (value) => !(parseInt(value) >= 0)
+) as Array<keyof typeof Category>;
+
 export const CategoryName = {
   [Category.PHONE]: "Phone",
   [Category.LAPTOP]: "Laptop",

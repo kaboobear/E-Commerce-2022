@@ -1,21 +1,6 @@
 import { sequelize } from "../database/db";
 import { DataType } from "sequelize-typescript";
-
-export enum Category {
-  PHONE,
-  LAPTOP,
-  TABLET,
-  HEADPHONES,
-  WATCH,
-}
-
-export const CategoryName = {
-  [Category.PHONE]: "Phone",
-  [Category.LAPTOP]: "Laptop",
-  [Category.TABLET]: "Tablet",
-  [Category.HEADPHONES]: "Headphones",
-  [Category.WATCH]: "Watch",
-};
+import { Category } from "../types/category.types";
 
 export const Product = sequelize.define(
   "Product",
@@ -38,7 +23,8 @@ export const Product = sequelize.define(
       type: DataType.INTEGER,
     },
     category: {
-      type: DataType.INTEGER,
+      type: DataType.ENUM,
+      values: Object.keys(Category),
     },
   },
   { freezeTableName: true }

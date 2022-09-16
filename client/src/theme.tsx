@@ -19,6 +19,54 @@ export const theme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          margin: 0,
+          boxShadow: "none",
+          borderBottom: "1px solid #ccc",
+          "&:last-child": {
+            borderBottom: "none",
+          },
+          "&.Mui-expanded": {
+            margin: 0,
+            boxShadow: "none",
+          },
+          "&:before": {
+            display: "none",
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        content: {
+          marginBottom: 20,
+          fontSize: 18,
+          fontWeight: 600,
+          marginTop: 20,
+          "&.Mui-expanded": {
+            marginBottom: 20,
+            marginTop: 20,
+          },
+        },
+        root: {
+          padding: 0,
+          minHeight: "auto",
+          "&.Mui-expanded": {
+            minHeight: "auto",
+          },
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+          paddingBottom: 15,
+        },
+      },
+    },
     MuiCardContent: {
       styleOverrides: {
         root: {

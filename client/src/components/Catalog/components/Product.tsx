@@ -4,9 +4,10 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Fade,
   Typography,
 } from "@mui/material";
-import { Product as ProductType } from "api/products/types/product.interface";
+import { Product as ProductType } from "features/product/products.types";
 
 interface Props {
   product: ProductType;
@@ -15,15 +16,21 @@ interface Props {
 export const Product: FC<Props> = ({ product }) => {
   return (
     <Card>
-      <CardMedia
-        component="img"
-        height="350"
-        image={product.image}
-        alt={product.title}
-      />
+      <Fade
+        in={true}
+        style={{ transitionDelay: "300ms", transitionDuration: "500ms" }}
+      >
+        <CardMedia
+          component="img"
+          height="350"
+          image={product.image}
+          alt={product.title}
+        />
+      </Fade>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {product.title}
+          <Typography></Typography>
         </Typography>
         <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
           {product.description}

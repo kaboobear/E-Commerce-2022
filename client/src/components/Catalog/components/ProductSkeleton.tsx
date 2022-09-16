@@ -1,11 +1,10 @@
 import { FC } from "react";
-import { Card, CardContent, CardMedia, Skeleton } from "@mui/material";
+import { Card, CardContent, Skeleton } from "@mui/material";
 
 export const ProductSkeleton: FC = () => {
   return (
     <Card>
       <Skeleton height={350} width="100%" variant="rectangular" />
-      {/* <CardMedia component="img" height="350" /> */}
       <CardContent>
         <Skeleton height={32} width={120} sx={{ mb: 1 }} />
         <Skeleton height={60} width={250} sx={{ mb: 1.5 }} />
