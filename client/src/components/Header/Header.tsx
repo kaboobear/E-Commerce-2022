@@ -4,19 +4,27 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { headerTitle, headerWrapper } from "./styles";
+import { HideUpMd } from "utils/show-and-hide/hide-up-md";
+import { ShowUpMd } from "utils/show-and-hide/show-up-md";
+import { Auth } from "components/Auth/Auth";
 import MyPhoto from "assets/icons/photo.jpg";
-import { HideUpMd } from "utils/hide-up-md";
-import { ShowUpMd } from "utils/show-up-md";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "features/auth/auth.selectors";
+import { Avatar } from "@mui/material";
+import { useAppDispatch } from "features/hooks";
+import { logout } from "features/auth/auth.actions";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export const Header: FC = () => {
+  const dispatch = useAppDispatch();
+  const user = useSelector(selectUser);
+
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -37,12 +45,17 @@ export const Header: FC = () => {
 
   return (
     <Box sx={headerWrapper}>
-      <Box display="flex" alignItems="center">
-        <RocketLaunchIcon sx={{ mr: 1 }} />
-        <Typography variant="h6" noWrap component="a" href="/" sx={headerTitle}>
-          AppleStore
-        </Typography>
-      </Box>
+      <Link
+        to="/"
+        children={
+          <Box display="flex" alignItems="center">
+            <RocketLaunchIcon sx={{ mr: 1 }} />
+            <Typography variant="h6" noWrap sx={headerTitle}>
+              AppleStore
+            </Typography>
+          </Box>
+        }
+      />
 
       <HideUpMd>
         <Box sx={{ order: -1 }}>
@@ -96,9 +109,17 @@ export const Header: FC = () => {
       </ShowUpMd>
 
       <Box ml={[0, 0, "auto"]}>
-        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar src={MyPhoto} />
-        </IconButton>
+        {user ? (
+          <Box display="flex" alignItems="center">
+            <Typography sx={{ mr: 1.5 }}>{user.username}</Typography>
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar src={MyPhoto} />
+            </IconButton>
+          </Box>
+        ) : (
+          <Auth />
+        )}
+
         <Menu
           anchorOrigin={{
             vertical: "top",
@@ -115,11 +136,17 @@ export const Header: FC = () => {
           sx={{ mt: "45px" }}
           keepMounted
         >
-          {settings.map((setting) => (
-            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
+          <MenuItem onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">Profile</Typography>
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              dispatch(logout());
+              handleCloseUserMenu();
+            }}
+          >
+            <Typography textAlign="center">Logout</Typography>
+          </MenuItem>
         </Menu>
       </Box>
     </Box>

@@ -1,5 +1,5 @@
 import { Product } from "features/product/products.types";
-import { Sort } from "features/filters/types/sort.interface";
+import { Sort } from "enums/sort.enum";
 import { compareAsc, compareDesc } from "date-fns";
 
 export const sortByType = (type: Sort): ((a: Product, b: Product) => number) =>

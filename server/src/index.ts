@@ -1,30 +1,14 @@
-import { sequelize } from "./database/db";
-import express, { Request, Response } from "express";
-import { rootRouter } from "./routes";
+import { App } from "./app";
+import { ProductConroller } from "./controllers/product.controller";
+import { AuthConroller } from "./controllers/auth.controller";
+import { UserConroller } from "./controllers/user.controller";
+import { AppConroller } from "./controllers/app.controller";
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = new App([
+  new AppConroller(),
+  new ProductConroller(),
+  new AuthConroller(),
+  new UserConroller(),
+]);
 
-const bootstrap = async () => {
-  try {
-    await sequelize.authenticate();
-    // await sequelize.sync();
-    console.log("Postgres was connected (Sequelize)");
-  } catch (error) {
-    console.log("Postgres connection failed (Sequelize)", error);
-  }
-
-  app.get("/", (req: Request, res: Response) => {
-    res.status(200).send({ message: "API working well" });
-  });
-
-  app.use("/", rootRouter);
-
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log("Server running on port", PORT);
-  });
-};
-
-bootstrap();
+app.listen();

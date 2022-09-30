@@ -4,7 +4,7 @@ import { ProductSkeleton } from "./ProductSkeleton";
 import { Product } from "./Product";
 import { useAppDispatch, useAppSelector } from "features/hooks";
 import { fetchProducts } from "features/product/products.actions";
-import { Sort } from "features/filters/types/sort.interface";
+import { Sort } from "enums/sort.enum";
 import { setFilter } from "features/filters/filters.slice";
 import { selectProductsAndPagesCount } from "features/product/products.selectors";
 
@@ -53,7 +53,6 @@ export const ProductsList: FC<Props> = ({ initLoading, sort }) => {
             count={pages}
             color="primary"
             page={filters.page}
-            //todo
             onChange={(_, pageValue) =>
               dispatch(setFilter({ page: pageValue }))
             }

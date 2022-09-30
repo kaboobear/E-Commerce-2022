@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { Button, MenuItem, Select, TextField, Grid, Box } from "@mui/material";
-import { Form, Formik, FormikProps } from "formik";
+import { Form, Formik } from "formik";
 import { ProductFormData } from "features/product/products.types";
-import { Category, CategoryName } from "features/filters/types/category.interface";
+import { Category, CategoryName } from "enums/category.enums";
 import { ProductSchema } from "./schema";
 import { useAppDispatch } from "features/hooks";
 import { addProduct } from "features/product/products.actions";
+import { getErrorText } from "utils/get-formik-error-text";
 
 export const ProductForm: FC = () => {
   const dispatch = useAppDispatch();
@@ -17,16 +18,6 @@ export const ProductForm: FC = () => {
       "http://cdn.shopify.com/s/files/1/0593/0480/4531/products/IPHONE121_COLOR-PURPLE_CAPACITY-ALL.png",
     category: Category.PHONE,
     price: 500,
-  };
-
-  const getErrorText = (
-    formikObject: FormikProps<ProductFormData>,
-    fieldName: keyof ProductFormData
-  ) => {
-    if (formikObject.errors[fieldName] && formikObject.touched[fieldName]) {
-      return formikObject.errors[fieldName];
-    }
-    return null;
   };
 
   return (
@@ -62,7 +53,7 @@ export const ProductForm: FC = () => {
                   type="text"
                   label="Title"
                   fullWidth
-                  helperText={getErrorText(formik, "title")}
+                  helperText={getErrorText<ProductFormData>(formik, "title")}
                   {...formik.getFieldProps("title")}
                 />
               </Grid>
@@ -73,7 +64,10 @@ export const ProductForm: FC = () => {
                   type="text"
                   label="Description"
                   fullWidth
-                  helperText={getErrorText(formik, "description")}
+                  helperText={getErrorText<ProductFormData>(
+                    formik,
+                    "description"
+                  )}
                   {...formik.getFieldProps("description")}
                 />
               </Grid>
@@ -84,7 +78,7 @@ export const ProductForm: FC = () => {
                   type="text"
                   label="Image"
                   fullWidth
-                  helperText={getErrorText(formik, "image")}
+                  helperText={getErrorText<ProductFormData>(formik, "image")}
                   {...formik.getFieldProps("image")}
                 />
               </Grid>
@@ -95,7 +89,7 @@ export const ProductForm: FC = () => {
                   type="number"
                   label="Price"
                   fullWidth
-                  helperText={getErrorText(formik, "price")}
+                  helperText={getErrorText<ProductFormData>(formik, "price")}
                   {...formik.getFieldProps("price")}
                 />
               </Grid>

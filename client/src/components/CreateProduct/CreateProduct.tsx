@@ -1,18 +1,12 @@
 import { FC, useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  IconButton,
-} from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Button } from "@mui/material";
 import { ProductForm } from "./ProductForm";
+import { Dialog } from "components/Common/Dialog/Dialog";
 
 export const CreateProduct: FC = () => {
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
+  const handleOpen = () => {
     setOpen(true);
   };
 
@@ -22,27 +16,11 @@ export const CreateProduct: FC = () => {
 
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleOpen}>
         Create New Product
       </Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle sx={{ m: 0, p: 2 }}>
-          Create New Product
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: "absolute",
-              right: 8,
-              top: 8,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent sx={{ p: 2 }}>
-          <ProductForm />
-        </DialogContent>
+      <Dialog open={open} handleClose={handleClose}>
+        <ProductForm />
       </Dialog>
     </>
   );

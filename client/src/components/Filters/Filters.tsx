@@ -12,22 +12,14 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React, { FC, useEffect } from "react";
-import {
-  Category,
-  CategoryKeys,
-  CategoryName,
-} from "features/filters/types/category.interface";
-import {
-  Price,
-  PriceKeys,
-  PriceName,
-} from "features/filters/types/price.iterface";
+import { Category, CategoryKeys, CategoryName } from "enums/category.enums";
+import { Price, PriceKeys, PriceName } from "enums/price.enum";
 import { Search } from "components/Search/Search";
 import { useAppDispatch, useAppSelector } from "features/hooks";
 import { setFilter } from "features/filters/filters.slice";
-import { addOrRemoveArrayElement } from "utils/add-or-remove-array-element";
+import { addOrRemoveArrayElement } from "utils/array/add-or-remove-array-element";
 import { fetchProducts } from "features/product/products.actions";
-import { Sort } from "features/filters/types/sort.interface";
+import { Sort } from "enums/sort.enum";
 
 interface Props {
   sort: Sort;

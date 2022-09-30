@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { productApiService } from "api/products/products.api.service";
 import { ProductFormData } from "features/product/products.types";
-import { PriceValues } from "../../features/filters/types/price.iterface";
+import { PriceValues } from "../../enums/price.enum";
 import { isNullOrUndefined } from "utils/is-null-or-undefined";
 import { FiltersAndSort } from "features/filters/types/filters.types";
 import { ProductParams } from "api/products/types";
@@ -25,18 +25,26 @@ const getParamsFromFilters = (filters: FiltersAndSort): ProductParams => {
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async (filters: FiltersAndSort) => {
-    const response = await productApiService.getProducts(
-      getParamsFromFilters(filters)
-    );
-    return response.data;
+  async (filters: FiltersAndSort, { rejectWithValue }) => {
+    try {
+      const response = await productApiService.getProducts(
+        getParamsFromFilters(filters)
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
   }
 );
 
 export const addProduct = createAsyncThunk(
   "products/addProduct",
-  async (product: ProductFormData) => {
-    const response = await productApiService.createProduct(product);
-    return response.data;
+  async (product: ProductFormData, { rejectWithValue }) => {
+    try {
+      const response = await productApiService.createProduct(product);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
   }
 );

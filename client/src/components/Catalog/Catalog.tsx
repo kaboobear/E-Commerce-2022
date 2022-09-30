@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { fetchProducts } from "features/product/products.actions";
 import { Status } from "types/Status";
 import { useAppDispatch, useAppSelector } from "features/hooks";
-import { Sort } from "features/filters/types/sort.interface";
+import { Sort } from "enums/sort.enum";
 import { Filters } from "components/Filters/Filters";
 import { SortSelector } from "components/Sort/Sort";
 import { ProductsList } from "./components/ProductsList";

@@ -1,5 +1,5 @@
 import { Box, Select, MenuItem } from "@mui/material";
-import { Sort, SortName } from "features/filters/types/sort.interface";
+import { Sort, SortName } from "enums/sort.enum";
 import React, { FC } from "react";
 import SortIcon from "@mui/icons-material/Sort";
 

@@ -3,6 +3,7 @@ import { Status } from "types/Status";
 import { ProductsWithPagesCount } from "features/product/products.types";
 import { State } from "types/State";
 import { addProduct, fetchProducts } from "./products.actions";
+import { ResponseError } from "types/Errors";
 
 const initialState: State<ProductsWithPagesCount> = {
   data: {
@@ -16,7 +17,12 @@ const initialState: State<ProductsWithPagesCount> = {
 export const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    reset: () => initialState,
+    resetError: (state) => {
+      state.error = null;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchProducts.pending, (state, action) => {
@@ -28,12 +34,17 @@ export const productsSlice = createSlice({
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = Status.ERROR;
-        state.error = action.error.message || null;
+        state.error = action.payload as ResponseError;
       })
       .addCase(addProduct.fulfilled, (state, action) => {
         state.data.products = [...state.data.products, action.payload];
+      })
+      .addCase(addProduct.rejected, (state, action) => {
+        state.status = Status.ERROR;
+        state.error = action.payload as ResponseError;
       });
   },
 });
 
+export const { reset, resetError } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -6,8 +6,8 @@ export enum Sort {
 }
 
 export const SortValues = {
-  [Sort.DATE_ASC]: { column: "createdAt", order: "ASC" },
-  [Sort.DATE_DESC]: { column: "createdAt", order: "DESC" },
+  [Sort.DATE_ASC]: { column: "created_at", order: "ASC" },
+  [Sort.DATE_DESC]: { column: "created_at", order: "DESC" },
   [Sort.PRICE_ASC]: { column: "price", order: "ASC" },
   [Sort.PRICE_DESC]: { column: "price", order: "DESC" },
 };

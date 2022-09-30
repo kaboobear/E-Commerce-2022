@@ -15,7 +15,7 @@ interface Props {
 
 export const Product: FC<Props> = ({ product }) => {
   return (
-    <Card>
+    <Card sx={{ height: 1, display: "flex", flexDirection: "column" }}>
       <Fade
         in={true}
         style={{ transitionDelay: "300ms", transitionDuration: "500ms" }}
@@ -27,7 +27,7 @@ export const Product: FC<Props> = ({ product }) => {
           alt={product.title}
         />
       </Fade>
-      <CardContent>
+      <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Typography gutterBottom variant="h5" component="div">
           {product.title}
           <Typography></Typography>
@@ -35,11 +35,16 @@ export const Product: FC<Props> = ({ product }) => {
         <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
           {product.description}
         </Typography>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography
+          gutterBottom
+          variant="h4"
+          component="div"
+          sx={{ mt: "auto" }}
+        >
           {product.price}$
         </Typography>
         <Button size="large" variant="contained" fullWidth>
-          Buy
+          Add To Cart
         </Button>
       </CardContent>
     </Card>

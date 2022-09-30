@@ -1,5 +1,5 @@
 import { ApiBaseService } from "api/apibase.service";
-import { AxiosResponse } from "axios";
+import { AxiosPromise } from "axios";
 import {
   ProductsWithPagesCount,
   Product,
@@ -8,13 +8,11 @@ import {
 import { ProductParams } from "./types";
 
 class ProductApiService extends ApiBaseService {
-  getProducts(
-    params: ProductParams
-  ): Promise<AxiosResponse<ProductsWithPagesCount>> {
+  getProducts(params: ProductParams): AxiosPromise<ProductsWithPagesCount> {
     return this.apibase.get("/products", { params });
   }
 
-  createProduct(data: ProductFormData): Promise<AxiosResponse<Product>> {
+  createProduct(data: ProductFormData): AxiosPromise<Product> {
     return this.apibase.post("/products", data);
   }
 }

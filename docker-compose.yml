@@ -27,6 +27,7 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
+      - JWTSECRET=123123nko
     command: npm run dev
   client:
     build:

@@ -1,4 +1,4 @@
-import { Category } from "../filters/types/category.interface";
+import { Category } from "enums/category.enums";
 
 export interface ProductFormData {
   title: string;
