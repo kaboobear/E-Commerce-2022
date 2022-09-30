@@ -11,6 +11,8 @@ import {
 } from "../dto/auth.dto";
 import { plainToInstance } from "class-transformer";
 import validationMiddleware from "../middlewares/validation.middleware";
+import { ONE_DAY } from "../helpers/tokenable";
+import { UnautorizedException } from "../exceptions/UnauthorizedException";
 
 class AuthConroller implements Controller {
   public path = "/auth";
@@ -34,6 +36,7 @@ class AuthConroller implements Controller {
       this.resetPassword
     );
     routes.post("/login", validationMiddleware(LoginBodyDto), this.login);
+    routes.get("/confirm-email/:token", this.confirmEmail);
     routes.post("/logout", this.logout);
     routes.post(
       "/change-password",
@@ -48,7 +51,7 @@ class AuthConroller implements Controller {
       const body = plainToInstance(LoginBodyDto, req.body);
 
       const loggedInUser = await this.service.login(body);
-      const tokenData = this.service.createToken(loggedInUser.id);
+      const tokenData = this.service.createToken(loggedInUser.id, ONE_DAY);
 
       res.cookie("Authorization", tokenData.token, {
         maxAge: tokenData.expiresIn,
@@ -65,6 +68,27 @@ class AuthConroller implements Controller {
   private logout = (req: Request, res: Response) => {
     res.cookie("Authorization", "", { maxAge: 0 });
     res.send(200);
+  };
+
+  private confirmEmail = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const token = req.params.token;
+      if (!token) {
+        next(new UnautorizedException("Authentication token missing"));
+      }
+
+      await this.service.confirmEmail(token);
+      const clientURL = process.env.CLIENT_URL;
+      res.redirect(`${clientURL}/emailConfirmed`);
+
+      res.send(200);
+    } catch (error) {
+      next(error);
+    }
   };
 
   private resetPasswordRequest = async (

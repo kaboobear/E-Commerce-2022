@@ -19,7 +19,7 @@ async function authMiddleware(
       next(new UnautorizedException("Authentication token missing"));
     }
 
-    const secret = process.env.JWTSECRET;
+    const secret = process.env.JWT_SECRET;
     const dataStoredInToken = jwt.verify(
       cookies.Authorization,
       secret

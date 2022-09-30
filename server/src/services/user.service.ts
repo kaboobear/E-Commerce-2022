@@ -3,16 +3,19 @@ import { User } from "../database/entity/User";
 import { Role } from "../enums/role.enum";
 import { NotFoundException } from "../exceptions/NotFoundException";
 import { Service } from "../iterfaces/service.interface";
+import * as os from "os";
 import {
   CreateUserBodyDto,
   RegisterResponseDto,
   UpdateUserBodyDto,
 } from "../dto/user.dto";
 import { BadRequestException } from "../exceptions/BadRequestException";
-import { Tokenable } from "../helpers/tokenable";
+import { TEN_YEARS, Tokenable } from "../helpers/tokenable";
+import { MailService } from "../mail/mail.service";
 
 class UserService extends Tokenable implements Service<User> {
   public repository = AppDataSource.getRepository(User);
+  private mailService = new MailService();
 
   initUser = async (id: number): Promise<User> => {
     const user = await this.repository.findOneBy({ id });
@@ -26,7 +29,7 @@ class UserService extends Tokenable implements Service<User> {
 
   getAll = async (): Promise<User[]> => {
     const users = await this.repository.find({
-      select: ["id", "username", "email", "role"],
+      // select: ["id", "username", "email", "role"],
     });
 
     return users;
@@ -48,7 +51,7 @@ class UserService extends Tokenable implements Service<User> {
       throw new BadRequestException("User with this email is already exist");
     }
 
-    let user = new User();
+    const user = new User();
     user.username = username;
     user.password = password;
     user.email = email;
@@ -57,6 +60,16 @@ class UserService extends Tokenable implements Service<User> {
     user.hashPassword();
 
     const newUser = await this.repository.save(user);
+
+    const confirmationTokenData = this.createToken(newUser.id, TEN_YEARS);
+
+    const serverUrl = process.env.SERVER_URL;
+    this.mailService.sendConfirmationMail({
+      recipient: newUser.email,
+      username: newUser.username,
+      link: `${serverUrl}/auth/confirm-email/${confirmationTokenData.token}`,
+    });
+
     return {
       id: newUser.id,
       username: newUser.username,
@@ -74,7 +87,7 @@ class UserService extends Tokenable implements Service<User> {
   }): Promise<User> => {
     const { username, email, role } = body;
 
-    let user = await this.repository.findOneBy({ id });
+    const user = await this.repository.findOneBy({ id });
     if (!user) {
       throw new NotFoundException("User not found");
     }

@@ -11,7 +11,9 @@ import {
   ResetPasswordRequestBodyDto,
 } from "dto/auth.dto";
 import { NotFoundException } from "../exceptions/NotFoundException";
+import jwt from "jsonwebtoken";
 import { UnautorizedException } from "../exceptions/UnauthorizedException";
+import DataStoredInToken from "../iterfaces/data-stored-in-token";
 import { MailService } from "../mail/mail.service";
 import { getUtcIsoTime } from "../utils/getUtcIsoTime";
 import { BadRequestException } from "../exceptions/BadRequestException";
@@ -40,22 +42,34 @@ class AuthService extends Tokenable implements Service<User> {
     };
   };
 
+  confirmEmail = async (token: string) => {
+    const secret = process.env.JWT_SECRET;
+    const dataStoredInToken = jwt.verify(token, secret) as DataStoredInToken;
+
+    const user = await this.repository.findOneBy({ id: dataStoredInToken.id });
+    if (!user) {
+      throw new NotFoundException("User not found");
+    }
+    user.confirmed = true;
+    this.repository.save(user);
+  };
+
   public resetPasswordRequest = async (body: ResetPasswordRequestBodyDto) => {
     const { email } = body;
 
-    let user = await this.repository.findOneBy({ email });
+    const user = await this.repository.findOneBy({ email });
     if (!user) {
       throw new NotFoundException("User with this email not found");
     }
 
-    let resetToken = crypto.randomBytes(32).toString("hex");
+    const resetToken = crypto.randomBytes(32).toString("hex");
     const hash = bcrypt.hashSync(resetToken, 8);
 
-    user.token = hash;
-    user.tokenExpirationTime = getUtcIsoTime({ plusHours: 1 });
+    user.passwordToken = hash;
+    user.passwordTokenExpirationTime = getUtcIsoTime({ plusHours: 1 });
     await this.repository.save(user);
 
-    const clientURL = "http://localhost:3000";
+    const clientURL = process.env.CLIENT_URL;
     const link = `${clientURL}/passwordReset?token=${resetToken}&id=${user.id}`;
 
     this.mailService.sendPasswordResetMail({
@@ -68,23 +82,23 @@ class AuthService extends Tokenable implements Service<User> {
   public resetPassword = async (body: ResetPasswordBodyDto) => {
     const { password, token, id } = body;
 
-    let user = await this.repository.findOneBy({ id });
+    const user = await this.repository.findOneBy({ id });
     if (!user) {
       throw new NotFoundException("User not found");
     }
 
-    const isTokenExpired = user.tokenExpirationTime < getUtcIsoTime({});
-    if (isTokenExpired) {
+    const isTokenExpired = user.passwordTokenExpirationTime < getUtcIsoTime({});
+    if (isTokenExpired || !user.passwordToken) {
       throw new BadRequestException("Time to reset your password is expired");
     }
 
-    const isValid = await bcrypt.compare(token, user.token);
-    if (!isValid || !user.token) {
+    const isValid = await bcrypt.compare(token, user.passwordToken);
+    if (!isValid) {
       throw new BadRequestException("Link for password reseting is wrong");
     }
 
-    user.token = null;
-    user.tokenExpirationTime = null;
+    user.passwordToken = null;
+    user.passwordTokenExpirationTime = null;
     user.password = password;
     user.hashPassword();
 
@@ -100,7 +114,7 @@ class AuthService extends Tokenable implements Service<User> {
   }) => {
     const { oldPassword, newPassword } = body;
 
-    let user = await this.repository.findOneBy({ id });
+    const user = await this.repository.findOneBy({ id });
     if (!user) {
       throw new NotFoundException("User not found");
     }

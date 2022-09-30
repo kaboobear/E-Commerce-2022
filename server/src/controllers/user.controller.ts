@@ -6,6 +6,7 @@ import { UserService } from "../services/user.service";
 import { CreateUserBodyDto, UpdateUserBodyDto } from "../dto/user.dto";
 import { plainToInstance } from "class-transformer";
 import validationMiddleware from "../middlewares/validation.middleware";
+import { ONE_DAY } from "../helpers/tokenable";
 
 class UserConroller implements Controller {
   public path = "/user";
@@ -19,15 +20,15 @@ class UserConroller implements Controller {
   private initializeRoutes() {
     const routes = Router();
     routes.get("/init", [authMiddleware], this.initUser);
-    routes.get("/", [authMiddleware], this.getAll);
+    routes.get("/", this.getAll);
     routes.post("/", [validationMiddleware(CreateUserBodyDto)], this.create);
     routes.patch(
       "/:id",
       [authMiddleware, validationMiddleware(UpdateUserBodyDto)],
       this.update
     );
-    routes.delete("/:id", [authMiddleware], this.remove);
-    routes.get("/:id", [authMiddleware], this.getOneById);
+    routes.delete("/:id", this.remove);
+    routes.get("/:id", this.getOneById);
     this.router.use(this.path, routes);
   }
 
@@ -70,7 +71,7 @@ class UserConroller implements Controller {
     try {
       const body = plainToInstance(CreateUserBodyDto, req.body);
       const registeredUser = await this.service.create(body);
-      const tokenData = this.service.createToken(registeredUser.id);
+      const tokenData = this.service.createToken(registeredUser.id, ONE_DAY);
 
       res.cookie("Authorization", tokenData.token, {
         maxAge: tokenData.expiresIn,

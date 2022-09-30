@@ -1,7 +1,7 @@
 import nodemailer, { Transporter } from "nodemailer";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { confirmEmailTemplate } from "./templates/confirm-email";
 import { resetPasswordTemplate } from "./templates/reset-password";
-import { PasswordResetMailParams, SendMailParams } from "./types";
+import { EmailWithAcionLinkParams, SendMailParams } from "./types";
 
 class MailService {
   private transporter;
@@ -17,11 +17,23 @@ class MailService {
     recipient,
     username,
     link,
-  }: PasswordResetMailParams) {
+  }: EmailWithAcionLinkParams) {
     this.sendMail({
       recipient,
       subject: "Reset Your Password",
       content: resetPasswordTemplate({ username, link }),
+    });
+  }
+
+  public async sendConfirmationMail({
+    recipient,
+    username,
+    link,
+  }: EmailWithAcionLinkParams) {
+    this.sendMail({
+      recipient,
+      subject: "Confirm Your Email",
+      content: confirmEmailTemplate({ username, link }),
     });
   }
 

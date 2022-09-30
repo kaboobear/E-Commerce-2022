@@ -4,7 +4,7 @@ export interface SendMailParams {
   content: string;
 }
 
-export interface PasswordResetMailParams {
+export interface EmailWithAcionLinkParams {
   recipient: string;
   username: string;
   link: string;

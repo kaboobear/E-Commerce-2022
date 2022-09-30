@@ -7,6 +7,7 @@ import { MainLayout } from "layouts/MainLayout";
 import { useAppDispatch } from "features/hooks";
 import { init } from "features/auth/auth.actions";
 import { ResetPassword } from "components/Auth/components/ResetPassword/ResetPassword";
+import { EmailConfirmation } from "components/Auth/components/EmailConfirmation/EmailConfirmation";
 
 export const App = () => {
   const dispatch = useAppDispatch();
@@ -21,6 +22,7 @@ export const App = () => {
         <Route path="/" element={<Catalog />} />
         <Route path="/create" element={<CreateProduct />} />
         <Route path="/passwordReset" element={<ResetPassword />} />
+        <Route path="/emailConfirmed" element={<EmailConfirmation />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

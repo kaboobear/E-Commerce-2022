@@ -27,7 +27,9 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
-      - JWTSECRET=123123nko
+      - JWT_SECRET=123123nko
+      - CLIENT_URL=http://localhost:3000
+      - SERVER_URL=http://localhost:3000/api
     command: npm run dev
   client:
     build:

@@ -31,11 +31,14 @@ export class User {
   @IsNotEmpty()
   role: Role;
 
-  @Column({ nullable: true })
-  token: string;
+  @Column({ default: false })
+  confirmed: boolean;
 
   @Column({ nullable: true })
-  tokenExpirationTime: Date;
+  passwordToken: string;
+
+  @Column({ nullable: true })
+  passwordTokenExpirationTime: Date;
 
   @CreateDateColumn({ name: "created_at" })
   created_at: Date;
