@@ -54,7 +54,7 @@ class AuthConroller implements Controller {
       const tokenData = this.service.createToken(loggedInUser.id, ONE_DAY);
 
       res.cookie("Authorization", tokenData.token, {
-        maxAge: tokenData.expiresIn,
+        maxAge: tokenData.expiresIn * 1000,
         sameSite: false,
         secure: true,
         httpOnly: true,

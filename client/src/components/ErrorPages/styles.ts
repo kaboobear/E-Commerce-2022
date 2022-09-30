@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 import { SxProps } from "@mui/system";
 
-export const notFoundPage: SxProps<Theme> = (theme) => ({
+export const errorPage: SxProps<Theme> = (theme) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

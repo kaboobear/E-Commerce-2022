@@ -74,9 +74,7 @@ class UserConroller implements Controller {
       const tokenData = this.service.createToken(registeredUser.id, ONE_DAY);
 
       res.cookie("Authorization", tokenData.token, {
-        maxAge: tokenData.expiresIn,
-        sameSite: false,
-        secure: true,
+        maxAge: tokenData.expiresIn * 1000,
         httpOnly: true,
       });
       res.send(registeredUser);
