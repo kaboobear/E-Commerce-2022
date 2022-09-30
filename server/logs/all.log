@@ -5765,3 +5765,21 @@
 [35m[39m
 30/09/2022 14:50:20 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 10.215 ms[39m
 [35m[39m
+30/09/2022 15:06:08 [35mhttp[39m: [35mGET /user/init 401 55 - 25.564 ms[39m
+[35m[39m
+30/09/2022 15:06:08 [35mhttp[39m: [35mGET /user/init 401 55 - 50.167 ms[39m
+[35m[39m
+30/09/2022 15:06:09 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 25 - 516.915 ms[39m
+[35m[39m
+30/09/2022 15:06:09 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 25 - 546.247 ms[39m
+[35m[39m
+30/09/2022 15:06:18 [35mhttp[39m: [35mGET /seed 200 25 - 231.166 ms[39m
+[35m[39m
+30/09/2022 15:06:23 [35mhttp[39m: [35mGET /user/init 401 55 - 7.227 ms[39m
+[35m[39m
+30/09/2022 15:06:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 2384 - 15.025 ms[39m
+[35m[39m
+30/09/2022 15:06:23 [35mhttp[39m: [35mGET /user/init 401 55 - 3.368 ms[39m
+[35m[39m
+30/09/2022 15:06:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 14.789 ms[39m
+[35m[39m
