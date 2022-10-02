@@ -20,15 +20,15 @@ class UserConroller implements Controller {
   private initializeRoutes() {
     const routes = Router();
     routes.get("/init", [authMiddleware], this.initUser);
-    routes.get("/", this.getAll);
+    routes.get("/", this.list);
     routes.post("/", [validationMiddleware(CreateUserBodyDto)], this.create);
-    routes.patch(
+    routes.put(
       "/:id",
       [authMiddleware, validationMiddleware(UpdateUserBodyDto)],
       this.update
     );
     routes.delete("/:id", this.remove);
-    routes.get("/:id", this.getOneById);
+    routes.get("/:id", this.retrieveById);
     this.router.use(this.path, routes);
   }
 
@@ -47,19 +47,19 @@ class UserConroller implements Controller {
     }
   };
 
-  getAll = async (req: Request, res: Response, next: NextFunction) => {
+  list = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const users = await this.service.getAll();
+      const users = await this.service.list();
       res.send(users);
     } catch (error) {
       next(error);
     }
   };
 
-  getOneById = async (req: Request, res: Response, next: NextFunction) => {
+  retrieveById = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const id = Number(req.params.id);
-      const user = await this.service.getOneById(id);
+      const user = await this.service.retrieveById(id);
 
       res.send(user);
     } catch (error) {

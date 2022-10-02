@@ -20,7 +20,7 @@ class ProductService implements Service<Product> {
   public repository = AppDataSource.getRepository(Product);
   private LIMIT = 6;
 
-  public getAll = async (
+  public list = async (
     query: GetProductsQueryDto
   ): Promise<GetProductsResponseDto> => {
     const page = Number(query.page) || 1;

@@ -55,8 +55,6 @@ class AuthConroller implements Controller {
 
       res.cookie("Authorization", tokenData.token, {
         maxAge: tokenData.expiresIn * 1000,
-        sameSite: false,
-        secure: true,
         httpOnly: true,
       });
       res.send(loggedInUser);

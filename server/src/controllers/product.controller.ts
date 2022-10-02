@@ -17,14 +17,14 @@ class ProductConroller implements Controller {
   private initializeRoutes() {
     const routes = Router();
     routes.post("/", validationMiddleware(CreateProductBodyDto), this.create);
-    routes.get("/", this.getAll);
+    routes.get("/", this.list);
     this.router.use(this.path, routes);
   }
 
-  private getAll = async (req: Request, res: Response, next: NextFunction) => {
+  private list = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const query = plainToInstance(GetProductsQueryDto, req.query);
-      const { products, pages } = await this.service.getAll(query);
+      const { products, pages } = await this.service.list(query);
 
       res.send({
         products,

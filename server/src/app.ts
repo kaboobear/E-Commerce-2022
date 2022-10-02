@@ -36,7 +36,11 @@ class App {
     this.app.use(loggerMiddleware);
     this.app.use(express.json());
     this.app.use(helmet());
-    this.app.use(cors());
+    this.app.use(
+      cors({
+        methods: ["GET", "POST", "PUT", "DELETE"],
+      })
+    );
     this.app.use(cookieParser());
   }
 

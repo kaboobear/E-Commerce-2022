@@ -27,7 +27,7 @@ class UserService extends Tokenable implements Service<User> {
     return user;
   };
 
-  getAll = async (): Promise<User[]> => {
+  list = async (): Promise<User[]> => {
     const users = await this.repository.find({
       // select: ["id", "username", "email", "role"],
     });
@@ -35,7 +35,7 @@ class UserService extends Tokenable implements Service<User> {
     return users;
   };
 
-  getOneById = async (id: number): Promise<User> => {
+  retrieveById = async (id: number): Promise<User> => {
     const user = await this.repository.findOne({
       select: ["id", "username", "role", "email"],
       where: { id },
