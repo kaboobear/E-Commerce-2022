@@ -1,21 +1,21 @@
-import { Request, Response, Router, NextFunction } from "express";
-import { Controller } from "../iterfaces/controller.interface";
-import authMiddleware from "../middlewares/auth-jwt.middleware";
-import { RequestWithUser } from "../iterfaces/request-with-user.interface";
-import { AuthService } from "../services/auth.service";
+import { Request, Response, Router, NextFunction } from 'express';
+import { Controller } from 'iterfaces/controller.interface';
+import authMiddleware from 'middlewares/auth-jwt.middleware';
+import { RequestWithUser } from 'iterfaces/request-with-user.interface';
+import { AuthService } from 'services/auth.service';
 import {
   ChangePasswordBodyDto,
   LoginBodyDto,
   ResetPasswordBodyDto,
   ResetPasswordRequestBodyDto,
-} from "../dto/auth.dto";
-import { plainToInstance } from "class-transformer";
-import validationMiddleware from "../middlewares/validation.middleware";
-import { ONE_DAY } from "../helpers/tokenable";
-import { UnautorizedException } from "../exceptions/UnauthorizedException";
+} from 'dto/auth.dto';
+import { plainToInstance } from 'class-transformer';
+import validationMiddleware from 'middlewares/validation.middleware';
+import { ONE_DAY } from 'helpers/tokenable';
+import { UnautorizedException } from 'exceptions/UnauthorizedException';
 
 class AuthConroller implements Controller {
-  public path = "/auth";
+  public path = '/auth';
   public router = Router();
   private service = new AuthService();
 
@@ -26,22 +26,22 @@ class AuthConroller implements Controller {
   private initializeRoutes() {
     const routes = Router();
     routes.post(
-      "/reset-password-request",
+      '/reset-password-request',
       validationMiddleware(ResetPasswordRequestBodyDto),
-      this.resetPasswordRequest
+      this.resetPasswordRequest,
     );
     routes.post(
-      "/reset-password",
+      '/reset-password',
       validationMiddleware(ResetPasswordBodyDto),
-      this.resetPassword
+      this.resetPassword,
     );
-    routes.post("/login", validationMiddleware(LoginBodyDto), this.login);
-    routes.get("/confirm-email/:token", this.confirmEmail);
-    routes.post("/logout", this.logout);
+    routes.post('/login', validationMiddleware(LoginBodyDto), this.login);
+    routes.get('/confirm-email/:token', this.confirmEmail);
+    routes.post('/logout', this.logout);
     routes.post(
-      "/change-password",
+      '/change-password',
       [authMiddleware, validationMiddleware(ChangePasswordBodyDto)],
-      this.changePassword
+      this.changePassword,
     );
     this.router.use(this.path, routes);
   }
@@ -53,7 +53,7 @@ class AuthConroller implements Controller {
       const loggedInUser = await this.service.login(body);
       const tokenData = this.service.createToken(loggedInUser.id, ONE_DAY);
 
-      res.cookie("Authorization", tokenData.token, {
+      res.cookie('Authorization', tokenData.token, {
         maxAge: tokenData.expiresIn * 1000,
         httpOnly: true,
       });
@@ -64,19 +64,19 @@ class AuthConroller implements Controller {
   };
 
   private logout = (req: Request, res: Response) => {
-    res.cookie("Authorization", "", { maxAge: 0 });
+    res.cookie('Authorization', '', { maxAge: 0 });
     res.send(200);
   };
 
   private confirmEmail = async (
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     try {
       const token = req.params.token;
       if (!token) {
-        next(new UnautorizedException("Authentication token missing"));
+        next(new UnautorizedException('Authentication token missing'));
       }
 
       await this.service.confirmEmail(token);
@@ -92,7 +92,7 @@ class AuthConroller implements Controller {
   private resetPasswordRequest = async (
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     try {
       const body = plainToInstance(ResetPasswordRequestBodyDto, req.body);
@@ -107,7 +107,7 @@ class AuthConroller implements Controller {
   private resetPassword = async (
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     try {
       const body = plainToInstance(ResetPasswordBodyDto, req.body);
@@ -122,7 +122,7 @@ class AuthConroller implements Controller {
   private changePassword = async (
     req: RequestWithUser,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     try {
       const id = req.user.id;

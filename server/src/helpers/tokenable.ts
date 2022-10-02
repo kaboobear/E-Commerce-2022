@@ -1,6 +1,6 @@
-import DataStoredInToken from "../iterfaces/data-stored-in-token";
-import jwt from "jsonwebtoken";
-import { TokenData } from "../iterfaces/token-data.interface";
+import DataStoredInToken from 'iterfaces/data-stored-in-token';
+import jwt from 'jsonwebtoken';
+import { TokenData } from 'iterfaces/token-data.interface';
 
 export const ONE_DAY = 60 * 60 * 24;
 export const TEN_YEARS = ONE_DAY * 3650;

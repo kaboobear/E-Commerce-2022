@@ -20,7 +20,6 @@ services:
     volumes:
       - /app/node_modules
       - ./server:/app
-
     environment:
       - PGUSER=postgres
       - PGHOST=postgres
@@ -30,6 +29,7 @@ services:
       - JWT_SECRET=123123nko
       - CLIENT_URL=http://localhost:3000
       - SERVER_URL=http://localhost:3000/api
+      - NODE_PATH=./src
     command: npm run dev
   client:
     build:

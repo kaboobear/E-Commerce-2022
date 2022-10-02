@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { Service } from "./service.interface";
+import { Router } from 'express';
+import { Service } from './service.interface';
 
 interface Controller {
   path: string;

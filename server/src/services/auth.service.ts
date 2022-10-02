@@ -1,23 +1,23 @@
-import { AppDataSource } from "../database/data-source";
-import { User } from "../database/entity/User";
-import crypto from "crypto";
-import bcrypt from "bcryptjs";
-import { Service } from "../iterfaces/service.interface";
+import { AppDataSource } from 'database/data-source';
+import { User } from 'database/entity/User';
+import crypto from 'crypto';
+import bcrypt from 'bcryptjs';
+import { Service } from 'iterfaces/service.interface';
 import {
   ChangePasswordBodyDto,
   LoginBodyDto,
   LoginResponseDto,
   ResetPasswordBodyDto,
   ResetPasswordRequestBodyDto,
-} from "dto/auth.dto";
-import { NotFoundException } from "../exceptions/NotFoundException";
-import jwt from "jsonwebtoken";
-import { UnautorizedException } from "../exceptions/UnauthorizedException";
-import DataStoredInToken from "../iterfaces/data-stored-in-token";
-import { MailService } from "../mail/mail.service";
-import { getUtcIsoTime } from "../utils/getUtcIsoTime";
-import { BadRequestException } from "../exceptions/BadRequestException";
-import { Tokenable } from "../helpers/tokenable";
+} from 'dto/auth.dto';
+import { NotFoundException } from 'exceptions/NotFoundException';
+import jwt from 'jsonwebtoken';
+import { UnautorizedException } from 'exceptions/UnauthorizedException';
+import DataStoredInToken from 'iterfaces/data-stored-in-token';
+import { MailService } from 'mail/mail.service';
+import { getUtcIsoTime } from 'utils/getUtcIsoTime';
+import { BadRequestException } from 'exceptions/BadRequestException';
+import { Tokenable } from 'helpers/tokenable';
 
 class AuthService extends Tokenable implements Service<User> {
   public repository = AppDataSource.getRepository(User);
@@ -28,10 +28,10 @@ class AuthService extends Tokenable implements Service<User> {
     const user = await this.repository.findOneBy({ email });
 
     if (!user) {
-      throw new UnautorizedException("Wrong credentials provided");
+      throw new UnautorizedException('Wrong credentials provided');
     }
     if (!user.checkIfUnencryptedPasswordIsValid(password)) {
-      throw new UnautorizedException("Wrong credentials provided");
+      throw new UnautorizedException('Wrong credentials provided');
     }
 
     return {
@@ -48,7 +48,7 @@ class AuthService extends Tokenable implements Service<User> {
 
     const user = await this.repository.findOneBy({ id: dataStoredInToken.id });
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
     user.confirmed = true;
     this.repository.save(user);
@@ -59,10 +59,10 @@ class AuthService extends Tokenable implements Service<User> {
 
     const user = await this.repository.findOneBy({ email });
     if (!user) {
-      throw new NotFoundException("User with this email not found");
+      throw new NotFoundException('User with this email not found');
     }
 
-    const resetToken = crypto.randomBytes(32).toString("hex");
+    const resetToken = crypto.randomBytes(32).toString('hex');
     const hash = bcrypt.hashSync(resetToken, 8);
 
     user.passwordToken = hash;
@@ -84,17 +84,17 @@ class AuthService extends Tokenable implements Service<User> {
 
     const user = await this.repository.findOneBy({ id });
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
 
     const isTokenExpired = user.passwordTokenExpirationTime < getUtcIsoTime({});
     if (isTokenExpired || !user.passwordToken) {
-      throw new BadRequestException("Time to reset your password is expired");
+      throw new BadRequestException('Time to reset your password is expired');
     }
 
     const isValid = await bcrypt.compare(token, user.passwordToken);
     if (!isValid) {
-      throw new BadRequestException("Link for password reseting is wrong");
+      throw new BadRequestException('Link for password reseting is wrong');
     }
 
     user.passwordToken = null;
@@ -116,11 +116,11 @@ class AuthService extends Tokenable implements Service<User> {
 
     const user = await this.repository.findOneBy({ id });
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
 
     if (!user.checkIfUnencryptedPasswordIsValid(oldPassword)) {
-      throw new BadRequestException("Wrong old password");
+      throw new BadRequestException('Wrong old password');
     }
 
     user.password = newPassword;

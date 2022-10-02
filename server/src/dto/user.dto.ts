@@ -1,5 +1,5 @@
-import { IsEmail, IsString, Length } from "class-validator";
-import { Role } from "enums/role.enum";
+import { IsEmail, IsString, Length } from 'class-validator';
+import { Role } from 'enums/role.enum';
 
 export class CreateUserBodyDto {
   @IsString()

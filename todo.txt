@@ -1,8 +1,5 @@
-- (ограничение кол-ва запросов на единицу времени, валидация и санитизация входных данных)
-- component vs container
 - filters into urs
 - user friendly url
-- service/controller private fields
 - implement breadcrumbs
 - lint and paths for api
 - redesign User-block/product card/mobile-version for filters

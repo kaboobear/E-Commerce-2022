@@ -1,15 +1,15 @@
-import nodemailer, { Transporter } from "nodemailer";
-import { confirmEmailTemplate } from "./templates/confirm-email";
-import { resetPasswordTemplate } from "./templates/reset-password";
-import { EmailWithAcionLinkParams, SendMailParams } from "./types";
+import nodemailer, { Transporter } from 'nodemailer';
+import { confirmEmailTemplate } from './templates/confirm-email';
+import { resetPasswordTemplate } from './templates/reset-password';
+import { EmailWithAcionLinkParams, SendMailParams } from './types';
 
 class MailService {
   private transporter;
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: { user: "kaboo.bear.test@gmail.com", pass: "vsbgnzrxggrdywhf" },
+      service: 'gmail',
+      auth: { user: 'kaboo.bear.test@gmail.com', pass: 'vsbgnzrxggrdywhf' },
     });
   }
 
@@ -20,7 +20,7 @@ class MailService {
   }: EmailWithAcionLinkParams) {
     this.sendMail({
       recipient,
-      subject: "Reset Your Password",
+      subject: 'Reset Your Password',
       content: resetPasswordTemplate({ username, link }),
     });
   }
@@ -32,7 +32,7 @@ class MailService {
   }: EmailWithAcionLinkParams) {
     this.sendMail({
       recipient,
-      subject: "Confirm Your Email",
+      subject: 'Confirm Your Email',
       content: confirmEmailTemplate({ username, link }),
     });
   }

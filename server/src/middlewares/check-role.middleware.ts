@@ -1,10 +1,10 @@
-import { AppDataSource } from "../database/data-source";
-import { Response, NextFunction } from "express";
-import { User } from "../database/entity/User";
-import { Role } from "../enums/role.enum";
-import { RequestWithUser } from "../iterfaces/request-with-user.interface";
-import { ForbidenException } from "../exceptions/ForbidenException";
-import { UnautorizedException } from "../exceptions/UnauthorizedException";
+import { AppDataSource } from 'database/data-source';
+import { Response, NextFunction } from 'express';
+import { User } from 'database/entity/User';
+import { Role } from 'enums/role.enum';
+import { RequestWithUser } from 'iterfaces/request-with-user.interface';
+import { ForbidenException } from 'exceptions/ForbidenException';
+import { UnautorizedException } from 'exceptions/UnauthorizedException';
 
 const userRepository = AppDataSource.getRepository(User);
 

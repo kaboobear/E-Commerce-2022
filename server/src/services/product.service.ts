@@ -1,6 +1,6 @@
-import { SortValues } from "../enums/sort.enum";
-import { AppDataSource } from "../database/data-source";
-import { Product } from "../database/entity/Product";
+import { SortValues } from 'enums/sort.enum';
+import { AppDataSource } from 'database/data-source';
+import { Product } from 'database/entity/Product';
 import {
   Between,
   FindManyOptions,
@@ -8,20 +8,20 @@ import {
   In,
   Like,
   MoreThan,
-} from "typeorm";
+} from 'typeorm';
 import {
   CreateProductBodyDto,
   GetProductsQueryDto,
   GetProductsResponseDto,
-} from "../dto/product.dto";
-import { Service } from "iterfaces/service.interface";
+} from 'dto/product.dto';
+import { Service } from 'iterfaces/service.interface';
 
 class ProductService implements Service<Product> {
   public repository = AppDataSource.getRepository(Product);
   private LIMIT = 6;
 
   public list = async (
-    query: GetProductsQueryDto
+    query: GetProductsQueryDto,
   ): Promise<GetProductsResponseDto> => {
     const page = Number(query.page) || 1;
     const offset = (page - 1) * this.LIMIT;
@@ -53,17 +53,17 @@ class ProductService implements Service<Product> {
   };
 
   private getWhereOptionsFromQuery = (
-    query: GetProductsQueryDto
+    query: GetProductsQueryDto,
   ): FindOptionsWhere<Product> => {
     let where: FindOptionsWhere<Product> = {};
     if (query.category) {
-      where.category = In(query.category.split(","));
+      where.category = In(query.category.split(','));
     }
     if (query.search) {
       where.title = Like(`%${query.search}%`);
     }
     if (query.price) {
-      const priceRange = query.price.split("-");
+      const priceRange = query.price.split('-');
 
       if (priceRange.length === 1) {
         where.price = MoreThan(Number(priceRange[0]));

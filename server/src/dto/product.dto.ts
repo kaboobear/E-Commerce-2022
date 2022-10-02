@@ -1,7 +1,7 @@
-import { IsNumber, IsString } from "class-validator";
-import { Product } from "database/entity/Product";
-import { Category } from "../enums/category.enum";
-import { Sort } from "../enums/sort.enum";
+import { IsNumber, IsString } from 'class-validator';
+import { Product } from 'database/entity/Product';
+import { Category } from 'enums/category.enum';
+import { Sort } from 'enums/sort.enum';
 
 export class GetProductsQueryDto {
   page: number;

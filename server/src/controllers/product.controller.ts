@@ -1,12 +1,12 @@
-import { plainToInstance } from "class-transformer";
-import { NextFunction, Request, Response, Router } from "express";
-import validationMiddleware from "../middlewares/validation.middleware";
-import { CreateProductBodyDto, GetProductsQueryDto } from "../dto/product.dto";
-import { Controller } from "../iterfaces/controller.interface";
-import { ProductService } from "../services/product.service";
+import { plainToInstance } from 'class-transformer';
+import { NextFunction, Request, Response, Router } from 'express';
+import validationMiddleware from 'middlewares/validation.middleware';
+import { CreateProductBodyDto, GetProductsQueryDto } from 'dto/product.dto';
+import { Controller } from 'iterfaces/controller.interface';
+import { ProductService } from 'services/product.service';
 
 class ProductConroller implements Controller {
-  public path = "/products";
+  public path = '/products';
   public router = Router();
   public service = new ProductService();
 
@@ -16,8 +16,8 @@ class ProductConroller implements Controller {
 
   private initializeRoutes() {
     const routes = Router();
-    routes.post("/", validationMiddleware(CreateProductBodyDto), this.create);
-    routes.get("/", this.list);
+    routes.post('/', validationMiddleware(CreateProductBodyDto), this.create);
+    routes.get('/', this.list);
     this.router.use(this.path, routes);
   }
 

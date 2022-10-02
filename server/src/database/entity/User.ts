@@ -5,13 +5,13 @@ import {
   Unique,
   CreateDateColumn,
   UpdateDateColumn,
-} from "typeorm";
-import { Length, IsNotEmpty } from "class-validator";
-import bcrypt from "bcryptjs";
-import { Role } from "../../enums/role.enum";
+} from 'typeorm';
+import { Length, IsNotEmpty } from 'class-validator';
+import bcrypt from 'bcryptjs';
+import { Role } from 'enums/role.enum';
 
 @Entity()
-@Unique(["email"])
+@Unique(['email'])
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -27,7 +27,7 @@ export class User {
   @Length(4, 30)
   password: string;
 
-  @Column({ type: "enum", enum: Role })
+  @Column({ type: 'enum', enum: Role })
   @IsNotEmpty()
   role: Role;
 
@@ -40,10 +40,10 @@ export class User {
   @Column({ nullable: true })
   passwordTokenExpirationTime: Date;
 
-  @CreateDateColumn({ name: "created_at" })
+  @CreateDateColumn({ name: 'created_at' })
   created_at: Date;
 
-  @UpdateDateColumn({ name: "updated_at" })
+  @UpdateDateColumn({ name: 'updated_at' })
   updated_at: Date;
 
   hashPassword() {

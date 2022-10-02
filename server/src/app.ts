@@ -1,11 +1,11 @@
-import { AppDataSource } from "./database/data-source";
-import express from "express";
-import { Controller } from "./iterfaces/controller.interface";
-import { loggerMiddleware } from "./middlewares/logger.middleware";
-import cookieParser from "cookie-parser";
-import helmet from "helmet";
-import cors from "cors";
-import { errorMiddleware } from "./middlewares/error.middleware";
+import { AppDataSource } from 'database/data-source';
+import express from 'express';
+import { Controller } from 'iterfaces/controller.interface';
+import { loggerMiddleware } from 'middlewares/logger.middleware';
+import cookieParser from 'cookie-parser';
+import helmet from 'helmet';
+import cors from 'cors';
+import { errorMiddleware } from 'middlewares/error.middleware';
 
 class App {
   public app: express.Application;
@@ -23,7 +23,7 @@ class App {
     const PORT = process.env.PORT || 5000;
 
     this.app.listen(PORT, () => {
-      console.log("Server running on port", PORT);
+      console.log('Server running on port', PORT);
     });
   }
 
@@ -38,8 +38,8 @@ class App {
     this.app.use(helmet());
     this.app.use(
       cors({
-        methods: ["GET", "POST", "PUT", "DELETE"],
-      })
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      }),
     );
     this.app.use(cookieParser());
   }
@@ -50,17 +50,17 @@ class App {
 
   private initializeControllers(controllers: Controller[]) {
     controllers.forEach((controller) => {
-      this.app.use("/", controller.router);
+      this.app.use('/', controller.router);
     });
   }
 
   private connectToTheDatabase() {
     AppDataSource.initialize()
       .then(async () => {
-        console.log("Postgres was connected");
+        console.log('Postgres was connected');
       })
       .catch((error) =>
-        console.log("Postgres connection failed. Error: ", error)
+        console.log('Postgres connection failed. Error: ', error),
       );
   }
 }

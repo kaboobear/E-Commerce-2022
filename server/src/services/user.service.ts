@@ -1,17 +1,16 @@
-import { AppDataSource } from "../database/data-source";
-import { User } from "../database/entity/User";
-import { Role } from "../enums/role.enum";
-import { NotFoundException } from "../exceptions/NotFoundException";
-import { Service } from "../iterfaces/service.interface";
-import * as os from "os";
+import { AppDataSource } from 'database/data-source';
+import { User } from 'database/entity/User';
+import { Role } from 'enums/role.enum';
+import { NotFoundException } from 'exceptions/NotFoundException';
+import { Service } from 'iterfaces/service.interface';
 import {
   CreateUserBodyDto,
   RegisterResponseDto,
   UpdateUserBodyDto,
-} from "../dto/user.dto";
-import { BadRequestException } from "../exceptions/BadRequestException";
-import { TEN_YEARS, Tokenable } from "../helpers/tokenable";
-import { MailService } from "../mail/mail.service";
+} from 'dto/user.dto';
+import { BadRequestException } from 'exceptions/BadRequestException';
+import { TEN_YEARS, Tokenable } from 'helpers/tokenable';
+import { MailService } from 'mail/mail.service';
 
 class UserService extends Tokenable implements Service<User> {
   public repository = AppDataSource.getRepository(User);
@@ -21,7 +20,7 @@ class UserService extends Tokenable implements Service<User> {
     const user = await this.repository.findOneBy({ id });
 
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
 
     return user;
@@ -37,7 +36,7 @@ class UserService extends Tokenable implements Service<User> {
 
   retrieveById = async (id: number): Promise<User> => {
     const user = await this.repository.findOne({
-      select: ["id", "username", "role", "email"],
+      select: ['id', 'username', 'role', 'email'],
       where: { id },
     });
     return user;
@@ -48,7 +47,7 @@ class UserService extends Tokenable implements Service<User> {
 
     const existingUser = await this.repository.findOneBy({ email });
     if (existingUser) {
-      throw new BadRequestException("User with this email is already exist");
+      throw new BadRequestException('User with this email is already exist');
     }
 
     const user = new User();
@@ -89,7 +88,7 @@ class UserService extends Tokenable implements Service<User> {
 
     const user = await this.repository.findOneBy({ id });
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
 
     user.username = username;
@@ -107,7 +106,7 @@ class UserService extends Tokenable implements Service<User> {
   remove = async (id: number) => {
     const user = await this.repository.findOneBy({ id });
     if (!user) {
-      throw new NotFoundException("User not found");
+      throw new NotFoundException('User not found');
     }
     this.repository.delete(id);
   };

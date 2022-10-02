@@ -1,15 +1,15 @@
-import { NextFunction, Request, Response, Router } from "express";
-import { Controller } from "../iterfaces/controller.interface";
-import authMiddleware from "../middlewares/auth-jwt.middleware";
-import { RequestWithUser } from "../iterfaces/request-with-user.interface";
-import { UserService } from "../services/user.service";
-import { CreateUserBodyDto, UpdateUserBodyDto } from "../dto/user.dto";
-import { plainToInstance } from "class-transformer";
-import validationMiddleware from "../middlewares/validation.middleware";
-import { ONE_DAY } from "../helpers/tokenable";
+import { NextFunction, Request, Response, Router } from 'express';
+import { Controller } from 'iterfaces/controller.interface';
+import authMiddleware from 'middlewares/auth-jwt.middleware';
+import { RequestWithUser } from 'iterfaces/request-with-user.interface';
+import { UserService } from 'services/user.service';
+import { CreateUserBodyDto, UpdateUserBodyDto } from 'dto/user.dto';
+import { plainToInstance } from 'class-transformer';
+import validationMiddleware from 'middlewares/validation.middleware';
+import { ONE_DAY } from 'helpers/tokenable';
 
 class UserConroller implements Controller {
-  public path = "/user";
+  public path = '/user';
   public router = Router();
   private service = new UserService();
 
@@ -19,23 +19,23 @@ class UserConroller implements Controller {
 
   private initializeRoutes() {
     const routes = Router();
-    routes.get("/init", [authMiddleware], this.initUser);
-    routes.get("/", this.list);
-    routes.post("/", [validationMiddleware(CreateUserBodyDto)], this.create);
+    routes.get('/init', [authMiddleware], this.initUser);
+    routes.get('/', this.list);
+    routes.post('/', [validationMiddleware(CreateUserBodyDto)], this.create);
     routes.put(
-      "/:id",
+      '/:id',
       [authMiddleware, validationMiddleware(UpdateUserBodyDto)],
-      this.update
+      this.update,
     );
-    routes.delete("/:id", this.remove);
-    routes.get("/:id", this.retrieveById);
+    routes.delete('/:id', this.remove);
+    routes.get('/:id', this.retrieveById);
     this.router.use(this.path, routes);
   }
 
   initUser = async (
     req: RequestWithUser,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     try {
       const id = req.user.id;
@@ -73,7 +73,7 @@ class UserConroller implements Controller {
       const registeredUser = await this.service.create(body);
       const tokenData = this.service.createToken(registeredUser.id, ONE_DAY);
 
-      res.cookie("Authorization", tokenData.token, {
+      res.cookie('Authorization', tokenData.token, {
         maxAge: tokenData.expiresIn * 1000,
         httpOnly: true,
       });

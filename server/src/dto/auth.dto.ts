@@ -1,6 +1,6 @@
-import { Type } from "class-transformer";
-import { IsEmail, IsNumber, IsString, Length } from "class-validator";
-import { Role } from "enums/role.enum";
+import { Type } from 'class-transformer';
+import { IsEmail, IsNumber, IsString, Length } from 'class-validator';
+import { Role } from 'enums/role.enum';
 
 export class LoginBodyDto {
   @IsString()

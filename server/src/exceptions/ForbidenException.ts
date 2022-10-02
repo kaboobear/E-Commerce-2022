@@ -1,7 +1,7 @@
-import { HttpException } from "./HttpException";
+import { HttpException } from './HttpException';
 
 class ForbidenException extends HttpException {
-  constructor(message: string = "Forbiden") {
+  constructor(message: string = 'Forbiden') {
     super(403, message);
   }
 }
