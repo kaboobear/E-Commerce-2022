@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Status } from "types/Status";
-import { State } from "types/State";
-import { resetPassword, resetPasswordRequest } from "./reset-password.actions";
-import { ResponseError } from "types/Errors";
+import { createSlice } from '@reduxjs/toolkit';
+import { Status } from 'services/types/Status';
+import { State } from 'services/types/State';
+import { resetPassword, resetPasswordRequest } from './reset-password.actions';
+import { ResponseError } from 'services/types/Errors';
 
 const initialState: State<null> = {
   data: null,
@@ -11,7 +11,7 @@ const initialState: State<null> = {
 };
 
 export const resetPasswordSlice = createSlice({
-  name: "reset-password",
+  name: 'reset-password',
   initialState,
   reducers: {
     reset: () => initialState,

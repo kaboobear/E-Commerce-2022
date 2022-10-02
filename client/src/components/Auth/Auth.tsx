@@ -1,13 +1,13 @@
-import { Avatar, Box, IconButton } from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import { SignIn } from "./components/SignIn/SignIn";
-import PersonIcon from "@mui/icons-material/Person";
-import { SignUp } from "./components/SignUp/SignUp";
-import { ResetPasswordRequest } from "./components/ResetPasswordRequest/ResetPasswordRequest";
-import { Dialog } from "components/Common/Dialog/Dialog";
-import { authWrapper } from "./styles";
-import { AuthState } from "enums/auth-state.enums";
-import { ResetPasswordEmailSent } from "./components/ResetPasswordRequest/ResetPasswordEmailSent";
+import { Avatar, Box, IconButton } from '@mui/material';
+import { FC, useState } from 'react';
+import { SignIn } from './components/SignIn/SignIn';
+import PersonIcon from '@mui/icons-material/Person';
+import { SignUp } from './components/SignUp/SignUp';
+import { ResetPasswordRequest } from './components/ResetPasswordRequest/ResetPasswordRequest';
+import { Dialog } from 'components/Common/Dialog/Dialog';
+import { authWrapper } from './styles';
+import { AuthState } from 'services/enums/auth-state.enums';
+import { ResetPasswordEmailSent } from './components/ResetPasswordRequest/ResetPasswordEmailSent';
 
 export const Auth: FC = () => {
   const [open, setOpen] = useState(false);
@@ -44,7 +44,7 @@ export const Auth: FC = () => {
         }}
       >
         <Box sx={authWrapper}>
-          <Avatar sx={{ bgcolor: "primary.main", mb: 1 }}>
+          <Avatar sx={{ bgcolor: 'primary.main', mb: 1 }}>
             <PersonIcon />
           </Avatar>
 

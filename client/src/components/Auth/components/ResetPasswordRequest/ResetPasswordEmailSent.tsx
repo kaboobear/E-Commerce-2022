@@ -1,6 +1,6 @@
-import { Typography, Box } from "@mui/material";
-import React from "react";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Typography, Box } from '@mui/material';
+import React from 'react';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export const ResetPasswordEmailSent = () => {
   return (

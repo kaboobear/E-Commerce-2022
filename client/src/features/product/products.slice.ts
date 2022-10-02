@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Status } from "types/Status";
-import { ProductsWithPagesCount } from "features/product/products.types";
-import { State } from "types/State";
-import { addProduct, fetchProducts } from "./products.actions";
-import { ResponseError } from "types/Errors";
+import { createSlice } from '@reduxjs/toolkit';
+import { Status } from 'services/types/Status';
+import { ProductsWithPagesCount } from 'features/product/products.types';
+import { State } from 'services/types/State';
+import { addProduct, fetchProducts } from './products.actions';
+import { ResponseError } from 'services/types/Errors';
 
 const initialState: State<ProductsWithPagesCount> = {
   data: {
@@ -15,7 +15,7 @@ const initialState: State<ProductsWithPagesCount> = {
 };
 
 export const productsSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState,
   reducers: {
     reset: () => initialState,

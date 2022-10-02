@@ -3,11 +3,11 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
-} from "@mui/material";
-import { FC, PropsWithChildren } from "react";
-import CloseIcon from "@mui/icons-material/Close";
-import ArrowBack from "@mui/icons-material/ArrowBack";
-import * as styles from "./styles";
+} from '@mui/material';
+import { FC, PropsWithChildren } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import ArrowBack from '@mui/icons-material/ArrowBack';
+import * as styles from './styles';
 
 interface Props extends PropsWithChildren {
   open: boolean;

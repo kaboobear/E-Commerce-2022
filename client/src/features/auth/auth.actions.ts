@@ -1,9 +1,9 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { LoginBody, RegisterBody } from "api/auth/types";
-import { authApiService } from "api/auth/auth.api.service";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { LoginBody, RegisterBody } from 'api/auth/types';
+import { authApiService } from 'api/auth/auth.api.service';
 
 export const login = createAsyncThunk(
-  "auth/login",
+  'auth/login',
   async (body: LoginBody, { rejectWithValue }) => {
     try {
       const response = await authApiService.login(body);
@@ -11,11 +11,11 @@ export const login = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );
 
 export const register = createAsyncThunk(
-  "auth/register",
+  'auth/register',
   async (body: RegisterBody, { rejectWithValue }) => {
     try {
       const response = await authApiService.register(body);
@@ -23,15 +23,15 @@ export const register = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );
 
-export const logout = createAsyncThunk("auth/logout", async () => {
+export const logout = createAsyncThunk('auth/logout', async () => {
   authApiService.logout();
 });
 
 export const init = createAsyncThunk(
-  "auth/init",
+  'auth/init',
   async (_, { rejectWithValue }) => {
     try {
       const response = await authApiService.init();
@@ -39,5 +39,5 @@ export const init = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );

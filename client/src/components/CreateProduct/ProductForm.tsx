@@ -1,21 +1,21 @@
-import { FC } from "react";
-import { Button, MenuItem, Select, TextField, Grid, Box } from "@mui/material";
-import { Form, Formik } from "formik";
-import { ProductFormData } from "features/product/products.types";
-import { Category, CategoryName } from "enums/category.enums";
-import { ProductSchema } from "./schema";
-import { useAppDispatch } from "features/hooks";
-import { addProduct } from "features/product/products.actions";
-import { getErrorText } from "utils/get-formik-error-text";
+import { FC } from 'react';
+import { Button, MenuItem, Select, TextField, Grid, Box } from '@mui/material';
+import { Form, Formik } from 'formik';
+import { ProductFormData } from 'features/product/products.types';
+import { Category, CategoryName } from 'services/enums/category.enums';
+import { ProductSchema } from './schema';
+import { useAppDispatch } from 'features/hooks';
+import { addProduct } from 'features/product/products.actions';
+import { getErrorText } from 'services/utils/get-formik-error-text';
 
 export const ProductForm: FC = () => {
   const dispatch = useAppDispatch();
   const initial: ProductFormData = {
-    title: "",
+    title: '',
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     image:
-      "http://cdn.shopify.com/s/files/1/0593/0480/4531/products/IPHONE121_COLOR-PURPLE_CAPACITY-ALL.png",
+      'http://cdn.shopify.com/s/files/1/0593/0480/4531/products/IPHONE121_COLOR-PURPLE_CAPACITY-ALL.png',
     category: Category.PHONE,
     price: 500,
   };
@@ -37,7 +37,7 @@ export const ProductForm: FC = () => {
                   id="category"
                   type="select"
                   fullWidth
-                  {...formik.getFieldProps("category")}
+                  {...formik.getFieldProps('category')}
                 >
                   {Object.entries(CategoryName).map(([value, name]) => (
                     <MenuItem key={value} value={Number(value)}>
@@ -53,8 +53,8 @@ export const ProductForm: FC = () => {
                   type="text"
                   label="Title"
                   fullWidth
-                  helperText={getErrorText<ProductFormData>(formik, "title")}
-                  {...formik.getFieldProps("title")}
+                  helperText={getErrorText<ProductFormData>(formik, 'title')}
+                  {...formik.getFieldProps('title')}
                 />
               </Grid>
 
@@ -66,9 +66,9 @@ export const ProductForm: FC = () => {
                   fullWidth
                   helperText={getErrorText<ProductFormData>(
                     formik,
-                    "description"
+                    'description',
                   )}
-                  {...formik.getFieldProps("description")}
+                  {...formik.getFieldProps('description')}
                 />
               </Grid>
 
@@ -78,8 +78,8 @@ export const ProductForm: FC = () => {
                   type="text"
                   label="Image"
                   fullWidth
-                  helperText={getErrorText<ProductFormData>(formik, "image")}
-                  {...formik.getFieldProps("image")}
+                  helperText={getErrorText<ProductFormData>(formik, 'image')}
+                  {...formik.getFieldProps('image')}
                 />
               </Grid>
 
@@ -89,8 +89,8 @@ export const ProductForm: FC = () => {
                   type="number"
                   label="Price"
                   fullWidth
-                  helperText={getErrorText<ProductFormData>(formik, "price")}
-                  {...formik.getFieldProps("price")}
+                  helperText={getErrorText<ProductFormData>(formik, 'price')}
+                  {...formik.getFieldProps('price')}
                 />
               </Grid>
 
@@ -99,7 +99,7 @@ export const ProductForm: FC = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ height: 1, boxShadow: "none" }}
+                  sx={{ height: 1, boxShadow: 'none' }}
                 >
                   Create
                 </Button>

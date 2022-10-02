@@ -1,18 +1,18 @@
-import React, { FC, useEffect } from "react";
-import { Button, TextField, Box, Typography, Alert } from "@mui/material";
-import { Form, Formik } from "formik";
-import { useAppDispatch, useAppSelector } from "features/hooks";
-import { ResetPasswordRequestBody } from "api/auth/types";
-import { ResetPasswordRequestSchema } from "./schema";
-import { resetPasswordRequest } from "features/reset-password/reset-password.actions";
-import { getErrorText } from "utils/get-formik-error-text";
-import { AuthState } from "enums/auth-state.enums";
-import { reset as resetPasswordStateRefresh } from "features/reset-password/reset-password.slice";
+import React, { FC, useEffect } from 'react';
+import { Button, TextField, Box, Typography, Alert } from '@mui/material';
+import { Form, Formik } from 'formik';
+import { useAppDispatch, useAppSelector } from 'features/hooks';
+import { ResetPasswordRequestBody } from 'api/auth/types';
+import { ResetPasswordRequestSchema } from './schema';
+import { resetPasswordRequest } from 'features/reset-password/reset-password.actions';
+import { getErrorText } from 'services/utils/get-formik-error-text';
+import { AuthState } from 'services/enums/auth-state.enums';
+import { reset as resetPasswordStateRefresh } from 'features/reset-password/reset-password.slice';
 import {
   selectResetPasswordError,
   selectResetPasswordStatus,
-} from "features/reset-password/reset-password.selectors";
-import { Status } from "types/Status";
+} from 'features/reset-password/reset-password.selectors';
+import { Status } from 'services/types/Status';
 
 interface Props {
   setAuthState: (d: AuthState) => void;
@@ -35,7 +35,7 @@ export const ResetPasswordRequest: FC<Props> = ({ setAuthState }) => {
   }, [status, setAuthState, dispatch]);
 
   const initial: ResetPasswordRequestBody = {
-    email: "kaboo.bear@gmail.com",
+    email: 'kaboo.bear@gmail.com',
   };
   return (
     <>
@@ -61,9 +61,9 @@ export const ResetPasswordRequest: FC<Props> = ({ setAuthState }) => {
                 label="Email"
                 helperText={getErrorText<ResetPasswordRequestBody>(
                   formik,
-                  "email"
+                  'email',
                 )}
-                {...formik.getFieldProps("email")}
+                {...formik.getFieldProps('email')}
               />
               <Button
                 type="submit"

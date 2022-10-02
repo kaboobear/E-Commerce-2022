@@ -1,10 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { productApiService } from "api/products/products.api.service";
-import { ProductFormData } from "features/product/products.types";
-import { PriceValues } from "../../enums/price.enum";
-import { isNullOrUndefined } from "utils/is-null-or-undefined";
-import { FiltersAndSort } from "features/filters/types/filters.types";
-import { ProductParams } from "api/products/types";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { productApiService } from 'api/products/products.api.service';
+import { ProductFormData } from 'features/product/products.types';
+import { PriceValues } from '../../services/enums/price.enum';
+import { isNullOrUndefined } from 'services/utils/is-null-or-undefined';
+import { FiltersAndSort } from 'features/filters/types/filters.types';
+import { ProductParams } from 'api/products/types';
 
 const getParamsFromFilters = (filters: FiltersAndSort): ProductParams => {
   const params: ProductParams = {
@@ -15,7 +15,7 @@ const getParamsFromFilters = (filters: FiltersAndSort): ProductParams => {
     params.search = filters.search;
   }
   if (filters.category) {
-    params.category = filters.category.join(",");
+    params.category = filters.category.join(',');
   }
   if (!isNullOrUndefined(filters.price)) {
     params.price = PriceValues[filters.price];
@@ -24,21 +24,21 @@ const getParamsFromFilters = (filters: FiltersAndSort): ProductParams => {
 };
 
 export const fetchProducts = createAsyncThunk(
-  "products/fetchProducts",
+  'products/fetchProducts',
   async (filters: FiltersAndSort, { rejectWithValue }) => {
     try {
       const response = await productApiService.getProducts(
-        getParamsFromFilters(filters)
+        getParamsFromFilters(filters),
       );
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );
 
 export const addProduct = createAsyncThunk(
-  "products/addProduct",
+  'products/addProduct',
   async (product: ProductFormData, { rejectWithValue }) => {
     try {
       const response = await productApiService.createProduct(product);
@@ -46,5 +46,5 @@ export const addProduct = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );

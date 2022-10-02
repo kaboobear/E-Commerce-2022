@@ -1,4 +1,4 @@
-import { Category } from "enums/category.enums";
+import { Category } from 'services/enums/category.enums';
 
 export interface ProductFormData {
   title: string;

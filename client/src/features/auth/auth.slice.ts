@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Status } from "types/Status";
-import { State } from "types/State";
-import { init, login, logout, register } from "./auth.actions";
-import { UserData } from "./auth.types";
-import { ResponseError } from "types/Errors";
+import { createSlice } from '@reduxjs/toolkit';
+import { Status } from 'services/types/Status';
+import { State } from 'services/types/State';
+import { init, login, logout, register } from './auth.actions';
+import { UserData } from './auth.types';
+import { ResponseError } from 'services/types/Errors';
 
 const initialState: State<UserData | null> = {
   data: null,
@@ -12,7 +12,7 @@ const initialState: State<UserData | null> = {
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
     reset: () => initialState,

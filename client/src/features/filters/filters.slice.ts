@@ -1,15 +1,15 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FiltersState } from "./types/filters.types";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { FiltersState } from './types/filters.types';
 
 const initialState: FiltersState = {
   category: null,
   price: null,
-  search: "",
+  search: '',
   page: 1,
 };
 
 export const filterSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState,
   reducers: {
     set: (state, { payload }: PayloadAction<Partial<FiltersState>>) => ({

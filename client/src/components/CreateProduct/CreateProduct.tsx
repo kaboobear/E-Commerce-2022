@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import { Button } from "@mui/material";
-import { ProductForm } from "./ProductForm";
-import { Dialog } from "components/Common/Dialog/Dialog";
+import { FC, useState } from 'react';
+import { Button } from '@mui/material';
+import { ProductForm } from './ProductForm';
+import { Dialog } from 'components/Common/Dialog/Dialog';
 
 export const CreateProduct: FC = () => {
   const [open, setOpen] = useState(false);

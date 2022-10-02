@@ -1,4 +1,4 @@
-import { Role } from "enums/role.enum";
+import { Role } from 'services/enums/role.enum';
 
 export interface UserData {
   id: number;

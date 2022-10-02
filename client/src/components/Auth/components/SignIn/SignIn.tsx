@@ -1,13 +1,13 @@
-import React, { FC, useEffect } from "react";
-import { Button, TextField, Grid, Box, Typography, Alert } from "@mui/material";
-import { LoginBody } from "api/auth/types";
-import { Form, Formik } from "formik";
-import { login } from "features/auth/auth.actions";
-import { useAppDispatch, useAppSelector } from "features/hooks";
-import { LoginSchema } from "./schema";
-import { getErrorText } from "utils/get-formik-error-text";
-import { selectAuthError } from "features/auth/auth.selectors";
-import { resetError } from "features/auth/auth.slice";
+import React, { FC, useEffect } from 'react';
+import { Button, TextField, Grid, Box, Typography, Alert } from '@mui/material';
+import { LoginBody } from 'api/auth/types';
+import { Form, Formik } from 'formik';
+import { login } from 'features/auth/auth.actions';
+import { useAppDispatch, useAppSelector } from 'features/hooks';
+import { LoginSchema } from './schema';
+import { getErrorText } from 'services/utils/get-formik-error-text';
+import { selectAuthError } from 'features/auth/auth.selectors';
+import { resetError } from 'features/auth/auth.slice';
 
 interface Props {
   openSignUp: () => void;
@@ -23,8 +23,8 @@ export const SignIn: FC<Props> = ({ openSignUp, openReset }) => {
   }, [dispatch]);
 
   const initial: LoginBody = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   };
 
   return (
@@ -49,8 +49,8 @@ export const SignIn: FC<Props> = ({ openSignUp, openReset }) => {
                 fullWidth
                 id="email"
                 label="Email"
-                helperText={getErrorText<LoginBody>(formik, "email")}
-                {...formik.getFieldProps("email")}
+                helperText={getErrorText<LoginBody>(formik, 'email')}
+                {...formik.getFieldProps('email')}
               />
               <TextField
                 margin="normal"
@@ -58,8 +58,8 @@ export const SignIn: FC<Props> = ({ openSignUp, openReset }) => {
                 label="Password"
                 type="password"
                 id="password"
-                helperText={getErrorText<LoginBody>(formik, "password")}
-                {...formik.getFieldProps("password")}
+                helperText={getErrorText<LoginBody>(formik, 'password')}
+                {...formik.getFieldProps('password')}
               />
 
               <Button

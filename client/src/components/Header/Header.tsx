@@ -1,25 +1,25 @@
-import React, { FC, useState } from "react";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import { headerTitle, headerWrapper } from "./styles";
-import { HideUpMd } from "utils/show-and-hide/hide-up-md";
-import { ShowUpMd } from "utils/show-and-hide/show-up-md";
-import { Auth } from "components/Auth/Auth";
-import MyPhoto from "assets/icons/photo.jpg";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "features/auth/auth.selectors";
-import { Avatar } from "@mui/material";
-import { useAppDispatch } from "features/hooks";
-import { logout } from "features/auth/auth.actions";
+import React, { FC, useState } from 'react';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { headerTitle, headerWrapper } from './styles';
+import { HideUpMd } from 'services/utils/show-and-hide/hide-up-md';
+import { ShowUpMd } from 'services/utils/show-and-hide/show-up-md';
+import { Auth } from 'components/Auth/Auth';
+import MyPhoto from 'assets/images/photo.jpg';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'features/auth/auth.selectors';
+import { Avatar } from '@mui/material';
+import { useAppDispatch } from 'features/hooks';
+import { logout } from 'features/auth/auth.actions';
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ['Products', 'Pricing', 'Blog'];
 
 export const Header: FC = () => {
   const dispatch = useAppDispatch();
@@ -71,12 +71,12 @@ export const Header: FC = () => {
           </IconButton>
           <Menu
             anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
+              vertical: 'bottom',
+              horizontal: 'left',
             }}
             transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
             anchorEl={anchorElNav}
             open={Boolean(anchorElNav)}
@@ -100,7 +100,7 @@ export const Header: FC = () => {
               key={page}
               onClick={handleCloseNavMenu}
               variant="text"
-              sx={{ mr: 2, color: "black" }}
+              sx={{ mr: 2, color: 'black' }}
             >
               {page}
             </Button>
@@ -108,7 +108,7 @@ export const Header: FC = () => {
         </Box>
       </ShowUpMd>
 
-      <Box ml={[0, 0, "auto"]}>
+      <Box ml={[0, 0, 'auto']}>
         {user ? (
           <Box display="flex" alignItems="center">
             <Typography sx={{ mr: 1.5 }}>{user.username}</Typography>
@@ -122,18 +122,18 @@ export const Header: FC = () => {
 
         <Menu
           anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
+            vertical: 'top',
+            horizontal: 'right',
           }}
           transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
+            vertical: 'top',
+            horizontal: 'right',
           }}
           id="menu-appbar"
           anchorEl={anchorElUser}
           open={Boolean(anchorElUser)}
           onClose={handleCloseUserMenu}
-          sx={{ mt: "45px" }}
+          sx={{ mt: '45px' }}
           keepMounted
         >
           <MenuItem onClick={handleCloseUserMenu}>

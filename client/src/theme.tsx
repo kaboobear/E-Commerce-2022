@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
-const mainFont = "Montserrat, sans-serif";
+const mainFont = 'Montserrat, sans-serif';
 
 export const theme = createTheme({
   components: {
@@ -14,8 +14,8 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: "none",
-          border: "1px solid #ddd",
+          boxShadow: 'none',
+          border: '1px solid #ddd',
         },
       },
     },
@@ -23,17 +23,17 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           margin: 0,
-          boxShadow: "none",
-          borderBottom: "1px solid #ccc",
-          "&:last-child": {
-            borderBottom: "none",
+          boxShadow: 'none',
+          borderBottom: '1px solid #ccc',
+          '&:last-child': {
+            borderBottom: 'none',
           },
-          "&.Mui-expanded": {
+          '&.Mui-expanded': {
             margin: 0,
-            boxShadow: "none",
+            boxShadow: 'none',
           },
-          "&:before": {
-            display: "none",
+          '&:before': {
+            display: 'none',
           },
         },
       },
@@ -45,16 +45,16 @@ export const theme = createTheme({
           fontSize: 18,
           fontWeight: 600,
           marginTop: 20,
-          "&.Mui-expanded": {
+          '&.Mui-expanded': {
             marginBottom: 20,
             marginTop: 20,
           },
         },
         root: {
           padding: 0,
-          minHeight: "auto",
-          "&.Mui-expanded": {
-            minHeight: "auto",
+          minHeight: 'auto',
+          '&.Mui-expanded': {
+            minHeight: 'auto',
           },
         },
       },
@@ -70,16 +70,16 @@ export const theme = createTheme({
     MuiCardContent: {
       styleOverrides: {
         root: {
-          padding: "12px",
-          "&:last-child": {
-            padding: "12px",
+          padding: '12px',
+          '&:last-child': {
+            padding: '12px',
           },
         },
       },
     },
     MuiSkeleton: {
       defaultProps: {
-        variant: "rounded",
+        variant: 'rounded',
       },
       styleOverrides: {
         root: {},
@@ -90,22 +90,22 @@ export const theme = createTheme({
     fontFamily: mainFont,
   },
   palette: {
-    mode: "light",
+    mode: 'light',
     primary: {
-      main: "#6495ED",
-      dark: "#9995ED",
-      contrastText: "#fff",
+      main: '#6495ED',
+      dark: '#9995ED',
+      contrastText: '#fff',
     },
     grey: {
-      100: "#F8F8F8",
-      200: "#DFDFDF",
-      400: "#F4F6F9",
-      500: "#555",
+      100: '#F8F8F8',
+      200: '#DFDFDF',
+      400: '#F4F6F9',
+      500: '#555',
     },
     text: {
-      primary: "rgba(0, 0, 0, 0.87)",
-      secondary: "rgba(0, 0, 0, 0.6)",
-      disabled: "rgba(0, 0, 0, 0.38)",
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.6)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
     },
   },
   breakpoints: {
