@@ -1,7 +1,7 @@
 export enum Category {
-  PHONE,
-  LAPTOP,
-  TABLET,
-  HEADPHONES,
-  WATCH,
+  PHONE = 'phone',
+  LAPTOP = 'laptop',
+  TABLET = 'tablet',
+  HEADPHONES = 'headphones',
+  WATCH = 'watch',
 }

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Button, MenuItem, Select, TextField, Grid, Box } from '@mui/material';
 import { Form, Formik } from 'formik';
 import { ProductFormData } from 'features/product/products.types';
-import { Category, CategoryName } from 'services/enums/category.enums';
+import { Category, CategoryLabels } from 'services/enums/category.enums';
 import { ProductSchema } from './schema';
 import { useAppDispatch } from 'features/hooks';
 import { addProduct } from 'features/product/products.actions';
@@ -39,8 +39,8 @@ export const ProductForm: FC = () => {
                   fullWidth
                   {...formik.getFieldProps('category')}
                 >
-                  {Object.entries(CategoryName).map(([value, name]) => (
-                    <MenuItem key={value} value={Number(value)}>
+                  {Object.entries(CategoryLabels).map(([value, name]) => (
+                    <MenuItem key={value} value={value}>
                       {name}
                     </MenuItem>
                   ))}

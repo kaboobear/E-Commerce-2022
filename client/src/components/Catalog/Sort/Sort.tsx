@@ -1,5 +1,5 @@
 import { Box, Select, MenuItem } from '@mui/material';
-import { Sort, SortName } from 'services/enums/sort.enum';
+import { Sort, SortLabels } from 'services/enums/sort.enum';
 import React, { FC } from 'react';
 import SortIcon from '@mui/icons-material/Sort';
 
@@ -32,7 +32,7 @@ export const SortSelector: FC<Props> = ({ sort, setSort }) => {
             },
           }}
         >
-          {Object.entries(SortName).map(([value, name]) => (
+          {Object.entries(SortLabels).map(([value, name]) => (
             <MenuItem key={value} value={value}>
               {name}
             </MenuItem>

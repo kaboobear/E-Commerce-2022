@@ -1,31 +1,21 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Box, Grid, Pagination } from '@mui/material';
 import { ProductSkeleton } from '../Product/ProductSkeleton';
 import { Product } from '../Product/Product';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
-import { fetchProducts } from 'features/product/products.actions';
-import { Sort } from 'services/enums/sort.enum';
 import { setFilter } from 'features/filters/filters.slice';
-import { selectProductsAndPagesCount } from 'features/product/products.selectors';
+import {
+  checkIsBlocked,
+  selectProductsAndPagesCount,
+} from 'features/product/products.selectors';
 
-interface Props {
-  initLoading: boolean;
-  sort: Sort;
-}
-
-export const ProductsList: FC<Props> = ({ initLoading, sort }) => {
+export const ProductsList: FC = () => {
   const dispatch = useAppDispatch();
+  const isBlocked = useAppSelector(checkIsBlocked);
   const { products, pages } = useAppSelector(selectProductsAndPagesCount);
   const filters = useAppSelector((state) => state.filters);
 
-  useEffect(() => {
-    if (products.length) {
-      dispatch(fetchProducts({ ...filters, sort }));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters.page, dispatch]);
-
-  if (initLoading && !products.length) {
+  if (isBlocked && !products.length) {
     return (
       <Grid container spacing={2}>
         {Array.from(Array(3)).map((item, index) => (

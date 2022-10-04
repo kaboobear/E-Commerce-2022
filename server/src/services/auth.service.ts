@@ -44,7 +44,12 @@ class AuthService extends Tokenable implements Service<User> {
 
   confirmEmail = async (token: string) => {
     const secret = process.env.JWT_SECRET;
-    const dataStoredInToken = jwt.verify(token, secret) as DataStoredInToken;
+    let dataStoredInToken;
+    try {
+      dataStoredInToken = jwt.verify(token, secret) as DataStoredInToken;
+    } catch {
+      throw new UnautorizedException('Wrong authentication token');
+    }
 
     const user = await this.repository.findOneBy({ id: dataStoredInToken.id });
     if (!user) {
@@ -70,7 +75,7 @@ class AuthService extends Tokenable implements Service<User> {
     await this.repository.save(user);
 
     const clientURL = process.env.CLIENT_URL;
-    const link = `${clientURL}/passwordReset?token=${resetToken}&id=${user.id}`;
+    const link = `${clientURL}/password-reset?token=${resetToken}&id=${user.id}`;
 
     this.mailService.sendPasswordResetMail({
       recipient: email,

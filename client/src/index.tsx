@@ -6,6 +6,7 @@ import { theme } from './theme';
 import { Provider } from 'react-redux';
 import { store } from 'features/store';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { MainPage } from 'pages/MainPage/MainPage';
 
 const root = ReactDOM.createRoot(
@@ -17,7 +18,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <BrowserRouter>
-          <MainPage />
+          <HelmetProvider>
+            <MainPage />
+          </HelmetProvider>
         </BrowserRouter>
       </Provider>
     </ThemeProvider>

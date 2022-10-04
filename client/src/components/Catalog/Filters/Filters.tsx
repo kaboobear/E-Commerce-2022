@@ -11,28 +11,22 @@ import {
   Radio,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import {
   Category,
   CategoryKeys,
-  CategoryName,
+  CategoryLabels,
 } from 'services/enums/category.enums';
-import { Price, PriceKeys, PriceName } from 'services/enums/price.enum';
+import { Price, PriceKeys, PriceLabels } from 'services/enums/price.enum';
 import { Search } from 'components/Catalog/Search/Search';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
 import { setFilter } from 'features/filters/filters.slice';
 import { addOrRemoveArrayElement } from 'services/utils/array/add-or-remove-array-element';
-import { fetchProducts } from 'features/product/products.actions';
-import { Sort } from 'services/enums/sort.enum';
+import { selectFilters } from 'features/filters/filters.selectors';
 
-interface Props {
-  sort: Sort;
-  initLoading: boolean;
-}
-
-export const Filters: FC<Props> = ({ sort, initLoading }) => {
+export const Filters: FC = () => {
   const dispatch = useAppDispatch();
-  const { search, category, price } = useAppSelector((state) => state.filters);
+  const { search, category, price } = useAppSelector(selectFilters);
 
   const changePriceFilter = (priceValue: Price) => {
     if (priceValue === price) {
@@ -49,14 +43,6 @@ export const Filters: FC<Props> = ({ sort, initLoading }) => {
     );
     dispatch(setFilter({ category: choosenCategories }));
   };
-
-  useEffect(() => {
-    if (!initLoading) {
-      dispatch(fetchProducts({ search, category, price, page: 1, sort }));
-      dispatch(setFilter({ page: 1 }));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search, category, price, sort]);
 
   return (
     <Box sx={{ minWidth: 250, mr: 4 }}>
@@ -92,7 +78,7 @@ export const Filters: FC<Props> = ({ sort, initLoading }) => {
                       onClick={() => changeCategoryFilter(categoryValue)}
                     />
                   }
-                  label={CategoryName[categoryValue]}
+                  label={CategoryLabels[categoryValue]}
                 />
               );
             })}
@@ -100,7 +86,7 @@ export const Filters: FC<Props> = ({ sort, initLoading }) => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion square>
+      <Accordion defaultExpanded square>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -115,7 +101,6 @@ export const Filters: FC<Props> = ({ sort, initLoading }) => {
           >
             {PriceKeys.map((priceKey) => {
               const priceValue = Price[priceKey];
-
               return (
                 <FormControlLabel
                   key={priceKey}
@@ -128,7 +113,7 @@ export const Filters: FC<Props> = ({ sort, initLoading }) => {
                       }}
                     />
                   }
-                  label={PriceName[priceValue]}
+                  label={PriceLabels[priceValue]}
                 />
               );
             })}

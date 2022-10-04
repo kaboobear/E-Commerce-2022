@@ -27,16 +27,13 @@ export const ResetPassword: FC = () => {
           initialValues={initial}
           validationSchema={ResetPasswordSchema}
           onSubmit={(values) => {
-            if (searchParams.get('token') && searchParams.get('id')) {
-              //todo
-              dispatch(
-                resetPassword({
-                  password: values.password,
-                  token: searchParams.get('token') || '',
-                  id: Number(searchParams.get('id')) || 0,
-                }),
-              );
-            }
+            dispatch(
+              resetPassword({
+                password: values.password,
+                token: searchParams.get('token') || '',
+                id: Number(searchParams.get('id')) || 0,
+              }),
+            );
           }}
         >
           {(formik) => (

@@ -1,10 +1,6 @@
-- filters into urs
-- user friendly url
-- implement breadcrumbs
-- lint and paths for api
-- redesign User-block/product card/mobile-version for filters
+- redesign User-block/product card/mobile-version for filters/Headers/Errors + Form (thanks god!!!)
 - SOLID (OOP) for backend
 - HOC (protected routes)
-- UI headers
-- TEST ALL AUTH (UI)
-- session !!!
+- session (research)
+- implement breadcrumbs (after PDP)
+- lint (not urgent)

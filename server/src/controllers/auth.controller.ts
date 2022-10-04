@@ -73,6 +73,8 @@ class AuthConroller implements Controller {
     res: Response,
     next: NextFunction,
   ) => {
+    const clientURL = process.env.CLIENT_URL;
+
     try {
       const token = req.params.token;
       if (!token) {
@@ -80,12 +82,9 @@ class AuthConroller implements Controller {
       }
 
       await this.service.confirmEmail(token);
-      const clientURL = process.env.CLIENT_URL;
-      res.redirect(`${clientURL}/emailConfirmed`);
-
-      res.send(200);
+      res.redirect(`${clientURL}/email-confirmed`);
     } catch (error) {
-      next(error);
+      res.redirect(`${clientURL}/email-confirmation-failed`);
     }
   };
 

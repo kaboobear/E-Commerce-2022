@@ -5,9 +5,11 @@ export enum Sort {
   PRICE_DESC = 'price_high_to_low',
 }
 
-export const SortName = {
+export const SortLabels = {
   [Sort.DATE_DESC]: 'Date - New to Old',
   [Sort.DATE_ASC]: 'Date - Old to New',
   [Sort.PRICE_DESC]: 'Price - High to Low',
   [Sort.PRICE_ASC]: 'Price - Low to High',
 };
+
+export const SortDefaultValue = Sort.DATE_DESC;

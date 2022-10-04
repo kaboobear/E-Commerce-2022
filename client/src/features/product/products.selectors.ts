@@ -1,12 +1,23 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from 'features/store';
+import { Status } from 'services/types/Status';
 
 export const selectStatus = createSelector(
-  (state: RootState) => state.products,
-  (products) => products.status,
+  ({ products: { status } }: RootState) => status,
+  (status) => status,
 );
 
 export const selectProductsAndPagesCount = createSelector(
-  (state: RootState) => state.products,
-  (products) => products.data,
+  ({ products: { data } }: RootState) => data,
+  (data) => data,
+);
+
+export const checkIsBlocked = createSelector(
+  ({ products: { status } }: RootState) => status,
+  (status) => [Status.INIT, Status.LOADING].includes(status),
+);
+
+export const checkIsInit = createSelector(
+  ({ products: { status } }: RootState) => status,
+  (status) => [Status.INIT].includes(status),
 );

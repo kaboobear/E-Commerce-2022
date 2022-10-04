@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { productApiService } from 'api/products/products.api.service';
 import { ProductFormData } from 'features/product/products.types';
-import { PriceValues } from '../../services/enums/price.enum';
 import { isNullOrUndefined } from 'services/utils/is-null-or-undefined';
 import { FiltersAndSort } from 'features/filters/types/filters.types';
 import { ProductParams } from 'api/products/types';
@@ -18,7 +17,7 @@ const getParamsFromFilters = (filters: FiltersAndSort): ProductParams => {
     params.category = filters.category.join(',');
   }
   if (!isNullOrUndefined(filters.price)) {
-    params.price = PriceValues[filters.price];
+    params.price = filters.price;
   }
   return params;
 };
