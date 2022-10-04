@@ -6,7 +6,6 @@ import { ResetPasswordRequestBody } from 'api/auth/types';
 import { ResetPasswordRequestSchema } from './schema';
 import { resetPasswordRequest } from 'features/reset-password/reset-password.actions';
 import { getErrorText } from 'services/utils/get-formik-error-text';
-import { AuthState } from 'services/enums/auth-state.enums';
 import { reset as resetPasswordStateRefresh } from 'features/reset-password/reset-password.slice';
 import {
   selectResetPasswordError,
@@ -15,10 +14,10 @@ import {
 import { Status } from 'services/types/Status';
 
 interface Props {
-  setAuthState: (d: AuthState) => void;
+  openResetSuccess: () => void;
 }
 
-export const ResetPasswordRequest: FC<Props> = ({ setAuthState }) => {
+export const ResetPasswordRequest: FC<Props> = ({ openResetSuccess }) => {
   const dispatch = useAppDispatch();
   const error = useAppSelector(selectResetPasswordError);
   const status = useAppSelector(selectResetPasswordStatus);
@@ -29,10 +28,10 @@ export const ResetPasswordRequest: FC<Props> = ({ setAuthState }) => {
 
   useEffect(() => {
     if (status === Status.SUCCESS) {
-      setAuthState(AuthState.ResetPasswordSuccess);
+      openResetSuccess();
       dispatch(resetPasswordStateRefresh());
     }
-  }, [status, setAuthState, dispatch]);
+  }, [status, openResetSuccess, dispatch]);
 
   const initial: ResetPasswordRequestBody = {
     email: 'kaboo.bear@gmail.com',

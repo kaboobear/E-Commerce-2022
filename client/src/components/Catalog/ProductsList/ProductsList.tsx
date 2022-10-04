@@ -17,7 +17,7 @@ export const ProductsList: FC = () => {
 
   if (isBlocked && !products.length) {
     return (
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         {Array.from(Array(3)).map((item, index) => (
           <Grid key={index} item xs={12} sm={12} md={6} lg={4}>
             <ProductSkeleton />
@@ -29,7 +29,7 @@ export const ProductsList: FC = () => {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={2.5}>
         {products.map((product) => (
           <Grid key={product.id} item xs={12} sm={12} md={6} lg={4}>
             <Product product={product} />
@@ -38,7 +38,7 @@ export const ProductsList: FC = () => {
       </Grid>
 
       {pages > 1 && (
-        <Box display="flex" justifyContent="center" pt={2}>
+        <Box display="flex" justifyContent="center" pt={4}>
           <Pagination
             count={pages}
             color="primary"

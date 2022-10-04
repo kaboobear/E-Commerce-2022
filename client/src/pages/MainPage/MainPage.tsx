@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from 'layouts/MainLayout';
 import { EmailConfirmationPage } from 'pages/ConfirmationPages/EmailConfirmationPage';
@@ -7,16 +7,14 @@ import { CatalogPage } from 'pages/CatalogPage/CatalogPage';
 import { CreateProduct } from 'components/CreateProduct/CreateProduct';
 import { ResetPasswordPage } from 'pages/ResetPasswordPage/ResetPasswordPage';
 import NotFoundErrorPage from 'pages/ErrorPages/NotFoundErrorPage';
-import { useAppDispatch } from 'features/hooks';
-import { init } from 'features/auth/auth.actions';
 import { EmailConfirmationFailedPage } from 'pages/ConfirmationPages/EmailConfirmationFailedPage';
+import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
+import ProtectedRoute from './ProtectedRoute';
+import { useInitializeUser } from 'services/hooks/use-initialize-user';
 
 export const MainPage = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(init());
-  }, [dispatch]);
+  const { isAuth, isUserLoading } = useInitializeUser();
+  if (isUserLoading) return null;
 
   return (
     <ErrorBoundaries>
@@ -29,6 +27,16 @@ export const MainPage = () => {
           <Route
             path="/email-confirmation-failed"
             element={<EmailConfirmationFailedPage />}
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute
+                isAuthenticated={isAuth}
+                authenticationPath="/"
+                outlet={<ProfilePage />}
+              />
+            }
           />
         </Route>
         <Route path="*" element={<NotFoundErrorPage />} />

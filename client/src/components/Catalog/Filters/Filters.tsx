@@ -45,7 +45,7 @@ export const Filters: FC = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 250, mr: 4 }}>
+    <Box sx={{ minWidth: 240, mr: 4 }}>
       <Box sx={{ height: 60 }} alignItems="center" display="flex">
         <Typography variant="h5">Filters</Typography>
       </Box>

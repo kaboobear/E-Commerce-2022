@@ -9,3 +9,8 @@ export interface StateWithoutData {
 export interface State<T> extends StateWithoutData {
   data: T;
 }
+
+export interface StateWithMode<T, K> extends StateWithoutData {
+  data: T;
+  mode: K;
+}

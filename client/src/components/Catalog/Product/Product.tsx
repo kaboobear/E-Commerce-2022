@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -8,6 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 import { Product as ProductType } from 'features/product/products.types';
+import { productCard, productCardContent } from './styles';
+import { Link } from 'react-router-dom';
 
 interface Props {
   product: ProductType;
@@ -15,38 +18,63 @@ interface Props {
 
 export const Product: FC<Props> = ({ product }) => {
   return (
-    <Card sx={{ height: 1, display: 'flex', flexDirection: 'column' }}>
-      <Fade
-        in={true}
-        style={{ transitionDelay: '300ms', transitionDuration: '500ms' }}
-      >
-        <CardMedia
-          component="img"
-          height="350"
-          image={product.image}
-          alt={product.title}
-        />
-      </Fade>
-      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <Typography gutterBottom variant="h5" component="div">
-          {product.title}
-          <Typography></Typography>
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
-          {product.description}
-        </Typography>
-        <Typography
-          gutterBottom
-          variant="h4"
-          component="div"
-          sx={{ mt: 'auto' }}
-        >
-          {product.price}$
-        </Typography>
-        <Button size="large" variant="contained" fullWidth>
-          Add To Cart
-        </Button>
-      </CardContent>
-    </Card>
+    <Link
+      to="/profile"
+      children={
+        <Card sx={productCard}>
+          <Fade
+            in={true}
+            style={{ transitionDelay: '300ms', transitionDuration: '500ms' }}
+          >
+            <CardMedia
+              component="img"
+              height="300"
+              image={product.image}
+              alt={product.title}
+            />
+          </Fade>
+          <CardContent sx={productCardContent}>
+            <Typography sx={{ fontSize: 20, fontWeight: 700, mb: 0.5 }}>
+              {product.title}
+            </Typography>
+            <Typography
+              sx={{
+                mb: 2.5,
+                ontSize: 14,
+                fontWeight: 400,
+                opacity: 0.6,
+                lineHeight: 1.2,
+              }}
+            >
+              {product.description}
+            </Typography>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              mt="auto"
+            >
+              <Typography
+                component="div"
+                sx={{ fontSize: 24, fontWeight: 700 }}
+              >
+                {product.price}$
+              </Typography>
+              <Button
+                size="medium"
+                variant="contained"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  console.log('Add to Cart');
+                }}
+              >
+                Add to Cart
+              </Button>
+            </Box>
+          </CardContent>
+        </Card>
+      }
+    />
   );
 };

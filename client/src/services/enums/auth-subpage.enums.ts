@@ -1,4 +1,5 @@
-export enum AuthState {
+export enum AuthSubpage {
+  None,
   Login,
   Register,
   ResetPassword,

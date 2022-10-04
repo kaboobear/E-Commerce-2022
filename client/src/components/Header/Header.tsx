@@ -13,17 +13,16 @@ import { ShowUpMd } from 'services/utils/show-and-hide/show-up-md';
 import { Auth } from 'components/Auth/Auth';
 import MyPhoto from 'assets/images/photo.jpg';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { selectUser } from 'features/auth/auth.selectors';
 import { Avatar } from '@mui/material';
-import { useAppDispatch } from 'features/hooks';
+import { useAppDispatch, useAppSelector } from 'features/hooks';
 import { logout } from 'features/auth/auth.actions';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
 export const Header: FC = () => {
   const dispatch = useAppDispatch();
-  const user = useSelector(selectUser);
+  const user = useAppSelector(selectUser);
 
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);

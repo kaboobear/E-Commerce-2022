@@ -1,6 +1,5 @@
-- redesign User-block/product card/mobile-version for filters/Headers/Errors + Form (thanks god!!!)
-- SOLID (OOP) for backend
-- HOC (protected routes)
-- session (research)
+- redesign User-block/mobile-version for filters + sort select/Headers/Errors + Form (thanks god!!!)
+- session (research, before cart)
 - implement breadcrumbs (after PDP)
 - lint (not urgent)
+- todo

@@ -24,7 +24,13 @@ export const Dialog: FC<Props> = ({
   backButton,
 }) => {
   return (
-    <DialogComponent open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+    <DialogComponent
+      transitionDuration={0}
+      open={open}
+      onClose={handleClose}
+      maxWidth="sm"
+      fullWidth
+    >
       <DialogTitle sx={{ m: 0, p: 3 }}>
         {backButton && backButton.exists && (
           <IconButton

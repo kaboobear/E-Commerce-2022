@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 
-const mainFont = 'Montserrat, sans-serif';
+const mainFont = 'Nunito, sans-serif';
 
 export const theme = createTheme({
   components: {

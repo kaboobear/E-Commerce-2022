@@ -26,9 +26,16 @@ export const register = createAsyncThunk(
   },
 );
 
-export const logout = createAsyncThunk('auth/logout', async () => {
-  authApiService.logout();
-});
+export const logout = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try {
+      await authApiService.logout();
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  },
+);
 
 export const init = createAsyncThunk(
   'auth/init',

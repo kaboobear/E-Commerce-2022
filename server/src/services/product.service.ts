@@ -18,7 +18,7 @@ import { Service } from 'iterfaces/service.interface';
 
 class ProductService implements Service<Product> {
   public repository = AppDataSource.getRepository(Product);
-  private LIMIT = 3;
+  private LIMIT = 6;
 
   public list = async (
     query: GetProductsQueryDto,
