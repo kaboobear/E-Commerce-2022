@@ -22,7 +22,9 @@ export const authSlice = createSlice({
       state.error = null;
     },
     setMode: (state, { payload }: { payload: AuthSubpage }) => {
-      state.mode = payload;
+      if (!state.data) {
+        state.mode = payload;
+      }
     },
   },
   extraReducers(builder) {
@@ -33,6 +35,7 @@ export const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.status = Status.SUCCESS;
         state.data = action.payload;
+        state.mode = AuthSubpage.None;
       })
       .addCase(login.rejected, (state, action) => {
         state.status = Status.ERROR;
@@ -44,6 +47,7 @@ export const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.status = Status.SUCCESS;
         state.data = action.payload;
+        state.mode = AuthSubpage.None;
       })
       .addCase(register.rejected, (state, action) => {
         state.status = Status.ERROR;

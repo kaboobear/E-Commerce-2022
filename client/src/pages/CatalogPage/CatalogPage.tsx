@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
-import { fetchProducts } from 'features/product/products.actions';
+import { fetchProducts } from 'features/products/products.actions';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
 import { Sort, SortDefaultValue } from 'services/enums/sort.enum';
-import { Filters } from 'components/Catalog/Filters/Filters';
 import { SortSelector } from 'components/Catalog/Sort/Sort';
 import { ProductsList } from 'components/Catalog/ProductsList/ProductsList';
 import { useSetFiltersToSearchParams } from 'services/hooks/use-set-filters-to-search-params';
@@ -12,8 +11,11 @@ import { setFilter } from 'features/filters/filters.slice';
 import { useHasValueChanged } from 'services/hooks/use-has-value-changed';
 import { selectFilters } from 'features/filters/filters.selectors';
 import { useSearchParams } from 'react-router-dom';
-import { checkIsInit } from 'features/product/products.selectors';
+import { checkIsInit } from 'features/products/products.selectors';
 import { useGetFiltersFromUrl } from 'services/hooks/use-get-filters-from-url';
+import { ShowUpLg } from 'services/utils/show-and-hide/show-up-lg';
+import { FiltersSortSection } from 'components/Catalog/Filters/FiltersSortSection';
+import { catalogPageWrapper, sortWrapper } from './styles';
 
 export const CatalogPage: FC = () => {
   const dispatch = useAppDispatch();
@@ -53,10 +55,15 @@ export const CatalogPage: FC = () => {
   }, [dispatch, search, category, price, sort, page]);
 
   return (
-    <Box display="flex">
-      <Filters />
+    <Box sx={catalogPageWrapper}>
+      <FiltersSortSection sort={sort} setSort={setSort} />
       <Box flex={1}>
-        <SortSelector sort={sort} setSort={setSort} />
+        <ShowUpLg>
+          <Box sx={sortWrapper}>
+            <SortSelector sort={sort} setSort={setSort} />
+          </Box>
+        </ShowUpLg>
+
         <ProductsList />
       </Box>
     </Box>

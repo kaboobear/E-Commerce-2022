@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { Button, MenuItem, Select, TextField, Grid, Box } from '@mui/material';
 import { Form, Formik } from 'formik';
-import { ProductFormData } from 'features/product/products.types';
+import { ProductFormData } from 'features/products/products.types';
 import { Category, CategoryLabels } from 'services/enums/category.enums';
 import { ProductSchema } from './schema';
 import { useAppDispatch } from 'features/hooks';
-import { addProduct } from 'features/product/products.actions';
+import { addProduct } from 'features/products/products.actions';
 import { getErrorText } from 'services/utils/get-formik-error-text';
 
 export const ProductForm: FC = () => {
@@ -21,7 +21,7 @@ export const ProductForm: FC = () => {
   };
 
   return (
-    <Box pt={1}>
+    <Box pt={1} mb={-2}>
       <Formik
         initialValues={initial}
         validationSchema={ProductSchema}
@@ -31,7 +31,7 @@ export const ProductForm: FC = () => {
       >
         {(formik) => (
           <Form>
-            <Grid container spacing={2}>
+            <Grid container columnSpacing={2}>
               <Grid item sm={6} xs={12}>
                 <Select
                   id="category"
@@ -99,7 +99,7 @@ export const ProductForm: FC = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ height: 1, boxShadow: 'none' }}
+                  sx={{ height: 56, boxShadow: 'none' }}
                 >
                   Create
                 </Button>

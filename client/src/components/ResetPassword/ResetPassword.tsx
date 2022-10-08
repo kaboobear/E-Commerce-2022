@@ -19,9 +19,7 @@ export const ResetPassword: FC = () => {
 
   return (
     <>
-      <Typography component="h1" variant="h5">
-        Reset Password
-      </Typography>
+      <Typography variant="subtitle1">Reset Password</Typography>
       <Box sx={{ mt: 1, width: 1 }}>
         <Formik
           initialValues={initial}
@@ -41,7 +39,6 @@ export const ResetPassword: FC = () => {
               {error && <Alert severity="error">{error.message}</Alert>}
 
               <TextField
-                margin="normal"
                 fullWidth
                 id="password"
                 label="Password"
@@ -56,7 +53,7 @@ export const ResetPassword: FC = () => {
                 fullWidth
                 variant="contained"
                 size="large"
-                sx={{ mt: 1 }}
+                sx={{ height: 56 }}
               >
                 Send
               </Button>

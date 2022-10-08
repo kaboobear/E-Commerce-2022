@@ -1,5 +1,7 @@
-- redesign User-block/mobile-version for filters + sort select/Headers/Errors + Form (thanks god!!!)
+- lint 
+- to top button
+- design for email templates + confirm pages/reset pages
+- pdp (research about colors, details, gallery images, product code)
 - session (research, before cart)
 - implement breadcrumbs (after PDP)
-- lint (not urgent)
-- todo
+

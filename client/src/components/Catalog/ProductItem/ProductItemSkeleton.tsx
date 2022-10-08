@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Card, CardContent, Skeleton } from '@mui/material';
 
-export const ProductSkeleton: FC = () => {
+export const ProductItemSkeleton: FC = () => {
   return (
     <Card>
       <Skeleton height={350} width="100%" variant="rectangular" />

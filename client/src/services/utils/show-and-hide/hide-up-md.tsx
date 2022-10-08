@@ -1,13 +1,9 @@
-import { useTheme } from '@mui/material/styles';
 import React, { FC } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useIsUpMd } from 'services/hooks/use-get-screen-size';
 
 interface Props {
   children: React.ReactNode;
 }
-
-export const useIsUpMd = (): boolean =>
-  useMediaQuery(useTheme().breakpoints.up('md'));
 
 export const HideUpMd: FC<Props> = ({ children }) => {
   const isUpMd = useIsUpMd();

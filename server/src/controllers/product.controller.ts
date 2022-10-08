@@ -18,6 +18,7 @@ class ProductConroller implements Controller {
     const routes = Router();
     routes.post('/', validationMiddleware(CreateProductBodyDto), this.create);
     routes.get('/', this.list);
+    routes.get('/:id', this.retrieveById);
     this.router.use(this.path, routes);
   }
 
@@ -30,6 +31,21 @@ class ProductConroller implements Controller {
         products,
         pages,
       });
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  private retrieveById = async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    try {
+      const id = Number(req.params.id);
+      const product = await this.service.retrieveById(id);
+
+      res.send(product);
     } catch (error) {
       next(error);
     }

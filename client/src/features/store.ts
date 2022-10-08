@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filtersSlice from './filters/filters.slice';
-import productsSlice from './product/products.slice';
+import productsSlice from './products/products.slice';
 import resetPasswordSlice from './reset-password/reset-password.slice';
+import singleProductSlice from './single-product/single-product.slice';
 import authSlice from './auth/auth.slice';
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     filters: filtersSlice,
     auth: authSlice,
     resetPassword: resetPasswordSlice,
+    singleProduct: singleProductSlice,
   },
 });
 

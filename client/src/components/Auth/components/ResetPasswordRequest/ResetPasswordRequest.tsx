@@ -34,14 +34,14 @@ export const ResetPasswordRequest: FC<Props> = ({ openResetSuccess }) => {
   }, [status, openResetSuccess, dispatch]);
 
   const initial: ResetPasswordRequestBody = {
-    email: 'kaboo.bear@gmail.com',
+    email: '',
   };
   return (
     <>
-      <Typography component="h1" variant="h5">
+      <Typography variant="subtitle1" sx={{ mb: 2 }}>
         Reset Password
       </Typography>
-      <Box sx={{ mt: 1, width: 1 }}>
+      <Box sx={{ width: 1 }}>
         <Formik
           initialValues={initial}
           validationSchema={ResetPasswordRequestSchema}
@@ -54,7 +54,6 @@ export const ResetPasswordRequest: FC<Props> = ({ openResetSuccess }) => {
               {error && <Alert severity="error">{error.message}</Alert>}
 
               <TextField
-                margin="normal"
                 fullWidth
                 id="email"
                 label="Email"
@@ -69,7 +68,7 @@ export const ResetPasswordRequest: FC<Props> = ({ openResetSuccess }) => {
                 fullWidth
                 variant="contained"
                 size="large"
-                sx={{ mt: 1 }}
+                sx={{ height: 56 }}
               >
                 Send
               </Button>

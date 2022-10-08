@@ -2,6 +2,7 @@ import { Box, Select, MenuItem } from '@mui/material';
 import { Sort, SortLabels } from 'services/enums/sort.enum';
 import React, { FC } from 'react';
 import SortIcon from '@mui/icons-material/Sort';
+import { productSort } from './styles';
 
 interface Props {
   setSort: (sort: Sort) => void;
@@ -10,35 +11,21 @@ interface Props {
 
 export const SortSelector: FC<Props> = ({ sort, setSort }) => {
   return (
-    <Box
-      display="flex"
-      justifyContent="flex-end"
-      alignItems="center"
-      sx={{ height: 60 }}
+    <Select
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      variant="standard"
+      value={sort}
+      disableUnderline
+      onChange={(event) => setSort(event.target.value as Sort)}
+      sx={productSort}
+      IconComponent={SortIcon}
     >
-      <Box display="flex" alignItems="center">
-        <SortIcon sx={{ pr: 0.5 }} />
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          variant="standard"
-          value={sort}
-          disableUnderline
-          onChange={(event) => setSort(event.target.value as Sort)}
-          sx={{
-            '& .MuiSelect-standard': {
-              pl: 0.5,
-              background: 'none',
-            },
-          }}
-        >
-          {Object.entries(SortLabels).map(([value, name]) => (
-            <MenuItem key={value} value={value}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </Box>
-    </Box>
+      {Object.entries(SortLabels).map(([value, name]) => (
+        <MenuItem key={value} value={value}>
+          {name}
+        </MenuItem>
+      ))}
+    </Select>
   );
 };

@@ -3,6 +3,8 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Theme,
+  SxProps,
 } from '@mui/material';
 import { FC, PropsWithChildren } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
@@ -13,8 +15,9 @@ interface Props extends PropsWithChildren {
   open: boolean;
   handleClose: () => void;
   isBackButtonExists?: boolean;
-  onBackButtonClick?: () => void;
   backButton?: { exists: boolean; onClick: () => void };
+  paperSx?: SxProps<Theme>;
+  sx?: SxProps<Theme>;
 }
 
 export const Dialog: FC<Props> = ({
@@ -22,6 +25,8 @@ export const Dialog: FC<Props> = ({
   open,
   handleClose,
   backButton,
+  paperSx,
+  sx,
 }) => {
   return (
     <DialogComponent
@@ -30,6 +35,10 @@ export const Dialog: FC<Props> = ({
       onClose={handleClose}
       maxWidth="sm"
       fullWidth
+      PaperProps={{
+        sx: paperSx,
+      }}
+      sx={sx}
     >
       <DialogTitle sx={{ m: 0, p: 3 }}>
         {backButton && backButton.exists && (

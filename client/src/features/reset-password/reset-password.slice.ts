@@ -11,7 +11,7 @@ const initialState: State<null> = {
 };
 
 export const resetPasswordSlice = createSlice({
-  name: 'reset-password',
+  name: 'resetPassword',
   initialState,
   reducers: {
     reset: () => initialState,

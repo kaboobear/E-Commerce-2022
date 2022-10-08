@@ -11,6 +11,7 @@ import { EmailConfirmationFailedPage } from 'pages/ConfirmationPages/EmailConfir
 import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
 import ProtectedRoute from './ProtectedRoute';
 import { useInitializeUser } from 'services/hooks/use-initialize-user';
+import { ProductPage } from 'pages/ProductPage/ProductPage';
 
 export const MainPage = () => {
   const { isAuth, isUserLoading } = useInitializeUser();
@@ -21,6 +22,7 @@ export const MainPage = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<CatalogPage />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/create" element={<CreateProduct />} />
           <Route path="/password-reset" element={<ResetPasswordPage />} />
           <Route path="/email-confirmed" element={<EmailConfirmationPage />} />

@@ -1,6 +1,5 @@
 import { Typography, Box, Button } from '@mui/material';
 import React from 'react';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { Link } from 'react-router-dom';
 
 export const ResetPasswordSuccess = () => {
@@ -11,17 +10,16 @@ export const ResetPasswordSuccess = () => {
       alignItems="center"
       textAlign="center"
     >
-      <CheckCircleOutlineIcon sx={{ fontSize: 70, mb: 3 }} />
-      <Typography mb={2} component="h1" variant="h5">
+      <Typography mb={2} variant="subtitle1">
         Password succesfully changed
       </Typography>
-      <Typography mb={2}>
+      <Typography mb={2} variant="body1" color="text.secondary">
         You can return to the catalog to continue shopping. We do our best to
         make you happy
       </Typography>
       <Link
         children={
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" sx={{ height: 56 }}>
             Back Home
           </Button>
         }

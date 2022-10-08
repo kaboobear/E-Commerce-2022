@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useIsUpSm } from './hide-up-sm';
+import { useIsUpSm } from 'services/hooks/use-get-screen-size';
 
 interface Props {
   children: React.ReactNode;

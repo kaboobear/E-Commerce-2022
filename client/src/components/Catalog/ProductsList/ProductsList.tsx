@@ -1,26 +1,27 @@
 import { FC } from 'react';
 import { Box, Grid, Pagination } from '@mui/material';
-import { ProductSkeleton } from '../Product/ProductSkeleton';
-import { Product } from '../Product/Product';
+import { ProductItemSkeleton } from '../ProductItem/ProductItemSkeleton';
+import { ProductItem } from '../ProductItem/ProductItem';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
 import { setFilter } from 'features/filters/filters.slice';
 import {
   checkIsBlocked,
   selectProductsAndPagesCount,
-} from 'features/product/products.selectors';
+} from 'features/products/products.selectors';
+import { selectPage } from 'features/filters/filters.selectors';
 
 export const ProductsList: FC = () => {
   const dispatch = useAppDispatch();
   const isBlocked = useAppSelector(checkIsBlocked);
   const { products, pages } = useAppSelector(selectProductsAndPagesCount);
-  const filters = useAppSelector((state) => state.filters);
+  const page = useAppSelector(selectPage);
 
   if (isBlocked && !products.length) {
     return (
       <Grid container spacing={3}>
         {Array.from(Array(3)).map((item, index) => (
-          <Grid key={index} item xs={12} sm={12} md={6} lg={4}>
-            <ProductSkeleton />
+          <Grid key={index} item xs={12} sm={6} md={4} lg={4}>
+            <ProductItemSkeleton />
           </Grid>
         ))}
       </Grid>
@@ -31,8 +32,8 @@ export const ProductsList: FC = () => {
     <>
       <Grid container spacing={2.5}>
         {products.map((product) => (
-          <Grid key={product.id} item xs={12} sm={12} md={6} lg={4}>
-            <Product product={product} />
+          <Grid key={product.id} item xs={12} sm={6} md={4} lg={4}>
+            <ProductItem product={product} />
           </Grid>
         ))}
       </Grid>
@@ -42,7 +43,7 @@ export const ProductsList: FC = () => {
           <Pagination
             count={pages}
             color="primary"
-            page={filters.page}
+            page={page}
             onChange={(_, pageValue) =>
               dispatch(setFilter({ page: pageValue }))
             }

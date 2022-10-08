@@ -8,44 +8,33 @@ import {
   Fade,
   Typography,
 } from '@mui/material';
-import { Product as ProductType } from 'features/product/products.types';
-import { productCard, productCardContent } from './styles';
+import { Product as ProductType } from 'features/products/products.types';
+import { imageFade, productCard, productCardContent } from './styles';
 import { Link } from 'react-router-dom';
 
 interface Props {
   product: ProductType;
 }
 
-export const Product: FC<Props> = ({ product }) => {
+export const ProductItem: FC<Props> = ({ product }) => {
   return (
     <Link
-      to="/profile"
+      to={`/product/${product.id}`}
       children={
         <Card sx={productCard}>
-          <Fade
-            in={true}
-            style={{ transitionDelay: '300ms', transitionDuration: '500ms' }}
-          >
+          <Fade in={true} style={imageFade}>
             <CardMedia
               component="img"
-              height="300"
+              sx={{ height: [400, 350, 300, 275] }}
               image={product.image}
               alt={product.title}
             />
           </Fade>
           <CardContent sx={productCardContent}>
-            <Typography sx={{ fontSize: 20, fontWeight: 700, mb: 0.5 }}>
+            <Typography variant="subtitle2" sx={{ mb: 0.5, fontWeight: 700 }}>
               {product.title}
             </Typography>
-            <Typography
-              sx={{
-                mb: 2.5,
-                ontSize: 14,
-                fontWeight: 400,
-                opacity: 0.6,
-                lineHeight: 1.2,
-              }}
-            >
+            <Typography variant="body2" sx={{ mb: 2.5 }} color="text.secondary">
               {product.description}
             </Typography>
             <Box
@@ -54,15 +43,13 @@ export const Product: FC<Props> = ({ product }) => {
               justifyContent="space-between"
               mt="auto"
             >
-              <Typography
-                component="div"
-                sx={{ fontSize: 24, fontWeight: 700 }}
-              >
+              <Typography sx={{ mr: 2 }} variant="subtitle1">
                 {product.price}$
               </Typography>
               <Button
                 size="medium"
                 variant="contained"
+                sx={{ width: [200, 200, 'auto'] }}
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();

@@ -27,10 +27,10 @@ export const SignUp: FC<Props> = () => {
 
   return (
     <>
-      <Typography component="h1" variant="h5">
+      <Typography variant="subtitle1" sx={{ mb: 2 }}>
         Sign Up
       </Typography>
-      <Box sx={{ mt: 1 }}>
+      <Box sx={{ width: 1 }}>
         <Formik
           initialValues={initial}
           validationSchema={RegisterSchema}
@@ -43,7 +43,6 @@ export const SignUp: FC<Props> = () => {
               {error && <Alert severity="error">{error.message}</Alert>}
 
               <TextField
-                margin="normal"
                 fullWidth
                 id="username"
                 label="Username"
@@ -51,7 +50,6 @@ export const SignUp: FC<Props> = () => {
                 {...formik.getFieldProps('username')}
               />
               <TextField
-                margin="normal"
                 fullWidth
                 id="email"
                 label="Email"
@@ -59,7 +57,6 @@ export const SignUp: FC<Props> = () => {
                 {...formik.getFieldProps('email')}
               />
               <TextField
-                margin="normal"
                 fullWidth
                 label="Password"
                 type="password"
@@ -71,7 +68,7 @@ export const SignUp: FC<Props> = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 2 }}
+                sx={{ height: 56 }}
                 size="large"
               >
                 Sign Up

@@ -63,17 +63,41 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           padding: 0,
-          paddingBottom: 15,
+          paddingBottom: 16,
         },
       },
     },
     MuiCardContent: {
       styleOverrides: {
         root: {
-          padding: '12px',
+          padding: 12,
           '&:last-child': {
-            padding: '12px',
+            padding: 12,
           },
+        },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          marginBottom: 16,
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          lineHeight: 1,
+          marginTop: 5,
+          marginLeft: 8,
+          color: '#e57373',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          marginBottom: 16,
         },
       },
     },
@@ -88,6 +112,26 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: mainFont,
+    subtitle1: {
+      fontSize: 24,
+      fontWeight: 600,
+    },
+    subtitle2: {
+      fontSize: 20,
+      fontWeight: 600,
+    },
+    body1: {
+      fontSize: 16,
+      fontWeight: 400,
+    },
+    body2: {
+      fontSize: 14,
+      fontWeight: 400,
+    },
+    button: {
+      fontSize: 14,
+      fontWeight: 700,
+    },
   },
   palette: {
     mode: 'light',

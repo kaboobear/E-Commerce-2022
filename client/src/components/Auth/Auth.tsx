@@ -1,18 +1,18 @@
-import { Avatar, Box, IconButton } from '@mui/material';
-import { FC } from 'react';
+import { Avatar, Box } from '@mui/material';
+import { FC, PropsWithChildren } from 'react';
 import { SignIn } from './components/SignIn/SignIn';
 import PersonIcon from '@mui/icons-material/Person';
 import { SignUp } from './components/SignUp/SignUp';
 import { ResetPasswordRequest } from './components/ResetPasswordRequest/ResetPasswordRequest';
 import { Dialog } from 'components/Common/Dialog/Dialog';
-import { authWrapper } from './styles';
+import { authModalAvatar, authWrapper } from './styles';
 import { AuthSubpage } from 'services/enums/auth-subpage.enums';
 import { ResetPasswordEmailSent } from './components/ResetPasswordRequest/ResetPasswordEmailSent';
 import { useAppSelector } from 'features/hooks';
 import { selectMode } from 'features/auth/auth.selectors';
 import { useChangeAuthSubpage } from './hooks';
 
-export const Auth: FC = () => {
+export const Auth: FC<PropsWithChildren> = ({ children }) => {
   const authSubpage = useAppSelector(selectMode);
   const authSubpageActions = useChangeAuthSubpage();
 
@@ -32,15 +32,19 @@ export const Auth: FC = () => {
 
   return (
     <>
-      <IconButton sx={{ p: 0 }} onClick={handleOpen}>
-        <Avatar>
-          <PersonIcon />
-        </Avatar>
-      </IconButton>
+      <Box onClick={handleOpen}>{children}</Box>
 
       <Dialog
         handleClose={handleClose}
         open={isOpen}
+        paperSx={(theme) => ({
+          [theme.breakpoints.down('sm')]: {
+            margin: 0,
+            minWidth: '100vw',
+            minHeight: '100vh',
+            borderRadius: 0,
+          },
+        })}
         backButton={{
           exists: isRegister || isResetPassword || isResetSuccess,
           onClick: () => authSubpageActions.openLogin(),
@@ -48,8 +52,8 @@ export const Auth: FC = () => {
       >
         {isOpen && (
           <Box sx={authWrapper}>
-            <Avatar sx={{ bgcolor: 'primary.main', mb: 1 }}>
-              <PersonIcon />
+            <Avatar sx={authModalAvatar}>
+              <PersonIcon sx={{ width: 25, height: 25 }} />
             </Avatar>
 
             {isLogin && (

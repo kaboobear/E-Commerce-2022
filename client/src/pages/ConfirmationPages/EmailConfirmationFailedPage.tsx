@@ -1,6 +1,5 @@
 import { Typography, Box, Button } from '@mui/material';
 import React from 'react';
-import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 
 export const EmailConfirmationFailedPage = () => {
@@ -11,17 +10,16 @@ export const EmailConfirmationFailedPage = () => {
       alignItems="center"
       textAlign="center"
     >
-      <CloseIcon sx={{ fontSize: 70, mb: 3 }} />
-      <Typography mb={2} component="h1" variant="h5">
+      <Typography mb={2} variant="subtitle1">
         Email Confirmation Failed
       </Typography>
-      <Typography mb={2}>
+      <Typography mb={2} variant="body1" color="text.secondary">
         Maybe something wrong with your confirmation link. We do our best to
         make you happy
       </Typography>
       <Link
         children={
-          <Button variant="contained" color="primary">
+          <Button variant="contained" sx={{ height: 56 }} color="primary">
             Back Home
           </Button>
         }

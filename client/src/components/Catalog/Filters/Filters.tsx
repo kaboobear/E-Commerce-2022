@@ -9,6 +9,7 @@ import {
   Checkbox,
   RadioGroup,
   Radio,
+  IconButton,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { FC } from 'react';
@@ -20,11 +21,18 @@ import {
 import { Price, PriceKeys, PriceLabels } from 'services/enums/price.enum';
 import { Search } from 'components/Catalog/Search/Search';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
+import CloseIcon from '@mui/icons-material/Close';
 import { setFilter } from 'features/filters/filters.slice';
 import { addOrRemoveArrayElement } from 'services/utils/array/add-or-remove-array-element';
 import { selectFilters } from 'features/filters/filters.selectors';
+import { filterTitle, filterWrapper } from './styles';
+import { HideUpLg } from 'services/utils/show-and-hide/hide-up-lg';
 
-export const Filters: FC = () => {
+interface Props {
+  close?: (event: React.KeyboardEvent | React.MouseEvent) => void;
+}
+
+export const Filters: FC<Props> = ({ close }) => {
   const dispatch = useAppDispatch();
   const { search, category, price } = useAppSelector(selectFilters);
 
@@ -45,9 +53,14 @@ export const Filters: FC = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 240, mr: 4 }}>
-      <Box sx={{ height: 60 }} alignItems="center" display="flex">
-        <Typography variant="h5">Filters</Typography>
+    <Box sx={filterWrapper}>
+      <Box sx={filterTitle} alignItems="center" display="flex">
+        <Typography variant="subtitle1">Filters</Typography>
+        <HideUpLg>
+          <IconButton onClick={close}>
+            <CloseIcon />
+          </IconButton>
+        </HideUpLg>
       </Box>
 
       <Search
@@ -61,7 +74,7 @@ export const Filters: FC = () => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          Category
+          <Typography variant="subtitle2">Category</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <FormGroup>
@@ -92,7 +105,7 @@ export const Filters: FC = () => {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          Price
+          <Typography variant="subtitle2">Price</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <RadioGroup

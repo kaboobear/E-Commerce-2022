@@ -1,4 +1,4 @@
-import { FiltersState } from 'features/filters/types/filters.types';
+import { FiltersState } from 'features/filters/filters.types';
 import { useSearchParams } from 'react-router-dom';
 import { Category } from 'services/enums/category.enums';
 import { Price } from 'services/enums/price.enum';

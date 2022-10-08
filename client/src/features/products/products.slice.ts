@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Status } from 'services/types/Status';
-import { ProductsWithPagesCount } from 'features/product/products.types';
+import { ProductsWithPagesCount } from 'features/products/products.types';
 import { State } from 'services/types/State';
 import { addProduct, fetchProducts } from './products.actions';
 import { ResponseError } from 'services/types/Errors';

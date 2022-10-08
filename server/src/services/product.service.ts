@@ -39,12 +39,23 @@ class ProductService implements Service<Product> {
     const where = this.getWhereOptionsFromQuery(query);
     options.where = where;
 
-    const products = await this.repository.find(options);
+    const products = await this.repository.find({
+      ...options,
+      select: ['id', 'title', 'description', 'image', 'price'],
+    });
 
     const productsCount = await this.repository.count({ where });
     const pagesCount = Math.ceil(productsCount / this.LIMIT);
 
     return { pages: pagesCount, products };
+  };
+
+  public retrieveById = async (id: number): Promise<Product> => {
+    const product = await this.repository.findOneBy({ id });
+
+    //todo: add error
+
+    return product;
   };
 
   public create = async (body: CreateProductBodyDto): Promise<Product> => {
