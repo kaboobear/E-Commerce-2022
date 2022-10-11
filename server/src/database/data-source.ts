@@ -7,6 +7,10 @@ import { ProductFactory } from './factories/product.factory';
 import { User } from './entity/User';
 import { UserFactory } from './factories/user.factory';
 import UserSeeder from './seeds/user.seeder';
+import { Color } from './entity/Color';
+import { ColorFactory } from './factories/color.factory';
+import { ImageFactory } from './factories/image.factory';
+import { Image } from './entity/Image';
 
 const options: DataSourceOptions & SeederOptions = {
   type: 'postgres',
@@ -17,11 +21,11 @@ const options: DataSourceOptions & SeederOptions = {
   database: process.env.PGDATABASE,
   synchronize: true,
   logging: false,
-  entities: [Product, User],
+  entities: [Product, User, Color, Image],
   migrations: [`${__dirname}/src/database/migration/**/*{.ts,.js}`],
   subscribers: [],
   seeds: [ProductSeeder, UserSeeder],
-  factories: [ProductFactory, UserFactory],
+  factories: [ColorFactory, ImageFactory, ProductFactory, UserFactory],
 };
 
 export const AppDataSource = new DataSource(options);

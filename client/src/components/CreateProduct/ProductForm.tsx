@@ -14,18 +14,17 @@ export const ProductForm: FC = () => {
     title: '',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    image:
-      'http://cdn.shopify.com/s/files/1/0593/0480/4531/products/IPHONE121_COLOR-PURPLE_CAPACITY-ALL.png',
     category: Category.PHONE,
     price: 500,
   };
 
   return (
-    <Box pt={1} mb={-2}>
+    <Box pt={1}>
       <Formik
         initialValues={initial}
         validationSchema={ProductSchema}
         onSubmit={(values) => {
+          console.log('VAlue', values);
           dispatch(addProduct(values));
         }}
       >
@@ -69,17 +68,6 @@ export const ProductForm: FC = () => {
                     'description',
                   )}
                   {...formik.getFieldProps('description')}
-                />
-              </Grid>
-
-              <Grid item sm={6} xs={12}>
-                <TextField
-                  id="image"
-                  type="text"
-                  label="Image"
-                  fullWidth
-                  helperText={getErrorText<ProductFormData>(formik, 'image')}
-                  {...formik.getFieldProps('image')}
                 />
               </Grid>
 

@@ -8,13 +8,13 @@ export default class UserSeeder implements Seeder {
     dataSource: DataSource,
     factoryManager: SeederFactoryManager,
   ): Promise<any> {
-    const userFactory = await factoryManager.get(User);
-    await userFactory.save({
+    const factory = await factoryManager.get(User);
+    await factory.save({
       role: Role.ADMIN,
       username: 'kaboo_admin',
       email: 'kaboo.bear@gmail.com',
     });
-    await userFactory.save({
+    await factory.save({
       role: Role.USER,
       username: 'kaboo_user',
       email: 'kaboo.user@gmail.com',

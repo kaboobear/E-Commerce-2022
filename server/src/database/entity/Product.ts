@@ -4,16 +4,25 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToMany,
+  JoinTable,
+  OneToMany,
+  Generated,
+  Unique,
 } from 'typeorm';
 import { Category } from 'enums/category.enum';
+import { Image } from './Image';
+import { Color } from './Color';
+
+const PRODUCT_CODE_ORIGIN = 82441;
 
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  image: string;
+  @Column({ unique: true, nullable: true })
+  code: number;
 
   @Column()
   title: string;
@@ -32,4 +41,15 @@ export class Product {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updated_at: Date;
+
+  @ManyToMany(() => Color)
+  @JoinTable()
+  colors: Color[];
+
+  @OneToMany(() => Image, (image) => image.product)
+  images: Image[];
+
+  setProductCode() {
+    this.code = PRODUCT_CODE_ORIGIN - this.id;
+  }
 }

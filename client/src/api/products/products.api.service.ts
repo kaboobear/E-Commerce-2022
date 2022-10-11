@@ -2,8 +2,8 @@ import { ApiBaseService } from 'api/apibase.service';
 import { AxiosPromise } from 'axios';
 import {
   ProductsWithPagesCount,
-  Product,
   ProductFormData,
+  CatalogProduct,
 } from 'features/products/products.types';
 import { ProductParams } from './types';
 
@@ -12,7 +12,7 @@ class ProductsApiService extends ApiBaseService {
     return this.apibase.get('/products', { params });
   }
 
-  createProduct(data: ProductFormData): AxiosPromise<Product> {
+  createProduct(data: ProductFormData): AxiosPromise<CatalogProduct> {
     return this.apibase.post('/products', data);
   }
 }

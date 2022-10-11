@@ -1,20 +1,23 @@
 import { Category } from 'services/enums/category.enums';
+import { Image } from 'services/types/Image';
 
 export interface ProductFormData {
   title: string;
   description: string;
-  image: string;
   price: number;
   category: Category;
 }
 
-export interface Product extends ProductFormData {
+export interface CatalogProduct {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  title: string;
+  description: string;
+  images: Image[];
+  price: number;
+  created_at: Date;
 }
 
 export interface ProductsWithPagesCount {
-  products: Product[];
+  products: CatalogProduct[];
   pages: number;
 }

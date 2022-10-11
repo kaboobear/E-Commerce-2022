@@ -1,12 +1,16 @@
 import { Category } from 'services/enums/category.enums';
+import { Color } from 'services/types/Color';
+import { Image } from 'services/types/Image';
 
 export interface SingleProduct {
   id: number;
+  code: number;
   title: string;
   description: string;
-  image: string;
+  images: Image[];
   price: number;
   category: Category;
   createdAt: Date;
   updatedAt: Date;
+  colors: Color[];
 }

@@ -17,8 +17,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { ShowUpSm } from 'services/utils/show-and-hide/show-up-sm';
 import { menuPages } from 'services/constants/menu-pages';
-import { MobileMenu } from './MobileMenu/MobileMenu';
-import { UserMenu } from './UserMenu/UserMenu';
+import { MobileMenu } from './components/MobileMenu/MobileMenu';
+import { UserMenu } from './components/UserMenu/UserMenu';
 import { Link } from 'react-router-dom';
 import { HideUpSm } from 'services/utils/show-and-hide/hide-up-sm';
 

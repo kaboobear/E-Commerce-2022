@@ -21,3 +21,8 @@ export const checkIsInit = createSelector(
   ({ singleProduct: { status } }: RootState) => status,
   (status) => [Status.INIT].includes(status),
 );
+
+export const checkIsError = createSelector(
+  ({ singleProduct: { status } }: RootState) => status,
+  (status) => [Status.ERROR].includes(status),
+);

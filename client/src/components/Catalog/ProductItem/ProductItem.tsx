@@ -8,12 +8,12 @@ import {
   Fade,
   Typography,
 } from '@mui/material';
-import { Product as ProductType } from 'features/products/products.types';
+import { CatalogProduct } from 'features/products/products.types';
 import { imageFade, productCard, productCardContent } from './styles';
 import { Link } from 'react-router-dom';
 
 interface Props {
-  product: ProductType;
+  product: CatalogProduct;
 }
 
 export const ProductItem: FC<Props> = ({ product }) => {
@@ -26,7 +26,7 @@ export const ProductItem: FC<Props> = ({ product }) => {
             <CardMedia
               component="img"
               sx={{ height: [400, 350, 300, 275] }}
-              image={product.image}
+              image={product.images[0]?.url || ''}
               alt={product.title}
             />
           </Fade>

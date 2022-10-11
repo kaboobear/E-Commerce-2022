@@ -28,6 +28,7 @@ class UserService extends Tokenable implements Service<User> {
 
   list = async (): Promise<User[]> => {
     const users = await this.repository.find({
+      // todo: uncomment
       // select: ["id", "username", "email", "role"],
     });
 

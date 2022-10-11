@@ -19,7 +19,7 @@ export const ResetPasswordSuccess = () => {
       </Typography>
       <Link
         children={
-          <Button variant="contained" color="primary" sx={{ height: 56 }}>
+          <Button variant="contained" color="primary" size="large">
             Back Home
           </Button>
         }

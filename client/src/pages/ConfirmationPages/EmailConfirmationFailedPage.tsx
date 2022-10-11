@@ -19,7 +19,7 @@ export const EmailConfirmationFailedPage = () => {
       </Typography>
       <Link
         children={
-          <Button variant="contained" sx={{ height: 56 }} color="primary">
+          <Button variant="contained" size="large" color="primary">
             Back Home
           </Button>
         }

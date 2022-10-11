@@ -15,6 +15,7 @@ import {
   GetProductsResponseDto,
 } from 'dto/product.dto';
 import { Service } from 'iterfaces/service.interface';
+import { NotFoundException } from 'exceptions/NotFoundException';
 
 class ProductService implements Service<Product> {
   public repository = AppDataSource.getRepository(Product);
@@ -33,6 +34,7 @@ class ProductService implements Service<Product> {
     if (query.sort) {
       const orderOptions = SortValues[query.sort];
       options.order = {
+        images: { order: 'ASC' },
         [orderOptions.column]: orderOptions.order,
       };
     }
@@ -41,7 +43,8 @@ class ProductService implements Service<Product> {
 
     const products = await this.repository.find({
       ...options,
-      select: ['id', 'title', 'description', 'image', 'price'],
+      relations: { images: true },
+      select: ['id', 'title', 'description', 'price', 'created_at'],
     });
 
     const productsCount = await this.repository.count({ where });
@@ -51,15 +54,23 @@ class ProductService implements Service<Product> {
   };
 
   public retrieveById = async (id: number): Promise<Product> => {
-    const product = await this.repository.findOneBy({ id });
+    const product = await this.repository.findOne({
+      where: { id },
+      relations: { colors: true, images: true },
+    });
 
-    //todo: add error
+    console.log('Product', product);
+
+    if (!product) {
+      throw new NotFoundException('Product not found');
+    }
 
     return product;
   };
 
   public create = async (body: CreateProductBodyDto): Promise<Product> => {
     const product = this.repository.create(body);
+    //todo: add product code on save
     return this.repository.save(product);
   };
 
