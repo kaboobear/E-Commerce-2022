@@ -57,7 +57,7 @@ export default class ProductSeeder implements Seeder {
         const image1 = await imageFactory.save({ order: 1 });
         const image2 = await imageFactory.save({
           order: 2,
-          url: 'https://www.printer4you.com/media/images/org/apple-airpods-pro-true-wireless-kopfhoerer-mit-mikrofon_213AP-MLWK3ZM-A_1.jpg',
+          url: 'https://wwwwwwwwwwww.printer4you.com/media/images/org/apple-airpods-pro-true-wireless-kopfhoerer-mit-mikrofon_213AP-MLWK3ZM-A_1.jpg',
         });
         const image3 = await imageFactory.save({
           order: 3,

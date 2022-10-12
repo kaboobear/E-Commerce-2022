@@ -2,14 +2,15 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { Box } from '@mui/material';
 import React, { FC, useState } from 'react';
-import { Image } from 'services/types/Image';
+import { ImageType } from 'services/types/Image';
 import Slider from 'react-slick';
 import { MainSlider } from './components/MainSlider/MainSlider';
 import { PreviewSlider } from './components/PreviewSlider/PreviewSlider';
 import { mainGalleryItem, previewItem, previewSliderWrapper } from './styles';
+import { Image } from 'components/Common/Image/Image';
 
 interface Props {
-  images: Image[];
+  images: ImageType[];
 }
 
 export const Gallery: FC<Props> = ({ images }) => {
@@ -28,7 +29,11 @@ export const Gallery: FC<Props> = ({ images }) => {
         >
           {images.map((image) => (
             <Box key={image.id + '_main'} role="button">
-              <Box sx={mainGalleryItem} component="img" src={image.url} />
+              <Image
+                sx={mainGalleryItem}
+                alt={String(image.id)}
+                src={image.url}
+              />
             </Box>
           ))}
         </MainSlider>
@@ -42,10 +47,10 @@ export const Gallery: FC<Props> = ({ images }) => {
           >
             {images.map((image, index) => (
               <Box key={image.id} role="button">
-                <Box
+                <Image
                   sx={previewItem(index === selectedImage)}
-                  component="img"
                   src={image.url}
+                  alt={String(image.id)}
                 />
               </Box>
             ))}

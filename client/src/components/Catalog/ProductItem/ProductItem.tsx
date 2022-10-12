@@ -4,13 +4,13 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Fade,
   Typography,
 } from '@mui/material';
 import { CatalogProduct } from 'features/products/products.types';
-import { imageFade, productCard, productCardContent } from './styles';
+import { productCard, productCardContent } from './styles';
 import { Link } from 'react-router-dom';
+import { Image } from 'components/Common/Image/Image';
 
 interface Props {
   product: CatalogProduct;
@@ -22,14 +22,12 @@ export const ProductItem: FC<Props> = ({ product }) => {
       to={`/product/${product.id}`}
       children={
         <Card sx={productCard}>
-          <Fade in={true} style={imageFade}>
-            <CardMedia
-              component="img"
-              sx={{ height: [400, 350, 300, 275] }}
-              image={product.images[0]?.url || ''}
-              alt={product.title}
-            />
-          </Fade>
+          <Image
+            sx={{ height: ['auto', 340, 320, 275] }}
+            src={product.images[0]?.url || ''}
+            alt={product.title}
+            transition
+          />
           <CardContent sx={productCardContent}>
             <Typography variant="subtitle2" sx={{ mb: 0.5, fontWeight: 700 }}>
               {product.title}

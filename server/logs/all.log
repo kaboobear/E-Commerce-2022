@@ -18095,3 +18095,975 @@
 [35m[39m
 11/10/2022 22:01:46 [35mhttp[39m: [35mGET /products/20 304 - - 9.651 ms[39m
 [35m[39m
+12/10/2022 20:23:56 [35mhttp[39m: [35mGET /user/init 401 55 - 22.991 ms[39m
+[35m[39m
+12/10/2022 20:23:56 [35mhttp[39m: [35mGET /user/init 401 55 - 10.892 ms[39m
+[35m[39m
+12/10/2022 20:23:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 36.997 ms[39m
+[35m[39m
+12/10/2022 20:23:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 12.936 ms[39m
+[35m[39m
+12/10/2022 20:23:59 [35mhttp[39m: [35mGET /products/21 304 - - 16.218 ms[39m
+[35m[39m
+12/10/2022 20:23:59 [35mhttp[39m: [35mGET /products/21 304 - - 15.465 ms[39m
+[35m[39m
+12/10/2022 20:24:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 11.193 ms[39m
+[35m[39m
+12/10/2022 20:24:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 35.103 ms[39m
+[35m[39m
+12/10/2022 20:24:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 16.568 ms[39m
+[35m[39m
+12/10/2022 20:24:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 19.576 ms[39m
+[35m[39m
+12/10/2022 20:24:05 [35mhttp[39m: [35mGET /products/19 304 - - 8.208 ms[39m
+[35m[39m
+12/10/2022 20:24:05 [35mhttp[39m: [35mGET /products/19 304 - - 15.416 ms[39m
+[35m[39m
+12/10/2022 21:03:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 25 - 54.520 ms[39m
+[35m[39m
+12/10/2022 21:03:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 16.715 ms[39m
+[35m[39m
+12/10/2022 21:03:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 13.504 ms[39m
+[35m[39m
+12/10/2022 21:03:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 13.201 ms[39m
+[35m[39m
+12/10/2022 21:03:14 [35mhttp[39m: [35mGET /seed 304 - - 1061.575 ms[39m
+[35m[39m
+12/10/2022 21:03:23 [35mhttp[39m: [35mGET /user/init 401 55 - 16.502 ms[39m
+[35m[39m
+12/10/2022 21:03:23 [35mhttp[39m: [35mGET /user/init 401 55 - 21.903 ms[39m
+[35m[39m
+12/10/2022 21:03:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 18.655 ms[39m
+[35m[39m
+12/10/2022 21:03:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 35.121 ms[39m
+[35m[39m
+12/10/2022 21:03:27 [35mhttp[39m: [35mGET /products/21 200 1891 - 20.268 ms[39m
+[35m[39m
+12/10/2022 21:03:27 [35mhttp[39m: [35mGET /products/21 200 1891 - 26.975 ms[39m
+[35m[39m
+12/10/2022 21:05:20 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 331.571 ms[39m
+[35m[39m
+12/10/2022 21:05:20 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 330.035 ms[39m
+[35m[39m
+12/10/2022 21:05:20 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 332.759 ms[39m
+[35m[39m
+12/10/2022 21:05:20 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 338.986 ms[39m
+[35m[39m
+12/10/2022 21:05:21 [35mhttp[39m: [35mGET /user/init 401 55 - 3.635 ms[39m
+[35m[39m
+12/10/2022 21:05:21 [35mhttp[39m: [35mGET /user/init 401 55 - 6.622 ms[39m
+[35m[39m
+12/10/2022 21:05:22 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 33.072 ms[39m
+[35m[39m
+12/10/2022 21:05:22 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 28.730 ms[39m
+[35m[39m
+12/10/2022 21:05:59 [35mhttp[39m: [35mGET /user/init 401 55 - 2.007 ms[39m
+[35m[39m
+12/10/2022 21:05:59 [35mhttp[39m: [35mGET /user/init 401 55 - 2.913 ms[39m
+[35m[39m
+12/10/2022 21:06:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 212.936 ms[39m
+[35m[39m
+12/10/2022 21:06:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 212.307 ms[39m
+[35m[39m
+12/10/2022 21:06:06 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8577 - 9.718 ms[39m
+[35m[39m
+12/10/2022 21:06:07 [35mhttp[39m: [35mGET /products?page=3&sort=date_new_to_old 200 8619 - 13.219 ms[39m
+[35m[39m
+12/10/2022 21:06:08 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 9.177 ms[39m
+[35m[39m
+12/10/2022 21:06:10 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 13.735 ms[39m
+[35m[39m
+12/10/2022 21:06:55 [35mhttp[39m: [35mGET /user/init 401 55 - 2.871 ms[39m
+[35m[39m
+12/10/2022 21:06:55 [35mhttp[39m: [35mGET /user/init 401 55 - 6.782 ms[39m
+[35m[39m
+12/10/2022 21:06:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 193.671 ms[39m
+[35m[39m
+12/10/2022 21:06:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 191.581 ms[39m
+[35m[39m
+12/10/2022 21:08:25 [35mhttp[39m: [35mGET /user/init 401 55 - 3.147 ms[39m
+[35m[39m
+12/10/2022 21:08:25 [35mhttp[39m: [35mGET /user/init 401 55 - 9.730 ms[39m
+[35m[39m
+12/10/2022 21:08:26 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 111.440 ms[39m
+[35m[39m
+12/10/2022 21:08:26 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8691 - 89.857 ms[39m
+[35m[39m
+12/10/2022 21:12:40 [35mhttp[39m: [35mGET /seed 200 25 - 974.785 ms[39m
+[35m[39m
+12/10/2022 21:12:45 [35mhttp[39m: [35mGET /user/init 401 55 - 21.216 ms[39m
+[35m[39m
+12/10/2022 21:12:45 [35mhttp[39m: [35mGET /user/init 401 55 - 8.927 ms[39m
+[35m[39m
+12/10/2022 21:12:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 62.510 ms[39m
+[35m[39m
+12/10/2022 21:12:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 54.902 ms[39m
+[35m[39m
+12/10/2022 21:12:47 [35mhttp[39m: [35mGET /user/init 401 55 - 2.082 ms[39m
+[35m[39m
+12/10/2022 21:12:47 [35mhttp[39m: [35mGET /user/init 401 55 - 6.014 ms[39m
+[35m[39m
+12/10/2022 21:12:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 32.258 ms[39m
+[35m[39m
+12/10/2022 21:12:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 43.718 ms[39m
+[35m[39m
+12/10/2022 21:12:50 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8614 - 14.024 ms[39m
+[35m[39m
+12/10/2022 21:12:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 11.046 ms[39m
+[35m[39m
+12/10/2022 21:12:54 [35mhttp[39m: [35mGET /user/init 401 55 - 1.865 ms[39m
+[35m[39m
+12/10/2022 21:12:54 [35mhttp[39m: [35mGET /user/init 401 55 - 6.550 ms[39m
+[35m[39m
+12/10/2022 21:12:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 39.714 ms[39m
+[35m[39m
+12/10/2022 21:12:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 103.957 ms[39m
+[35m[39m
+12/10/2022 21:13:50 [35mhttp[39m: [35mGET /user/init 401 55 - 33.185 ms[39m
+[35m[39m
+12/10/2022 21:13:50 [35mhttp[39m: [35mGET /user/init 401 55 - 49.675 ms[39m
+[35m[39m
+12/10/2022 21:13:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 305.101 ms[39m
+[35m[39m
+12/10/2022 21:13:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 276.560 ms[39m
+[35m[39m
+12/10/2022 21:13:54 [35mhttp[39m: [35mGET /user/init 401 55 - 3.428 ms[39m
+[35m[39m
+12/10/2022 21:13:54 [35mhttp[39m: [35mGET /user/init 401 55 - 8.372 ms[39m
+[35m[39m
+12/10/2022 21:13:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 16.369 ms[39m
+[35m[39m
+12/10/2022 21:13:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 30.121 ms[39m
+[35m[39m
+12/10/2022 21:14:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 368.125 ms[39m
+[35m[39m
+12/10/2022 21:14:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 406.608 ms[39m
+[35m[39m
+12/10/2022 21:14:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 465.862 ms[39m
+[35m[39m
+12/10/2022 21:14:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 440.609 ms[39m
+[35m[39m
+12/10/2022 21:15:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 452.442 ms[39m
+[35m[39m
+12/10/2022 21:15:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 480.338 ms[39m
+[35m[39m
+12/10/2022 21:15:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 493.453 ms[39m
+[35m[39m
+12/10/2022 21:15:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 495.704 ms[39m
+[35m[39m
+12/10/2022 21:15:06 [35mhttp[39m: [35mGET /user/init 401 55 - 35.447 ms[39m
+[35m[39m
+12/10/2022 21:15:06 [35mhttp[39m: [35mGET /user/init 401 55 - 48.041 ms[39m
+[35m[39m
+12/10/2022 21:15:07 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 23.709 ms[39m
+[35m[39m
+12/10/2022 21:15:07 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8569 - 25.849 ms[39m
+[35m[39m
+12/10/2022 21:18:37 [35mhttp[39m: [35mGET /user/init 401 55 - 32.168 ms[39m
+[35m[39m
+12/10/2022 21:18:37 [35mhttp[39m: [35mGET /user/init 401 55 - 41.585 ms[39m
+[35m[39m
+12/10/2022 21:18:37 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 25 - 309.866 ms[39m
+[35m[39m
+12/10/2022 21:18:37 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 25 - 286.684 ms[39m
+[35m[39m
+12/10/2022 21:18:44 [35mhttp[39m: [35mGET /seed 200 25 - 892.047 ms[39m
+[35m[39m
+12/10/2022 21:18:47 [35mhttp[39m: [35mGET /user/init 401 55 - 1.964 ms[39m
+[35m[39m
+12/10/2022 21:18:47 [35mhttp[39m: [35mGET /user/init 401 55 - 3.667 ms[39m
+[35m[39m
+12/10/2022 21:18:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 15.058 ms[39m
+[35m[39m
+12/10/2022 21:18:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.265 ms[39m
+[35m[39m
+12/10/2022 21:18:50 [35mhttp[39m: [35mGET /user/init 401 55 - 2.920 ms[39m
+[35m[39m
+12/10/2022 21:18:50 [35mhttp[39m: [35mGET /user/init 401 55 - 4.737 ms[39m
+[35m[39m
+12/10/2022 21:18:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 25.974 ms[39m
+[35m[39m
+12/10/2022 21:18:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 23.183 ms[39m
+[35m[39m
+12/10/2022 21:19:43 [35mhttp[39m: [35mGET /user/init 401 55 - 4.793 ms[39m
+[35m[39m
+12/10/2022 21:19:43 [35mhttp[39m: [35mGET /user/init 401 55 - 9.933 ms[39m
+[35m[39m
+12/10/2022 21:19:43 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 167.466 ms[39m
+[35m[39m
+12/10/2022 21:19:43 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 183.407 ms[39m
+[35m[39m
+12/10/2022 21:19:45 [35mhttp[39m: [35mGET /user/init 401 55 - 3.093 ms[39m
+[35m[39m
+12/10/2022 21:19:45 [35mhttp[39m: [35mGET /user/init 401 55 - 7.744 ms[39m
+[35m[39m
+12/10/2022 21:19:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 23.576 ms[39m
+[35m[39m
+12/10/2022 21:19:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 29.338 ms[39m
+[35m[39m
+12/10/2022 21:19:47 [35mhttp[39m: [35mGET /user/init 401 55 - 2.361 ms[39m
+[35m[39m
+12/10/2022 21:19:47 [35mhttp[39m: [35mGET /user/init 401 55 - 4.530 ms[39m
+[35m[39m
+12/10/2022 21:19:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 17.290 ms[39m
+[35m[39m
+12/10/2022 21:19:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 30.879 ms[39m
+[35m[39m
+12/10/2022 21:19:54 [35mhttp[39m: [35mGET /user/init 401 55 - 2.718 ms[39m
+[35m[39m
+12/10/2022 21:19:54 [35mhttp[39m: [35mGET /user/init 401 55 - 4.588 ms[39m
+[35m[39m
+12/10/2022 21:19:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 11.265 ms[39m
+[35m[39m
+12/10/2022 21:19:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 16.400 ms[39m
+[35m[39m
+12/10/2022 21:22:28 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 73.551 ms[39m
+[35m[39m
+12/10/2022 21:27:37 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 89.836 ms[39m
+[35m[39m
+12/10/2022 21:27:41 [35mhttp[39m: [35mGET /products?page=3&sort=date_new_to_old 200 8487 - 9.553 ms[39m
+[35m[39m
+12/10/2022 21:27:46 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 34.559 ms[39m
+[35m[39m
+12/10/2022 21:28:48 [35mhttp[39m: [35mGET /user/init 401 55 - 2.847 ms[39m
+[35m[39m
+12/10/2022 21:28:48 [35mhttp[39m: [35mGET /user/init 401 55 - 4.333 ms[39m
+[35m[39m
+12/10/2022 21:28:49 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 274.492 ms[39m
+[35m[39m
+12/10/2022 21:28:49 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 274.721 ms[39m
+[35m[39m
+12/10/2022 21:28:49 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 186.271 ms[39m
+[35m[39m
+12/10/2022 21:31:50 [35mhttp[39m: [35mGET /products?page=3&sort=date_new_to_old 200 8487 - 59.486 ms[39m
+[35m[39m
+12/10/2022 21:31:52 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 12.950 ms[39m
+[35m[39m
+12/10/2022 21:33:36 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 54.156 ms[39m
+[35m[39m
+12/10/2022 21:35:25 [35mhttp[39m: [35mGET /user/init 401 55 - 1.922 ms[39m
+[35m[39m
+12/10/2022 21:35:25 [35mhttp[39m: [35mGET /user/init 401 55 - 2.705 ms[39m
+[35m[39m
+12/10/2022 21:35:25 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 257.277 ms[39m
+[35m[39m
+12/10/2022 21:35:25 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 155.482 ms[39m
+[35m[39m
+12/10/2022 21:35:25 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 164.986 ms[39m
+[35m[39m
+12/10/2022 21:37:10 [35mhttp[39m: [35mGET /user/init 401 55 - 2.717 ms[39m
+[35m[39m
+12/10/2022 21:37:10 [35mhttp[39m: [35mGET /user/init 401 55 - 6.234 ms[39m
+[35m[39m
+12/10/2022 21:37:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 314.954 ms[39m
+[35m[39m
+12/10/2022 21:37:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 323.952 ms[39m
+[35m[39m
+12/10/2022 21:37:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 138.324 ms[39m
+[35m[39m
+12/10/2022 21:38:11 [35mhttp[39m: [35mGET /user/init 401 55 - 2.604 ms[39m
+[35m[39m
+12/10/2022 21:38:11 [35mhttp[39m: [35mGET /user/init 401 55 - 5.614 ms[39m
+[35m[39m
+12/10/2022 21:38:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 282.208 ms[39m
+[35m[39m
+12/10/2022 21:38:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 283.993 ms[39m
+[35m[39m
+12/10/2022 21:38:11 [35mhttp[39m: [35mGET /products?page=2&sort=date_new_to_old 200 8642 - 173.125 ms[39m
+[35m[39m
+12/10/2022 21:38:18 [35mhttp[39m: [35mGET /products?page=3&sort=date_new_to_old 200 8487 - 9.358 ms[39m
+[35m[39m
+12/10/2022 21:38:20 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 8.263 ms[39m
+[35m[39m
+12/10/2022 21:38:44 [35mhttp[39m: [35mGET /user/init 401 55 - 2.481 ms[39m
+[35m[39m
+12/10/2022 21:38:44 [35mhttp[39m: [35mGET /user/init 401 55 - 13.051 ms[39m
+[35m[39m
+12/10/2022 21:38:44 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 276.181 ms[39m
+[35m[39m
+12/10/2022 21:38:44 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 278.499 ms[39m
+[35m[39m
+12/10/2022 21:38:44 [35mhttp[39m: [35mGET /products?page=4&sort=date_new_to_old 200 8581 - 187.856 ms[39m
+[35m[39m
+12/10/2022 21:38:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 64.864 ms[39m
+[35m[39m
+12/10/2022 21:38:56 [35mhttp[39m: [35mGET /user/init 401 55 - 1.348 ms[39m
+[35m[39m
+12/10/2022 21:38:56 [35mhttp[39m: [35mGET /user/init 401 55 - 4.586 ms[39m
+[35m[39m
+12/10/2022 21:38:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 14.803 ms[39m
+[35m[39m
+12/10/2022 21:38:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 99.275 ms[39m
+[35m[39m
+12/10/2022 21:42:14 [35mhttp[39m: [35mGET /user/init 401 55 - 2.598 ms[39m
+[35m[39m
+12/10/2022 21:42:14 [35mhttp[39m: [35mGET /user/init 401 55 - 3.232 ms[39m
+[35m[39m
+12/10/2022 21:42:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 180.547 ms[39m
+[35m[39m
+12/10/2022 21:42:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 178.326 ms[39m
+[35m[39m
+12/10/2022 21:42:18 [35mhttp[39m: [35mGET /user/init 401 55 - 3.057 ms[39m
+[35m[39m
+12/10/2022 21:42:18 [35mhttp[39m: [35mGET /user/init 401 55 - 6.068 ms[39m
+[35m[39m
+12/10/2022 21:42:18 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 7.351 ms[39m
+[35m[39m
+12/10/2022 21:42:19 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 16.608 ms[39m
+[35m[39m
+12/10/2022 21:43:12 [35mhttp[39m: [35mGET /user/init 401 55 - 3.473 ms[39m
+[35m[39m
+12/10/2022 21:43:12 [35mhttp[39m: [35mGET /user/init 401 55 - 8.182 ms[39m
+[35m[39m
+12/10/2022 21:43:13 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 166.633 ms[39m
+[35m[39m
+12/10/2022 21:43:13 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 115.168 ms[39m
+[35m[39m
+12/10/2022 21:43:35 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 135.990 ms[39m
+[35m[39m
+12/10/2022 21:43:35 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 309.104 ms[39m
+[35m[39m
+12/10/2022 21:43:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 341.934 ms[39m
+[35m[39m
+12/10/2022 21:43:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 346.667 ms[39m
+[35m[39m
+12/10/2022 21:43:53 [35mhttp[39m: [35mGET /user/init 401 55 - 3.433 ms[39m
+[35m[39m
+12/10/2022 21:43:53 [35mhttp[39m: [35mGET /user/init 401 55 - 5.790 ms[39m
+[35m[39m
+12/10/2022 21:43:53 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 161.392 ms[39m
+[35m[39m
+12/10/2022 21:43:53 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 164.596 ms[39m
+[35m[39m
+12/10/2022 21:49:59 [35mhttp[39m: [35mGET /user/init 401 55 - 1.638 ms[39m
+[35m[39m
+12/10/2022 21:49:59 [35mhttp[39m: [35mGET /user/init 401 55 - 2.485 ms[39m
+[35m[39m
+12/10/2022 21:49:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 202.980 ms[39m
+[35m[39m
+12/10/2022 21:49:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 155.708 ms[39m
+[35m[39m
+12/10/2022 21:50:01 [35mhttp[39m: [35mGET /user/init 401 55 - 1.155 ms[39m
+[35m[39m
+12/10/2022 21:50:02 [35mhttp[39m: [35mGET /user/init 401 55 - 2.794 ms[39m
+[35m[39m
+12/10/2022 21:50:02 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 40.085 ms[39m
+[35m[39m
+12/10/2022 21:50:02 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 47.387 ms[39m
+[35m[39m
+12/10/2022 21:50:06 [35mhttp[39m: [35mGET /user/init 401 55 - 1.700 ms[39m
+[35m[39m
+12/10/2022 21:50:06 [35mhttp[39m: [35mGET /user/init 401 55 - 2.837 ms[39m
+[35m[39m
+12/10/2022 21:50:06 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.406 ms[39m
+[35m[39m
+12/10/2022 21:50:06 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 17.827 ms[39m
+[35m[39m
+12/10/2022 21:50:12 [35mhttp[39m: [35mGET /user/init 401 55 - 1.226 ms[39m
+[35m[39m
+12/10/2022 21:50:12 [35mhttp[39m: [35mGET /user/init 401 55 - 2.483 ms[39m
+[35m[39m
+12/10/2022 21:50:12 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 9.281 ms[39m
+[35m[39m
+12/10/2022 21:50:12 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 10.214 ms[39m
+[35m[39m
+12/10/2022 21:50:14 [35mhttp[39m: [35mGET /user/init 401 55 - 1.671 ms[39m
+[35m[39m
+12/10/2022 21:50:14 [35mhttp[39m: [35mGET /user/init 401 55 - 1.385 ms[39m
+[35m[39m
+12/10/2022 21:50:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 8.761 ms[39m
+[35m[39m
+12/10/2022 21:50:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 7.615 ms[39m
+[35m[39m
+12/10/2022 21:50:16 [35mhttp[39m: [35mGET /user/init 401 55 - 2.552 ms[39m
+[35m[39m
+12/10/2022 21:50:16 [35mhttp[39m: [35mGET /user/init 401 55 - 4.950 ms[39m
+[35m[39m
+12/10/2022 21:50:16 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 10.433 ms[39m
+[35m[39m
+12/10/2022 21:50:16 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 9.564 ms[39m
+[35m[39m
+12/10/2022 21:50:33 [35mhttp[39m: [35mGET /user/init 401 55 - 2.151 ms[39m
+[35m[39m
+12/10/2022 21:50:33 [35mhttp[39m: [35mGET /user/init 401 55 - 2.707 ms[39m
+[35m[39m
+12/10/2022 21:50:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 78.151 ms[39m
+[35m[39m
+12/10/2022 21:50:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 8.684 ms[39m
+[35m[39m
+12/10/2022 21:50:34 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop 200 5813 - 13.176 ms[39m
+[35m[39m
+12/10/2022 21:50:35 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet 200 8664 - 9.087 ms[39m
+[35m[39m
+12/10/2022 21:50:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 200 8664 - 13.439 ms[39m
+[35m[39m
+12/10/2022 21:50:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones&price=0-100 200 25 - 52.720 ms[39m
+[35m[39m
+12/10/2022 21:50:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 12.871 ms[39m
+[35m[39m
+12/10/2022 21:50:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet 304 - - 8.631 ms[39m
+[35m[39m
+12/10/2022 21:50:53 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop 304 - - 7.061 ms[39m
+[35m[39m
+12/10/2022 21:50:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category= 200 8645 - 7.208 ms[39m
+[35m[39m
+12/10/2022 21:50:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop 304 - - 7.478 ms[39m
+[35m[39m
+12/10/2022 21:50:55 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet 304 - - 10.679 ms[39m
+[35m[39m
+12/10/2022 21:50:57 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 7.233 ms[39m
+[35m[39m
+12/10/2022 21:53:38 [35mhttp[39m: [35mGET /user/init 401 55 - 4.202 ms[39m
+[35m[39m
+12/10/2022 21:53:38 [35mhttp[39m: [35mGET /user/init 401 55 - 3.017 ms[39m
+[35m[39m
+12/10/2022 21:53:38 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 114.742 ms[39m
+[35m[39m
+12/10/2022 21:53:38 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 14.170 ms[39m
+[35m[39m
+12/10/2022 21:53:38 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.718 ms[39m
+[35m[39m
+12/10/2022 21:53:59 [35mhttp[39m: [35mGET /user/init 401 55 - 1.149 ms[39m
+[35m[39m
+12/10/2022 21:53:59 [35mhttp[39m: [35mGET /user/init 401 55 - 3.499 ms[39m
+[35m[39m
+12/10/2022 21:54:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 64.364 ms[39m
+[35m[39m
+12/10/2022 21:54:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 8.538 ms[39m
+[35m[39m
+12/10/2022 21:54:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.708 ms[39m
+[35m[39m
+12/10/2022 21:54:03 [35mhttp[39m: [35mGET /user/init 401 55 - 0.992 ms[39m
+[35m[39m
+12/10/2022 21:54:03 [35mhttp[39m: [35mGET /user/init 401 55 - 2.433 ms[39m
+[35m[39m
+12/10/2022 21:54:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.225 ms[39m
+[35m[39m
+12/10/2022 21:54:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.253 ms[39m
+[35m[39m
+12/10/2022 21:54:03 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 9.793 ms[39m
+[35m[39m
+12/10/2022 21:55:11 [35mhttp[39m: [35mGET /user/init 401 55 - 1.069 ms[39m
+[35m[39m
+12/10/2022 21:55:11 [35mhttp[39m: [35mGET /user/init 401 55 - 2.765 ms[39m
+[35m[39m
+12/10/2022 21:55:11 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 60.793 ms[39m
+[35m[39m
+12/10/2022 21:55:11 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 12.451 ms[39m
+[35m[39m
+12/10/2022 21:55:11 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.961 ms[39m
+[35m[39m
+12/10/2022 21:55:12 [35mhttp[39m: [35mGET /user/init 401 55 - 1.250 ms[39m
+[35m[39m
+12/10/2022 21:55:12 [35mhttp[39m: [35mGET /user/init 401 55 - 3.812 ms[39m
+[35m[39m
+12/10/2022 21:55:12 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 8.240 ms[39m
+[35m[39m
+12/10/2022 21:55:12 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 11.282 ms[39m
+[35m[39m
+12/10/2022 21:55:12 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 10.585 ms[39m
+[35m[39m
+12/10/2022 21:55:49 [35mhttp[39m: [35mGET /user/init 401 55 - 1.984 ms[39m
+[35m[39m
+12/10/2022 21:55:49 [35mhttp[39m: [35mGET /user/init 401 55 - 6.262 ms[39m
+[35m[39m
+12/10/2022 21:55:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 159.055 ms[39m
+[35m[39m
+12/10/2022 21:55:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 160.824 ms[39m
+[35m[39m
+12/10/2022 21:55:51 [35mhttp[39m: [35mGET /user/init 401 55 - 1.583 ms[39m
+[35m[39m
+12/10/2022 21:55:51 [35mhttp[39m: [35mGET /user/init 401 55 - 3.392 ms[39m
+[35m[39m
+12/10/2022 21:55:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 11.960 ms[39m
+[35m[39m
+12/10/2022 21:55:51 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 10.682 ms[39m
+[35m[39m
+12/10/2022 21:56:10 [35mhttp[39m: [35mGET /user/init 401 55 - 1.494 ms[39m
+[35m[39m
+12/10/2022 21:56:10 [35mhttp[39m: [35mGET /user/init 401 55 - 4.629 ms[39m
+[35m[39m
+12/10/2022 21:56:11 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 134.095 ms[39m
+[35m[39m
+12/10/2022 21:56:11 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 147.389 ms[39m
+[35m[39m
+12/10/2022 21:56:13 [35mhttp[39m: [35mGET /user/init 401 55 - 2.413 ms[39m
+[35m[39m
+12/10/2022 21:56:13 [35mhttp[39m: [35mGET /user/init 401 55 - 3.324 ms[39m
+[35m[39m
+12/10/2022 21:56:13 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 14.467 ms[39m
+[35m[39m
+12/10/2022 21:56:13 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 13.073 ms[39m
+[35m[39m
+12/10/2022 21:56:15 [35mhttp[39m: [35mGET /user/init 401 55 - 1.203 ms[39m
+[35m[39m
+12/10/2022 21:56:15 [35mhttp[39m: [35mGET /user/init 401 55 - 2.669 ms[39m
+[35m[39m
+12/10/2022 21:56:15 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 10.236 ms[39m
+[35m[39m
+12/10/2022 21:56:15 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 10.389 ms[39m
+[35m[39m
+12/10/2022 21:57:25 [35mhttp[39m: [35mGET /user/init 401 55 - 1.504 ms[39m
+[35m[39m
+12/10/2022 21:57:25 [35mhttp[39m: [35mGET /user/init 401 55 - 3.347 ms[39m
+[35m[39m
+12/10/2022 21:57:25 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 254.376 ms[39m
+[35m[39m
+12/10/2022 21:57:26 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 253.737 ms[39m
+[35m[39m
+12/10/2022 21:57:28 [35mhttp[39m: [35mGET /user/init 401 55 - 1.989 ms[39m
+[35m[39m
+12/10/2022 21:57:28 [35mhttp[39m: [35mGET /user/init 401 55 - 2.919 ms[39m
+[35m[39m
+12/10/2022 21:57:28 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.774 ms[39m
+[35m[39m
+12/10/2022 21:57:28 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 17.903 ms[39m
+[35m[39m
+12/10/2022 21:57:30 [35mhttp[39m: [35mGET /user/init 401 55 - 1.764 ms[39m
+[35m[39m
+12/10/2022 21:57:30 [35mhttp[39m: [35mGET /user/init 401 55 - 2.865 ms[39m
+[35m[39m
+12/10/2022 21:57:30 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 12.666 ms[39m
+[35m[39m
+12/10/2022 21:57:30 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 28.078 ms[39m
+[35m[39m
+12/10/2022 21:57:33 [35mhttp[39m: [35mGET /user/init 401 55 - 1.554 ms[39m
+[35m[39m
+12/10/2022 21:57:33 [35mhttp[39m: [35mGET /user/init 401 55 - 3.329 ms[39m
+[35m[39m
+12/10/2022 21:57:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.875 ms[39m
+[35m[39m
+12/10/2022 21:57:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.017 ms[39m
+[35m[39m
+12/10/2022 21:57:36 [35mhttp[39m: [35mGET /user/init 401 55 - 2.951 ms[39m
+[35m[39m
+12/10/2022 21:57:36 [35mhttp[39m: [35mGET /user/init 401 55 - 8.030 ms[39m
+[35m[39m
+12/10/2022 21:57:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 20.106 ms[39m
+[35m[39m
+12/10/2022 21:57:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 24.674 ms[39m
+[35m[39m
+12/10/2022 21:57:43 [35mhttp[39m: [35mGET /user/init 401 55 - 2.242 ms[39m
+[35m[39m
+12/10/2022 21:57:43 [35mhttp[39m: [35mGET /user/init 401 55 - 4.068 ms[39m
+[35m[39m
+12/10/2022 21:57:43 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 12.782 ms[39m
+[35m[39m
+12/10/2022 21:57:43 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 23.826 ms[39m
+[35m[39m
+12/10/2022 21:57:46 [35mhttp[39m: [35mGET /user/init 401 55 - 1.324 ms[39m
+[35m[39m
+12/10/2022 21:57:46 [35mhttp[39m: [35mGET /user/init 401 55 - 3.413 ms[39m
+[35m[39m
+12/10/2022 21:57:46 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.639 ms[39m
+[35m[39m
+12/10/2022 21:57:46 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 44.178 ms[39m
+[35m[39m
+12/10/2022 21:57:48 [35mhttp[39m: [35mGET /user/init 401 55 - 1.886 ms[39m
+[35m[39m
+12/10/2022 21:57:48 [35mhttp[39m: [35mGET /user/init 401 55 - 4.713 ms[39m
+[35m[39m
+12/10/2022 21:57:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 15.342 ms[39m
+[35m[39m
+12/10/2022 21:57:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 26.454 ms[39m
+[35m[39m
+12/10/2022 21:58:32 [35mhttp[39m: [35mGET /user/init 401 55 - 2.538 ms[39m
+[35m[39m
+12/10/2022 21:58:32 [35mhttp[39m: [35mGET /user/init 401 55 - 4.218 ms[39m
+[35m[39m
+12/10/2022 21:58:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 185.707 ms[39m
+[35m[39m
+12/10/2022 21:58:33 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 192.343 ms[39m
+[35m[39m
+12/10/2022 21:58:35 [35mhttp[39m: [35mGET /user/init 401 55 - 1.835 ms[39m
+[35m[39m
+12/10/2022 21:58:35 [35mhttp[39m: [35mGET /user/init 401 55 - 4.502 ms[39m
+[35m[39m
+12/10/2022 21:58:35 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 12.822 ms[39m
+[35m[39m
+12/10/2022 21:58:35 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 16.056 ms[39m
+[35m[39m
+12/10/2022 21:58:38 [35mhttp[39m: [35mGET /user/init 401 55 - 1.493 ms[39m
+[35m[39m
+12/10/2022 21:58:38 [35mhttp[39m: [35mGET /user/init 401 55 - 2.653 ms[39m
+[35m[39m
+12/10/2022 21:58:39 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.845 ms[39m
+[35m[39m
+12/10/2022 21:58:39 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 13.790 ms[39m
+[35m[39m
+12/10/2022 21:58:41 [35mhttp[39m: [35mGET /user/init 401 55 - 1.775 ms[39m
+[35m[39m
+12/10/2022 21:58:41 [35mhttp[39m: [35mGET /user/init 401 55 - 1.591 ms[39m
+[35m[39m
+12/10/2022 21:58:41 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 11.174 ms[39m
+[35m[39m
+12/10/2022 21:58:41 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 15.906 ms[39m
+[35m[39m
+12/10/2022 21:58:42 [35mhttp[39m: [35mGET /user/init 401 55 - 1.464 ms[39m
+[35m[39m
+12/10/2022 21:58:42 [35mhttp[39m: [35mGET /user/init 401 55 - 2.829 ms[39m
+[35m[39m
+12/10/2022 21:58:42 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.782 ms[39m
+[35m[39m
+12/10/2022 21:58:42 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 17.723 ms[39m
+[35m[39m
+12/10/2022 21:58:55 [35mhttp[39m: [35mGET /user/init 401 55 - 1.664 ms[39m
+[35m[39m
+12/10/2022 21:58:55 [35mhttp[39m: [35mGET /user/init 401 55 - 3.456 ms[39m
+[35m[39m
+12/10/2022 21:58:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 206.915 ms[39m
+[35m[39m
+12/10/2022 21:58:56 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 224.018 ms[39m
+[35m[39m
+12/10/2022 21:59:08 [35mhttp[39m: [35mGET /user/init 401 55 - 3.011 ms[39m
+[35m[39m
+12/10/2022 21:59:08 [35mhttp[39m: [35mGET /user/init 401 55 - 9.884 ms[39m
+[35m[39m
+12/10/2022 21:59:08 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 207.967 ms[39m
+[35m[39m
+12/10/2022 21:59:08 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 203.684 ms[39m
+[35m[39m
+12/10/2022 21:59:14 [35mhttp[39m: [35mGET /user/init 401 55 - 1.588 ms[39m
+[35m[39m
+12/10/2022 21:59:14 [35mhttp[39m: [35mGET /user/init 401 55 - 2.475 ms[39m
+[35m[39m
+12/10/2022 21:59:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.420 ms[39m
+[35m[39m
+12/10/2022 21:59:14 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.289 ms[39m
+[35m[39m
+12/10/2022 21:59:29 [35mhttp[39m: [35mGET /user/init 401 55 - 3.349 ms[39m
+[35m[39m
+12/10/2022 21:59:29 [35mhttp[39m: [35mGET /user/init 401 55 - 3.897 ms[39m
+[35m[39m
+12/10/2022 21:59:30 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 179.453 ms[39m
+[35m[39m
+12/10/2022 21:59:30 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 185.454 ms[39m
+[35m[39m
+12/10/2022 21:59:45 [35mhttp[39m: [35mGET /user/init 401 55 - 3.583 ms[39m
+[35m[39m
+12/10/2022 21:59:45 [35mhttp[39m: [35mGET /user/init 401 55 - 2.797 ms[39m
+[35m[39m
+12/10/2022 21:59:46 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 208.863 ms[39m
+[35m[39m
+12/10/2022 21:59:46 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 215.698 ms[39m
+[35m[39m
+12/10/2022 22:00:10 [35mhttp[39m: [35mGET /user/init 401 55 - 4.562 ms[39m
+[35m[39m
+12/10/2022 22:00:10 [35mhttp[39m: [35mGET /user/init 401 55 - 4.507 ms[39m
+[35m[39m
+12/10/2022 22:00:10 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 224.749 ms[39m
+[35m[39m
+12/10/2022 22:00:10 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 241.370 ms[39m
+[35m[39m
+12/10/2022 22:00:25 [35mhttp[39m: [35mGET /user/init 401 55 - 5.415 ms[39m
+[35m[39m
+12/10/2022 22:00:25 [35mhttp[39m: [35mGET /user/init 401 55 - 5.459 ms[39m
+[35m[39m
+12/10/2022 22:00:25 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 206.682 ms[39m
+[35m[39m
+12/10/2022 22:00:25 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 208.005 ms[39m
+[35m[39m
+12/10/2022 22:00:31 [35mhttp[39m: [35mGET /user/init 401 55 - 2.961 ms[39m
+[35m[39m
+12/10/2022 22:00:31 [35mhttp[39m: [35mGET /user/init 401 55 - 3.243 ms[39m
+[35m[39m
+12/10/2022 22:00:31 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 22.164 ms[39m
+[35m[39m
+12/10/2022 22:00:31 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 22.526 ms[39m
+[35m[39m
+12/10/2022 22:00:33 [35mhttp[39m: [35mGET /user/init 401 55 - 3.434 ms[39m
+[35m[39m
+12/10/2022 22:00:33 [35mhttp[39m: [35mGET /user/init 401 55 - 4.054 ms[39m
+[35m[39m
+12/10/2022 22:00:34 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.786 ms[39m
+[35m[39m
+12/10/2022 22:00:34 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 18.630 ms[39m
+[35m[39m
+12/10/2022 22:00:35 [35mhttp[39m: [35mGET /user/init 401 55 - 1.836 ms[39m
+[35m[39m
+12/10/2022 22:00:35 [35mhttp[39m: [35mGET /user/init 401 55 - 2.534 ms[39m
+[35m[39m
+12/10/2022 22:00:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 15.848 ms[39m
+[35m[39m
+12/10/2022 22:00:36 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 17.368 ms[39m
+[35m[39m
+12/10/2022 22:00:46 [35mhttp[39m: [35mGET /user/init 401 55 - 1.657 ms[39m
+[35m[39m
+12/10/2022 22:00:46 [35mhttp[39m: [35mGET /user/init 401 55 - 2.305 ms[39m
+[35m[39m
+12/10/2022 22:00:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 117.043 ms[39m
+[35m[39m
+12/10/2022 22:00:47 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 118.916 ms[39m
+[35m[39m
+12/10/2022 22:00:48 [35mhttp[39m: [35mGET /user/init 401 55 - 3.590 ms[39m
+[35m[39m
+12/10/2022 22:00:48 [35mhttp[39m: [35mGET /user/init 401 55 - 2.920 ms[39m
+[35m[39m
+12/10/2022 22:00:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 14.063 ms[39m
+[35m[39m
+12/10/2022 22:00:48 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 13.680 ms[39m
+[35m[39m
+12/10/2022 22:00:53 [35mhttp[39m: [35mGET /user/init 401 55 - 4.863 ms[39m
+[35m[39m
+12/10/2022 22:00:53 [35mhttp[39m: [35mGET /user/init 401 55 - 4.404 ms[39m
+[35m[39m
+12/10/2022 22:00:53 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 14.747 ms[39m
+[35m[39m
+12/10/2022 22:00:53 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 15.859 ms[39m
+[35m[39m
+12/10/2022 22:01:16 [35mhttp[39m: [35mGET /user/init 401 55 - 2.993 ms[39m
+[35m[39m
+12/10/2022 22:01:16 [35mhttp[39m: [35mGET /user/init 401 55 - 5.259 ms[39m
+[35m[39m
+12/10/2022 22:01:16 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 198.271 ms[39m
+[35m[39m
+12/10/2022 22:01:16 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 136.710 ms[39m
+[35m[39m
+12/10/2022 22:01:53 [35mhttp[39m: [35mGET /user/init 401 55 - 2.590 ms[39m
+[35m[39m
+12/10/2022 22:01:53 [35mhttp[39m: [35mGET /user/init 401 55 - 2.267 ms[39m
+[35m[39m
+12/10/2022 22:01:53 [35mhttp[39m: [35mGET /user/init 401 55 - 4.140 ms[39m
+[35m[39m
+12/10/2022 22:01:53 [35mhttp[39m: [35mGET /user/init 401 55 - 3.623 ms[39m
+[35m[39m
+12/10/2022 22:01:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 228.154 ms[39m
+[35m[39m
+12/10/2022 22:01:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 326.371 ms[39m
+[35m[39m
+12/10/2022 22:01:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 148.880 ms[39m
+[35m[39m
+12/10/2022 22:01:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 43.993 ms[39m
+[35m[39m
+12/10/2022 22:01:54 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 21.924 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /user/init 401 55 - 2.246 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /user/init 401 55 - 1.327 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /user/init 401 55 - 2.866 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /user/init 401 55 - 1.834 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 26.220 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 25.021 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 19.928 ms[39m
+[35m[39m
+12/10/2022 22:01:59 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 27.580 ms[39m
+[35m[39m
+12/10/2022 22:02:00 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 30.549 ms[39m
+[35m[39m
+12/10/2022 22:02:03 [35mhttp[39m: [35mGET /user/init 401 55 - 4.751 ms[39m
+[35m[39m
+12/10/2022 22:02:03 [35mhttp[39m: [35mGET /user/init 401 55 - 4.024 ms[39m
+[35m[39m
+12/10/2022 22:02:03 [35mhttp[39m: [35mGET /user/init 401 55 - 8.582 ms[39m
+[35m[39m
+12/10/2022 22:02:03 [35mhttp[39m: [35mGET /user/init 401 55 - 5.311 ms[39m
+[35m[39m
+12/10/2022 22:02:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 16.201 ms[39m
+[35m[39m
+12/10/2022 22:02:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 21.418 ms[39m
+[35m[39m
+12/10/2022 22:02:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 25.812 ms[39m
+[35m[39m
+12/10/2022 22:02:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 17.178 ms[39m
+[35m[39m
+12/10/2022 22:02:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 34.023 ms[39m
+[35m[39m
+12/10/2022 22:02:05 [35mhttp[39m: [35mGET /user/init 401 55 - 1.273 ms[39m
+[35m[39m
+12/10/2022 22:02:05 [35mhttp[39m: [35mGET /user/init 401 55 - 2.511 ms[39m
+[35m[39m
+12/10/2022 22:02:06 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 19.721 ms[39m
+[35m[39m
+12/10/2022 22:02:06 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 27.985 ms[39m
+[35m[39m
+12/10/2022 22:02:22 [35mhttp[39m: [35mGET /user/init 401 55 - 1.748 ms[39m
+[35m[39m
+12/10/2022 22:02:22 [35mhttp[39m: [35mGET /user/init 401 55 - 4.398 ms[39m
+[35m[39m
+12/10/2022 22:02:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 96.510 ms[39m
+[35m[39m
+12/10/2022 22:02:23 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 106.256 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /user/init 401 55 - 5.536 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /user/init 401 55 - 4.497 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /user/init 401 55 - 3.882 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /user/init 401 55 - 6.322 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 54.816 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 56.531 ms[39m
+[35m[39m
+12/10/2022 22:02:28 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 164.732 ms[39m
+[35m[39m
+12/10/2022 22:02:29 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 25.463 ms[39m
+[35m[39m
+12/10/2022 22:02:29 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old&category=laptop,tablet,headphones 304 - - 20.373 ms[39m
+[35m[39m
+12/10/2022 22:02:45 [35mhttp[39m: [35mGET /products/20 200 1876 - 92.839 ms[39m
+[35m[39m
+12/10/2022 22:02:45 [35mhttp[39m: [35mGET /products/20 200 1876 - 100.657 ms[39m
+[35m[39m
+12/10/2022 22:05:08 [35mhttp[39m: [35mGET /products/20 200 1876 - 167.476 ms[39m
+[35m[39m
+12/10/2022 22:05:08 [35mhttp[39m: [35mGET /products/20 200 1876 - 171.793 ms[39m
+[35m[39m
+12/10/2022 22:05:52 [35mhttp[39m: [35mGET /user/init 401 55 - 1.337 ms[39m
+[35m[39m
+12/10/2022 22:05:52 [35mhttp[39m: [35mGET /user/init 401 55 - 2.005 ms[39m
+[35m[39m
+12/10/2022 22:05:52 [35mhttp[39m: [35mGET /products/20 200 1876 - 85.561 ms[39m
+[35m[39m
+12/10/2022 22:05:52 [35mhttp[39m: [35mGET /products/20 200 1876 - 89.996 ms[39m
+[35m[39m
+12/10/2022 22:06:53 [35mhttp[39m: [35mGET /user/init 401 55 - 2.998 ms[39m
+[35m[39m
+12/10/2022 22:06:53 [35mhttp[39m: [35mGET /user/init 401 55 - 10.426 ms[39m
+[35m[39m
+12/10/2022 22:06:53 [35mhttp[39m: [35mGET /products/20 200 1876 - 150.538 ms[39m
+[35m[39m
+12/10/2022 22:06:53 [35mhttp[39m: [35mGET /products/20 200 1876 - 161.129 ms[39m
+[35m[39m
+12/10/2022 22:07:49 [35mhttp[39m: [35mGET /user/init 401 55 - 2.546 ms[39m
+[35m[39m
+12/10/2022 22:07:49 [35mhttp[39m: [35mGET /user/init 401 55 - 6.141 ms[39m
+[35m[39m
+12/10/2022 22:07:50 [35mhttp[39m: [35mGET /products/20 200 1876 - 186.666 ms[39m
+[35m[39m
+12/10/2022 22:07:50 [35mhttp[39m: [35mGET /products/20 200 1876 - 197.038 ms[39m
+[35m[39m
+12/10/2022 22:08:21 [35mhttp[39m: [35mGET /user/init 401 55 - 2.589 ms[39m
+[35m[39m
+12/10/2022 22:08:21 [35mhttp[39m: [35mGET /user/init 401 55 - 4.062 ms[39m
+[35m[39m
+12/10/2022 22:08:21 [35mhttp[39m: [35mGET /products/20 200 1876 - 137.789 ms[39m
+[35m[39m
+12/10/2022 22:08:21 [35mhttp[39m: [35mGET /products/20 200 1876 - 138.003 ms[39m
+[35m[39m
+12/10/2022 22:08:30 [35mhttp[39m: [35mGET /user/init 401 55 - 2.906 ms[39m
+[35m[39m
+12/10/2022 22:08:30 [35mhttp[39m: [35mGET /user/init 401 55 - 2.369 ms[39m
+[35m[39m
+12/10/2022 22:08:30 [35mhttp[39m: [35mGET /products/20 200 1876 - 19.498 ms[39m
+[35m[39m
+12/10/2022 22:08:30 [35mhttp[39m: [35mGET /products/20 200 1876 - 26.397 ms[39m
+[35m[39m
+12/10/2022 22:08:42 [35mhttp[39m: [35mGET /user/init 401 55 - 1.777 ms[39m
+[35m[39m
+12/10/2022 22:08:42 [35mhttp[39m: [35mGET /user/init 401 55 - 3.900 ms[39m
+[35m[39m
+12/10/2022 22:08:42 [35mhttp[39m: [35mGET /products/20 200 1876 - 126.101 ms[39m
+[35m[39m
+12/10/2022 22:08:42 [35mhttp[39m: [35mGET /products/20 200 1876 - 126.041 ms[39m
+[35m[39m
+12/10/2022 22:11:56 [35mhttp[39m: [35mGET /user/init 401 55 - 2.297 ms[39m
+[35m[39m
+12/10/2022 22:11:56 [35mhttp[39m: [35mGET /user/init 401 55 - 5.188 ms[39m
+[35m[39m
+12/10/2022 22:11:57 [35mhttp[39m: [35mGET /products/20 200 1876 - 157.367 ms[39m
+[35m[39m
+12/10/2022 22:11:57 [35mhttp[39m: [35mGET /products/20 200 1876 - 158.034 ms[39m
+[35m[39m
+12/10/2022 22:12:01 [35mhttp[39m: [35mGET /user/init 401 55 - 1.431 ms[39m
+[35m[39m
+12/10/2022 22:12:01 [35mhttp[39m: [35mGET /user/init 401 55 - 3.048 ms[39m
+[35m[39m
+12/10/2022 22:12:01 [35mhttp[39m: [35mGET /products/20 200 1876 - 7.400 ms[39m
+[35m[39m
+12/10/2022 22:12:01 [35mhttp[39m: [35mGET /products/20 200 1876 - 12.201 ms[39m
+[35m[39m
+12/10/2022 22:12:41 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 107.715 ms[39m
+[35m[39m
+12/10/2022 22:12:41 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 108.092 ms[39m
+[35m[39m
+12/10/2022 22:12:53 [35mhttp[39m: [35mGET /products/21 200 1860 - 152.487 ms[39m
+[35m[39m
+12/10/2022 22:12:53 [35mhttp[39m: [35mGET /products/21 200 1860 - 161.403 ms[39m
+[35m[39m
+12/10/2022 22:13:18 [35mhttp[39m: [35mGET /user/init 401 55 - 2.771 ms[39m
+[35m[39m
+12/10/2022 22:13:18 [35mhttp[39m: [35mGET /user/init 401 55 - 7.256 ms[39m
+[35m[39m
+12/10/2022 22:13:19 [35mhttp[39m: [35mGET /products/21 200 1860 - 167.382 ms[39m
+[35m[39m
+12/10/2022 22:13:19 [35mhttp[39m: [35mGET /products/21 200 1860 - 174.658 ms[39m
+[35m[39m
+12/10/2022 22:13:25 [35mhttp[39m: [35mGET /user/init 401 55 - 3.774 ms[39m
+[35m[39m
+12/10/2022 22:13:25 [35mhttp[39m: [35mGET /user/init 401 55 - 3.205 ms[39m
+[35m[39m
+12/10/2022 22:13:25 [35mhttp[39m: [35mGET /products/21 200 1860 - 12.897 ms[39m
+[35m[39m
+12/10/2022 22:13:25 [35mhttp[39m: [35mGET /products/21 200 1860 - 17.995 ms[39m
+[35m[39m
+12/10/2022 22:13:52 [35mhttp[39m: [35mGET /user/init 401 55 - 3.282 ms[39m
+[35m[39m
+12/10/2022 22:13:52 [35mhttp[39m: [35mGET /user/init 401 55 - 6.910 ms[39m
+[35m[39m
+12/10/2022 22:13:53 [35mhttp[39m: [35mGET /products/21 200 1860 - 134.304 ms[39m
+[35m[39m
+12/10/2022 22:13:53 [35mhttp[39m: [35mGET /products/21 200 1860 - 76.361 ms[39m
+[35m[39m
+12/10/2022 22:13:57 [35mhttp[39m: [35mGET /user/init 401 55 - 1.911 ms[39m
+[35m[39m
+12/10/2022 22:13:57 [35mhttp[39m: [35mGET /user/init 401 55 - 2.125 ms[39m
+[35m[39m
+12/10/2022 22:13:57 [35mhttp[39m: [35mGET /products/21 200 1860 - 12.034 ms[39m
+[35m[39m
+12/10/2022 22:13:57 [35mhttp[39m: [35mGET /products/21 200 1860 - 24.536 ms[39m
+[35m[39m
+12/10/2022 22:14:00 [35mhttp[39m: [35mGET /user/init 401 55 - 2.820 ms[39m
+[35m[39m
+12/10/2022 22:14:00 [35mhttp[39m: [35mGET /user/init 401 55 - 5.171 ms[39m
+[35m[39m
+12/10/2022 22:14:00 [35mhttp[39m: [35mGET /products/21 200 1860 - 9.588 ms[39m
+[35m[39m
+12/10/2022 22:14:00 [35mhttp[39m: [35mGET /products/21 200 1860 - 12.996 ms[39m
+[35m[39m
+12/10/2022 22:14:21 [35mhttp[39m: [35mGET /user/init 401 55 - 2.907 ms[39m
+[35m[39m
+12/10/2022 22:14:21 [35mhttp[39m: [35mGET /user/init 401 55 - 5.506 ms[39m
+[35m[39m
+12/10/2022 22:14:21 [35mhttp[39m: [35mGET /products/21 200 1860 - 149.197 ms[39m
+[35m[39m
+12/10/2022 22:14:21 [35mhttp[39m: [35mGET /products/21 200 1860 - 156.184 ms[39m
+[35m[39m
+12/10/2022 22:14:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 104.385 ms[39m
+[35m[39m
+12/10/2022 22:14:45 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 108.966 ms[39m
+[35m[39m
+12/10/2022 22:15:55 [35mhttp[39m: [35mGET /products/21 200 1860 - 96.878 ms[39m
+[35m[39m
+12/10/2022 22:15:55 [35mhttp[39m: [35mGET /products/21 200 1860 - 98.691 ms[39m
+[35m[39m
+12/10/2022 22:19:07 [35mhttp[39m: [35mGET /user/init 401 55 - 2.296 ms[39m
+[35m[39m
+12/10/2022 22:19:07 [35mhttp[39m: [35mGET /user/init 401 55 - 5.050 ms[39m
+[35m[39m
+12/10/2022 22:19:07 [35mhttp[39m: [35mGET /products/21 200 1860 - 127.678 ms[39m
+[35m[39m
+12/10/2022 22:19:07 [35mhttp[39m: [35mGET /products/21 200 1860 - 79.041 ms[39m
+[35m[39m
+12/10/2022 22:20:32 [35mhttp[39m: [35mGET /user/init 401 55 - 2.313 ms[39m
+[35m[39m
+12/10/2022 22:20:32 [35mhttp[39m: [35mGET /user/init 401 55 - 2.197 ms[39m
+[35m[39m
+12/10/2022 22:20:32 [35mhttp[39m: [35mGET /products/21 200 1860 - 162.888 ms[39m
+[35m[39m
+12/10/2022 22:20:32 [35mhttp[39m: [35mGET /products/21 200 1860 - 155.552 ms[39m
+[35m[39m
+12/10/2022 22:20:40 [35mhttp[39m: [35mGET /user/init 401 55 - 1.748 ms[39m
+[35m[39m
+12/10/2022 22:20:40 [35mhttp[39m: [35mGET /user/init 401 55 - 6.516 ms[39m
+[35m[39m
+12/10/2022 22:20:40 [35mhttp[39m: [35mGET /products/21 200 1860 - 24.042 ms[39m
+[35m[39m
+12/10/2022 22:20:40 [35mhttp[39m: [35mGET /products/21 200 1860 - 26.600 ms[39m
+[35m[39m

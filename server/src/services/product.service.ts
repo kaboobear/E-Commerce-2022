@@ -59,8 +59,6 @@ class ProductService implements Service<Product> {
       relations: { colors: true, images: true },
     });
 
-    console.log('Product', product);
-
     if (!product) {
       throw new NotFoundException('Product not found');
     }

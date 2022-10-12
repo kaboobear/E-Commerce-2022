@@ -2,12 +2,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { Box } from '@mui/material';
 import React, { ComponentProps, FC } from 'react';
-import { Image } from 'services/types/Image';
+import { ImageType } from 'services/types/Image';
 import Slider from 'react-slick';
 import { MobileSlider } from './styled';
+import { Image } from 'components/Common/Image/Image';
 
 interface Props {
-  images: Image[];
+  images: ImageType[];
 }
 
 const mobileSliderProps: ComponentProps<typeof Slider> = {
@@ -22,14 +23,13 @@ const mobileSliderProps: ComponentProps<typeof Slider> = {
 export const MobileGallery: FC<Props> = ({ images }) => (
   <MobileSlider {...mobileSliderProps}>
     {images.map((image) => (
-      <Box
+      <Image
+        transition
         key={image.id}
-        component="img"
         src={image.url}
         sx={{ height: '500px' }}
+        alt={String(image.id)}
       />
     ))}
   </MobileSlider>
-
-  //todo: fix height
 );

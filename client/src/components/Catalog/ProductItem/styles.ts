@@ -1,6 +1,5 @@
 import { Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
-import { CSSProperties } from 'react';
 
 export const productCard: SxProps<Theme> = (theme) => ({
   height: 1,
@@ -16,9 +15,4 @@ export const productCardContent: SxProps = {
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
-};
-
-export const imageFade: CSSProperties = {
-  transitionDelay: '300ms',
-  transitionDuration: '500ms',
 };

@@ -4,14 +4,14 @@ Project:
 
 Catalog:
   - category into db
-  - empty images list (ui handling) + fallback for not existing images + quare image
   - user friendly url
   - to top button
 
 Single Product:
-  - fix counter styles
+  -
 
 Profile:
+  -
 
 Cart:
   - session + redis

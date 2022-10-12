@@ -24,7 +24,6 @@ export const ProductForm: FC = () => {
         initialValues={initial}
         validationSchema={ProductSchema}
         onSubmit={(values) => {
-          console.log('VAlue', values);
           dispatch(addProduct(values));
         }}
       >

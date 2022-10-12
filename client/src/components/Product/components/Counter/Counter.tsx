@@ -3,7 +3,8 @@ import { IconButton, InputBase } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import React, { FC } from 'react';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { CounterWrapper } from './styles';
+import { CounterWrapper } from './styled';
+import { counterButton } from './styles';
 
 interface Props {
   quantity: number;
@@ -23,8 +24,8 @@ export const Counter: FC<Props> = ({ quantity, setQuantity }) => {
   return (
     <CounterWrapper>
       <IconButton
+        sx={counterButton}
         onClick={handleDecrement}
-        color="primary"
         disabled={quantity === 1}
       >
         <RemoveIcon />
@@ -39,7 +40,7 @@ export const Counter: FC<Props> = ({ quantity, setQuantity }) => {
         }}
       />
 
-      <IconButton onClick={handleIncrement}>
+      <IconButton sx={counterButton} onClick={handleIncrement}>
         <AddIcon />
       </IconButton>
     </CounterWrapper>

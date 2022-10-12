@@ -1,4 +1,4 @@
-import { Box, Select, MenuItem } from '@mui/material';
+import { Select, MenuItem } from '@mui/material';
 import { Sort, SortLabels } from 'services/enums/sort.enum';
 import React, { FC } from 'react';
 import SortIcon from '@mui/icons-material/Sort';

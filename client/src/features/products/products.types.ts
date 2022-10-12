@@ -1,5 +1,5 @@
 import { Category } from 'services/enums/category.enums';
-import { Image } from 'services/types/Image';
+import { ImageType } from 'services/types/Image';
 
 export interface ProductFormData {
   title: string;
@@ -12,7 +12,7 @@ export interface CatalogProduct {
   id: number;
   title: string;
   description: string;
-  images: Image[];
+  images: ImageType[];
   price: number;
   created_at: Date;
 }

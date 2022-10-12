@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 const mainSliderProps: ComponentProps<typeof Slider> = {
   speed: 0,
   slidesToScroll: 1,
+  swipe: false,
   slidesToShow: 1,
   cssEase: 'linear',
 };
