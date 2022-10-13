@@ -11,6 +11,7 @@ import { CatalogProduct } from 'features/products/products.types';
 import { productCard, productCardContent } from './styles';
 import { Link } from 'react-router-dom';
 import { Image } from 'components/Common/Image/Image';
+import { fallbackImage } from 'services/constants/fallback-image';
 
 interface Props {
   product: CatalogProduct;
@@ -24,7 +25,9 @@ export const ProductItem: FC<Props> = ({ product }) => {
         <Card sx={productCard}>
           <Image
             sx={{ height: ['auto', 340, 320, 275] }}
-            src={product.images[0]?.url || ''}
+            src={
+              product.images.length ? product.images[0].url : fallbackImage.url
+            }
             alt={product.title}
             transition
           />

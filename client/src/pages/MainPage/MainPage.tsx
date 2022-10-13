@@ -12,6 +12,7 @@ import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
 import ProtectedRoute from './ProtectedRoute';
 import { useInitializeUser } from 'services/hooks/use-initialize-user';
 import { ProductPage } from 'pages/ProductPage/ProductPage';
+import { ToTop } from 'components/Common/ToTop/ToTop';
 
 export const MainPage = () => {
   const { isAuth, isUserLoading } = useInitializeUser();
@@ -43,6 +44,8 @@ export const MainPage = () => {
         </Route>
         <Route path="*" element={<NotFoundErrorPage />} />
       </Routes>
+
+      <ToTop />
     </ErrorBoundaries>
   );
 };

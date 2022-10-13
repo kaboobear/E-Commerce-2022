@@ -5,7 +5,6 @@ Project:
 Catalog:
   - category into db
   - user friendly url
-  - to top button
 
 Single Product:
   -

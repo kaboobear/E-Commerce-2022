@@ -1,9 +1,10 @@
-import { IconButton, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import React, { ComponentProps, forwardRef } from 'react';
 import Slider from 'react-slick';
-import { galleryIcon, galleryIconButton } from './styles';
+import { galleryIcon } from './styles';
+import { SliderControl } from './SliderControl';
 
 const previewSliderProps: ComponentProps<typeof Slider> = {
   speed: 300,
@@ -14,29 +15,21 @@ const previewSliderProps: ComponentProps<typeof Slider> = {
   focusOnSelect: true,
   arrows: true,
   infinite: true,
+  prevArrow: (
+    <SliderControl>
+      <KeyboardArrowLeftIcon sx={galleryIcon} fontSize="small" />
+    </SliderControl>
+  ),
+  nextArrow: (
+    <SliderControl>
+      <KeyboardArrowRightIcon sx={galleryIcon} fontSize="small" />
+    </SliderControl>
+  ),
 };
 
 export const PreviewSlider = forwardRef<Slider, ComponentProps<typeof Slider>>(
   ({ children, ...sliderProps }, ref) => (
-    <Slider
-      {...previewSliderProps}
-      {...sliderProps}
-      ref={ref}
-      nextArrow={
-        <Box>
-          <IconButton sx={galleryIconButton} aria-label="gallery next slick">
-            <KeyboardArrowRightIcon sx={galleryIcon} fontSize="small" />
-          </IconButton>
-        </Box>
-      }
-      prevArrow={
-        <Box>
-          <IconButton sx={galleryIconButton} aria-label="gallery prev slick">
-            <KeyboardArrowLeftIcon sx={galleryIcon} fontSize="small" />
-          </IconButton>
-        </Box>
-      }
-    >
+    <Slider {...previewSliderProps} {...sliderProps} ref={ref}>
       {children}
     </Slider>
   ),

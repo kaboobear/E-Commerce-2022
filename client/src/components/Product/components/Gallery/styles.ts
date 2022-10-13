@@ -10,7 +10,7 @@ export const mainGalleryItem: SxProps<Theme> = (theme) => ({
 
 export const previewSliderWrapper: SxProps<Theme> = (theme) => ({
   display: 'inline-block',
-  width: [0, 490, 340, 390],
+  width: [0, 450, 300, 350],
   '& .slick-arrow:before': {
     content: 'none',
   },
@@ -22,8 +22,8 @@ export const previewSliderWrapper: SxProps<Theme> = (theme) => ({
 export const previewItem =
   (active: boolean): SxProps<Theme> =>
   (theme) => ({
-    width: [0, 110, 65, 80],
-    height: [0, 110, 65, 80],
+    width: [0, 100, 55, 70],
+    height: [0, 100, 55, 70],
     borderRadius: 1.5,
     cursor: 'pointer',
     overflow: 'hidden',
