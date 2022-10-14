@@ -1,19 +1,14 @@
-export const confirmEmailTemplate = ({
-  username,
-  link,
-}: {
+import { callToActionTemplate } from './variants/call-to-action.template';
+
+interface ctaTemplateProps {
   username: string;
   link: string;
-}) => `
-<html>
-  <head>
-      <style></style>
-  </head>
-  <body>
-      <p>Hi ${username},</p>
-      <p>Confirm your email.</p>
-      <p> Please, click the link below to confirm your email</p>
-      <a href="${link}">Confirm</a>
-  </body>
-</html>
-`;
+}
+
+export const confirmEmailTemplate = ({ username, link }: ctaTemplateProps) =>
+  callToActionTemplate({
+    username,
+    link,
+    text: "We've heard that you want to confirm your email, so just click the button below, and we do the rest",
+    buttonText: 'Confirm Email',
+  });

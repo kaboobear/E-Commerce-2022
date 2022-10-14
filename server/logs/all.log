@@ -19693,3 +19693,75 @@
 [35m[39m
 13/10/2022 19:44:16 [35mhttp[39m: [35mGET /products?page=1&sort=date_old_to_new&category=laptop,tablet,headphones,phone&price=500-1000 304 - - 15.090 ms[39m
 [35m[39m
+14/10/2022 20:20:24 [35mhttp[39m: [35mGET /user/init 401 55 - 20.052 ms[39m
+[35m[39m
+14/10/2022 20:20:24 [35mhttp[39m: [35mGET /user/init 401 55 - 12.444 ms[39m
+[35m[39m
+14/10/2022 20:20:24 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 47.115 ms[39m
+[35m[39m
+14/10/2022 20:20:24 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 304 - - 15.702 ms[39m
+[35m[39m
+14/10/2022 20:20:27 [35mhttp[39m: [35mGET /products/20 304 - - 15.702 ms[39m
+[35m[39m
+14/10/2022 20:20:27 [35mhttp[39m: [35mGET /products/20 304 - - 12.545 ms[39m
+[35m[39m
+14/10/2022 20:20:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 337.497 ms[39m
+[35m[39m
+14/10/2022 20:20:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 366.266 ms[39m
+[35m[39m
+14/10/2022 20:20:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 413.617 ms[39m
+[35m[39m
+14/10/2022 20:20:50 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 426.780 ms[39m
+[35m[39m
+14/10/2022 20:23:35 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 241.806 ms[39m
+[35m[39m
+14/10/2022 21:08:13 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 182.889 ms[39m
+[35m[39m
+14/10/2022 21:09:37 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 284.191 ms[39m
+[35m[39m
+14/10/2022 21:10:16 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 161.630 ms[39m
+[35m[39m
+14/10/2022 21:23:12 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 322.216 ms[39m
+[35m[39m
+14/10/2022 21:26:22 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 369.897 ms[39m
+[35m[39m
+14/10/2022 21:29:37 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 266.656 ms[39m
+[35m[39m
+14/10/2022 21:31:16 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 173.568 ms[39m
+[35m[39m
+14/10/2022 21:38:44 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 296.499 ms[39m
+[35m[39m
+14/10/2022 21:42:05 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 181.025 ms[39m
+[35m[39m
+14/10/2022 21:45:05 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 301.951 ms[39m
+[35m[39m
+14/10/2022 21:48:08 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 173.523 ms[39m
+[35m[39m
+14/10/2022 21:54:28 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 179.669 ms[39m
+[35m[39m
+14/10/2022 21:58:23 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 183.153 ms[39m
+[35m[39m
+14/10/2022 22:01:03 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 334.766 ms[39m
+[35m[39m
+14/10/2022 22:04:16 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 325.054 ms[39m
+[35m[39m
+14/10/2022 22:06:10 [35mhttp[39m: [35mGET /user 200 684 - 126.045 ms[39m
+[35m[39m
+14/10/2022 22:06:18 [35mhttp[39m: [35mDELETE /user/1 200 2 - 11.357 ms[39m
+[35m[39m
+14/10/2022 22:06:32 [35mhttp[39m: [35mPOST /user 200 67 - 164.613 ms[39m
+[35m[39m
+14/10/2022 22:07:30 [35mhttp[39m: [35mPOST /auth/logout 200 2 - 10.633 ms[39m
+[35m[39m
+14/10/2022 22:07:34 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 259.029 ms[39m
+[35m[39m
+14/10/2022 22:09:04 [35mhttp[39m: [35mGET /user/init 401 55 - 35.231 ms[39m
+[35m[39m
+14/10/2022 22:09:04 [35mhttp[39m: [35mGET /user/init 401 55 - 46.095 ms[39m
+[35m[39m
+14/10/2022 22:09:04 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 56.926 ms[39m
+[35m[39m
+14/10/2022 22:09:05 [35mhttp[39m: [35mGET /products?page=1&sort=date_new_to_old 200 8645 - 173.902 ms[39m
+[35m[39m
+14/10/2022 22:09:24 [35mhttp[39m: [35mPOST /auth/reset-password-request 200 2 - 264.802 ms[39m
+[35m[39m

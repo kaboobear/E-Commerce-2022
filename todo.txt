@@ -1,6 +1,5 @@
 Project:
-  - lint + husky
-  - design for email templates 
+  - lint (renew versions) + husky
 
 Catalog:
   - category into db

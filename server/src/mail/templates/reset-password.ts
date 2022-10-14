@@ -1,19 +1,14 @@
-export const resetPasswordTemplate = ({
-  username,
-  link,
-}: {
+import { callToActionTemplate } from './variants/call-to-action.template';
+
+interface ctaTemplateProps {
   username: string;
   link: string;
-}) => `
-<html>
-  <head>
-      <style></style>
-  </head>
-  <body>
-      <p>Hi ${username},</p>
-      <p>You requested to reset your password.</p>
-      <p> Please, click the link below to reset your password</p>
-      <a href="${link}">Reset Password</a>
-  </body>
-</html>
-`;
+}
+
+export const resetPasswordTemplate = ({ username, link }: ctaTemplateProps) =>
+  callToActionTemplate({
+    username,
+    link,
+    text: "We've heard that you want to reset your password, so just click the button below, and we do the rest",
+    buttonText: 'Reset Password',
+  });
