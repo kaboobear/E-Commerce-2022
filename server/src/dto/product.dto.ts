@@ -38,3 +38,4 @@ export class CreateProductBodyDto {
 
   category: Category;
 }
+
